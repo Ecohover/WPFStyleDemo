@@ -1,0 +1,327 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sw="clr-namespace:WpfStyleableWindow.StyleableWindow">
+    
+    <SolidColorBrush x:Key="WindowColor" Color="#FF222C36"/>
+    <SolidColorBrush x:Key="WindowBackColor" Color="#FF1D1E26"/>
+    <SolidColorBrush x:Key="WindowForeColor" Color="White"/>
+    <SolidColorBrush x:Key="WindowForeHighlightColor" Color="WhiteSmoke"/>
+
+    <!--
+    <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFA9ADCE"/>
+    <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF148FB9"/>
+    <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF148FB9"/>
+
+    <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FF75788F"/>
+    <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FF707070"/>
+    <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070"/>
+
+    <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF"/>
+    <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF16B6ED"/>
+    <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF16B6ED"/>
+
+    <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FF222C36"/>
+    <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF15A5D7"/>
+    <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF15A5D7"/>
+ -->
+    <SolidColorBrush x:Key="RadioButton.MouseOver.Background" Color="#FFA9ADCE"/>
+    <SolidColorBrush x:Key="RadioButton.MouseOver.Border" Color="#FF148FB9"/>
+    <SolidColorBrush x:Key="RadioButton.MouseOver.Glyph" Color="#FF148FB9"/>
+
+    <SolidColorBrush x:Key="RadioButton.Disabled.Background" Color="#FF75788F"/>
+    <SolidColorBrush x:Key="RadioButton.Disabled.Border" Color="#FF707070"/>
+    <SolidColorBrush x:Key="RadioButton.Disabled.Glyph" Color="#FF707070"/>
+
+    <SolidColorBrush x:Key="RadioButton.Pressed.Background" Color="#FFD9ECFF"/>
+    <SolidColorBrush x:Key="RadioButton.Pressed.Border" Color="#FF16B6ED"/>
+    <SolidColorBrush x:Key="RadioButton.Pressed.Glyph" Color="#FF16B6ED"/>
+
+    <SolidColorBrush x:Key="RadioButton.Static.Background" Color="#FF222C36"/>
+    <SolidColorBrush x:Key="RadioButton.Static.Border" Color="#FF15A5D7"/>
+    <SolidColorBrush x:Key="RadioButton.Static.Glyph" Color="#FF15A5D7"/>
+
+
+    <sw:WindowMinimizeCommand x:Key="MinimizeCommand"></sw:WindowMinimizeCommand>
+    <sw:WindowMaximizeCommand x:Key="MaximizeCommand"></sw:WindowMaximizeCommand>
+    <sw:WindowCloseCommand x:Key="CloseCommand"></sw:WindowCloseCommand>
+
+    <!-- Windows 定義 Start-->
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Image}" x:Key="WindowIcon">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Width" Value="25"/>
+    </Style>
+
+    <ControlTemplate x:Key="WindowTemplate" TargetType="{x:Type Window}">
+        <Grid Background="{StaticResource WindowBackColor}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"                                           
+                                    sw:ControlDoubleClickBehavior.ExecuteCommand="{StaticResource CloseCommand}"                                               
+                                    sw:ControlDoubleClickBehavior.ExecuteCommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" Padding="0">
+                        <Image DockPanel.Dock="Left" Style="{StaticResource WindowIcon}" Source="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}},Path=Icon}"                                         
+                                    Width="16"                                           
+                                    sw:ShowSystemMenuBehavior.TargetWindow="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"                                           
+                                    sw:ShowSystemMenuBehavior.LeftButtonShowAt="{Binding ElementName=WindowContent}"/>
+                    </Label>
+                    <Label Grid.Column="1" DockPanel.Dock="Left" Content="{TemplateBinding Property=Title}" Padding="3,0,0,0"                                                                                  
+                                    HorizontalContentAlignment="Center"
+                                    VerticalContentAlignment="Center"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Foreground="{StaticResource WindowForeColor}"                                           
+                                    FontSize="16"
+                                    sw:WindowDragBehavior.LeftMouseButtonDrag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                                    sw:ControlDoubleClickBehavior.ExecuteCommand="{StaticResource MaximizeCommand}"
+                                    sw:ControlDoubleClickBehavior.ExecuteCommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                                    sw:ShowSystemMenuBehavior.TargetWindow="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                                    sw:ShowSystemMenuBehavior.RightButtonShow="true">
+                    </Label>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                        <Button DockPanel.Dock="Right" Width="30" Command="{StaticResource MinimizeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+                            <Image Source="../Image/Win_Mini.png"  Stretch="Uniform" Margin="8"></Image>
+                        </Button>
+                        <Button DockPanel.Dock="Right" Width="30" Command="{StaticResource MaximizeCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+                            <Image Source="../Image/Win_Max.png"  Stretch="Uniform" Margin="8"></Image>
+                        </Button>
+                        <Button DockPanel.Dock="Right" Width="30" Command="{StaticResource CloseCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
+                            <Image Source="../Image/Win_Close.png"  Stretch="Uniform" Margin="8"></Image>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <Border Grid.Row="1" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                    <Grid>
+                        <AdornerDecorator>
+                            <ContentPresenter x:Name="WindowContent"/>
+                        </AdornerDecorator>
+                        <ResizeGrip  x:Name="WindowResizeGrip" HorizontalAlignment="Right" IsTabStop="false" Visibility="Collapsed" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Thumb x:Name="ThumbTop" Height="6" Margin="14,0" VerticalAlignment="Top" Cursor="SizeNS"  Opacity="0" sw:WindowResizeBehavior.TopResize="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+            <Thumb x:Name="ThumbTopLeft" Height="6" Width="6" VerticalAlignment="Top" HorizontalAlignment="Left" Cursor="SizeNWSE"  Opacity="0" sw:WindowResizeBehavior.TopLeftResize="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+            <Thumb x:Name="ThumbBottom" Height="6" Margin="14,0" VerticalAlignment="Bottom" Cursor="SizeNS" Opacity="0" sw:WindowResizeBehavior.BottomResize="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+            <Thumb x:Name="ThumbTopRight" Height="6" Width="6" VerticalAlignment="Top" HorizontalAlignment="Right" Cursor="SizeNESW"  Opacity="0" sw:WindowResizeBehavior.TopRightResize="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+            <Thumb x:Name="ThumbRight" HorizontalAlignment="Right" Margin="0,14" Width="6" Cursor="SizeWE"  Opacity="0" sw:WindowResizeBehavior.RightResize="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+            <Thumb x:Name="ThumbBottomRight" Height="6" Width="6" VerticalAlignment="Bottom" HorizontalAlignment="Right" Cursor="SizeNWSE"  Opacity="0" sw:WindowResizeBehavior.BottomRightResize="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+            <Thumb x:Name="ThumbLeft" HorizontalAlignment="Left" Margin="0,14" Width="6" Cursor="SizeWE"  Opacity="0" sw:WindowResizeBehavior.LeftResize="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+            <Thumb x:Name="ThumbBottomLeft" Height="6" Width="6" VerticalAlignment="Bottom" HorizontalAlignment="Left" Cursor="SizeNESW"  Opacity="0" sw:WindowResizeBehavior.BottomLeftResize="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="ResizeMode" Value="CanResizeWithGrip"/>
+                    <Condition Property="WindowState" Value="Normal"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Visibility" TargetName="WindowResizeGrip" Value="Visible"/>
+            </MultiTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="Dark01" TargetType="{x:Type Window}">
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <Setter Property="MinWidth" Value="100"/>
+        <Setter Property="MinHeight" Value="46"/>
+        <Setter Property="Background" Value="#1D1E26"/>
+        <Setter Property="BorderBrush" Value="#222C36"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Template" Value="{StaticResource WindowTemplate}"/>
+    </Style>
+    <!-- Windows 定義 End-->
+
+
+    <!-- CheckBox 定義 Start-->
+    <Style x:Key="OptionMarkFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type CheckBox}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Foreground" Value="#FFFFFFFF"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="markGrid">
+                            <Image x:Name="frame" Grid.Column="0" Height="12" Width="12" Source="../Image/CheckBox_Frame.png" Stretch="Uniform"  Margin="0" Opacity="1"></Image>
+                            <Image x:Name="click" Grid.Column="0" Height="8" Width="8" Source="../Image/CheckBox_Click.png" Stretch="Uniform" Margin="0" Opacity="0"></Image>
+
+                            <Rectangle x:Name="mask" Fill="{StaticResource WindowBackColor}" Height="12" Width="12" Margin="0" StrokeThickness="0" Opacity="0"/>
+                        </Grid>
+                        <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+
+                        </ContentPresenter>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="true">
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                            <Setter Property="Padding" Value="4,-1,0,0"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Opacity" TargetName="frame" Value="0.7"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="mask" Value="0.7"></Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="true">
+                            <Setter Property="Opacity" TargetName="mask" Value="0"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Opacity" TargetName="click" Value="0.7"></Setter>
+
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Opacity" TargetName="click" Value="1"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter Property="Opacity" TargetName="click" Value="0"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- CheckBox 定義 End-->
+
+    <!-- RadioButton 定義 Start-->
+    <Style TargetType="{x:Type RadioButton}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource RadioButton.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Static.Border}"/>
+        <Setter Property="Foreground" Value="#FFFFFFFF"></Setter>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="radioButtonBorder"  BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="100" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1,1,2,1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <Grid x:Name="markGrid" Margin="0">
+                                <Image x:Name="frame" Grid.Column="0" Height="12" Width="12" Source="../Image/RadioButton_Frame.png" Stretch="Uniform"  Margin="0" Opacity="1"></Image>
+                                <Image x:Name="click" Grid.Column="0" Height="4" Width="4" Source="../Image/RadioButton_Click.png" Stretch="Uniform" Margin="0" Opacity="0"></Image>
+
+                                <Ellipse x:Name="mask" Grid.Column="0" Fill="{StaticResource WindowBackColor}" Height="12" Width="12" Margin="0" StrokeThickness="0" Opacity="0"/>
+                            </Grid>
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="true">
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                            <Setter Property="Padding" Value="4,-1,0,0"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Opacity" TargetName="frame" Value="0.7"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="mask" Value="0.7"></Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="true">
+                            <Setter Property="Opacity" TargetName="mask" Value="0"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Opacity" TargetName="click" Value="0.7"></Setter>
+
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Opacity" TargetName="click" Value="1"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter Property="Opacity" TargetName="click" Value="0"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- RadioButton 定義 End-->
+
+    <!-- Button 定義 Start-->
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="#FF222C36"/>
+        <Setter Property="Foreground" Value="#FFFFFFFF"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid >
+                        <Rectangle x:Name="rectangle" HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" RadiusY="4" RadiusX="4" Fill="#FF222C36" />
+                        <Border x:Name="border" Margin="0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true">
+                            <Setter Property="Fill" TargetName="rectangle" Value="{StaticResource Button.Static.Background}"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Fill" TargetName="rectangle">
+                                <Setter.Value >
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#880FC8CA" Offset="0"/>
+                                        <GradientStop Color="#88109ED7" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Fill" TargetName="rectangle">
+                                <Setter.Value >
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF0FC8CA" Offset="0"/>
+                                        <GradientStop Color="#FF109ED7" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- Button 定義 End-->
+</ResourceDictionary>
+    

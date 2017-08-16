@@ -1,0 +1,9 @@
+﻿<Application x:Class="WPFDemo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sw="clr-namespace:WpfStyleableWindow.StyleableWindow"   
+             xmlns:local="clr-namespace:WPFDemo"
+             StartupUri="StartPage.xaml">
+    <Application.Resources>
+    </Application.Resources>
+</Application>

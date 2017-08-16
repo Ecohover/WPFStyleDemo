@@ -1,0 +1,38 @@
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\bin\Debug\WPFDemo.exe.config
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\bin\Debug\WPFDemo.exe
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\bin\Debug\WPFDemo.pdb
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\App.g.cs
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\WPFDemo_MarkupCompile.cache
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\WPFDemo_MarkupCompile.lref
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\WPFDemo.g.resources
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\WPFDemo.Properties.Resources.resources
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\WPFDemo.csproj.GenerateResource.Cache
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\WPFDemo.exe
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\WPFDemo.pdb
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\StartPage.g.cs
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\StartPage.baml
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\DemoPage.g.cs
+c:\users\ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\DemoPage.baml
+C:\Users\Ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\WPFDemo.csprojResolveAssemblyReference.cache
+C:\Users\Ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\Properties\DesignTimeResources.baml
+C:\Users\Ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Ecohover\documents\visual studio 2017\Projects\WPFDemo\WPFDemo\obj\Debug\Resource\Dark01.baml
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\WPFDemo.csprojResolveAssemblyReference.cache
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\DemoPage.g.cs
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\StartPage.g.cs
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\App.g.cs
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\WPFDemo_MarkupCompile.cache
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\WPFDemo_MarkupCompile.lref
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\WPFDemo.exe
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\WPFDemo.pdb
+D:\(01)Test\WPFDemo\WPFDemo\bin\Debug\WPFDemo.exe.config
+D:\(01)Test\WPFDemo\WPFDemo\bin\Debug\WPFDemo.exe
+D:\(01)Test\WPFDemo\WPFDemo\bin\Debug\WPFDemo.pdb
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\DemoPage.baml
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\Properties\DesignTimeResources.baml
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\StartPage.baml
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\Resource\Dark01.baml
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\WPFDemo.g.resources
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\WPFDemo.Properties.Resources.resources
+D:\(01)Test\WPFDemo\WPFDemo\obj\Debug\WPFDemo.csproj.GenerateResource.Cache
