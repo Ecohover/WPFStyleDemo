@@ -20,9 +20,16 @@ namespace WPFDemo
     /// </summary>
     public partial class DemoPage : Window
     {
-        private ResourceDictionary mystyles;
         public DemoPage(string style)
         {
+            UpdateStyle(style);
+            InitializeComponent();
+            UpdateComdoBox();
+        }
+
+        private void UpdateStyle(string style)
+        {
+            ResourceDictionary mystyles;
             try
             {
                 if (!style.Equals("Normal"))
@@ -32,15 +39,14 @@ namespace WPFDemo
                     this.Resources = mystyles;
                     this.Style = mystyles[style] as Style;
                 }
-
-
             }
             catch (Exception ex)
             {
 
             }
-            InitializeComponent();
-
+        }
+        private void UpdateComdoBox()
+        {
 
             ObservableCollection<TestList> cmbList = new ObservableCollection<TestList>();
 
@@ -72,7 +78,6 @@ namespace WPFDemo
             cbStyleName.SelectedValuePath = "Key";
             cbStyleName.ItemsSource = cmbList;
         }
-
 
         private void PART_TITLEBAR_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
