@@ -13,7 +13,7 @@
         <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,105,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,87,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,107,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbStyleName" HorizontalAlignment="Left" Margin="28,240,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" />
+        <ComboBox x:Name="cbStyleName" HorizontalAlignment="Left" Margin="28,284,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" />
         <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,125,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,126,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,145,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="True"/>
@@ -28,6 +28,7 @@
         </TabControl>
         <Button x:Name="tbSearch" Content="C001-按鈕-1" HorizontalAlignment="Left" Margin="28,36,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click" Height="34"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="28,175,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <control:SearchTextBox HorizontalAlignment="Left" Height="23" Margin="28,202,0,0" VerticalAlignment="Top" Width="120"/>
+        <control:SearchTextBox HorizontalAlignment="Left" Height="23" Margin="28,245,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="28,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
     </Grid>
 </Window>
