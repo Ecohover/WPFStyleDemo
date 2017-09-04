@@ -6,6 +6,6 @@
              xmlns:local="clr-namespace:WPFDemo.Control"
              mc:Ignorable="d" >
     <Grid>
-        <TextBox></TextBox>
+        <TextBox x:Name="NewTextBox" Margin="0" Padding="0"></TextBox>
     </Grid>
 </UserControl>

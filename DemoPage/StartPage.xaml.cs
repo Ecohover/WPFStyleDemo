@@ -39,10 +39,16 @@ namespace WPFDemo
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
-            string stylekey = selobj.Key;
-            DemoPage win = new DemoPage(stylekey);
-            win.Show();
+            try
+            {
+                PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
+                string stylekey = selobj.Key;
+                DemoPage win = new DemoPage(stylekey);
+                win.Show();
+            }
+            catch (Exception ex)
+            {
+            }
 
         }
 

@@ -14,8 +14,7 @@ D:\(00)Work\WPFDemo\DemoPage\bin\Debug\Newtonsoft.Json.dll
 D:\(00)Work\WPFDemo\DemoPage\bin\Debug\log4net.xml
 D:\(00)Work\WPFDemo\DemoPage\bin\Debug\Newtonsoft.Json.xml
 D:\(00)Work\WPFDemo\DemoPage\obj\Debug\WorkWindows.g.cs
-D:\(00)Work\WPFDemo\DemoPage\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\(00)Work\WPFDemo\DemoPage\obj\Debug\DemoPage.csprojResolveAssemblyReference.cache
 D:\(00)Work\WPFDemo\DemoPage\obj\Debug\WorkWindows.baml
 D:\(00)Work\WPFDemo\DemoPage\obj\Debug\Control\SearchTextBox.g.cs
 D:\(00)Work\WPFDemo\DemoPage\obj\Debug\Control\SearchTextBox.baml
+D:\(00)Work\WPFDemo\DemoPage\obj\Debug\GeneratedInternalTypeHelper.g.cs

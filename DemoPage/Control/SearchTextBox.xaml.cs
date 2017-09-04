@@ -19,25 +19,42 @@ namespace WPFDemo.Control
     /// <summary>
     /// SearchTextBox.xaml 的互動邏輯
     /// </summary>
-    public partial class SearchTextBox : UserControl
+    public partial class SearchTextBox : UserControl 
     {
+        //public string StyleName
+        //{
+        //    set { SetStyle(value); }
+        //}
 
-        [Description("Test text displayed in the textbox"), Category("Data")]
+        public static readonly DependencyProperty StyleNameProperty =
+            DependencyProperty.Register("StyleName", typeof(string), typeof(SearchTextBox), new FrameworkPropertyMetadata { PropertyChangedCallback = Callback });
+
         public string StyleName
         {
-            set { SetStyle(value); }
+            get { return (string)base.GetValue(StyleNameProperty); }
+            set
+            {
+                base.SetValue(StyleNameProperty, value);
+                SetStyle(value);
+            }
         }
+        private static void Callback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
+        {
+            SearchTextBox obj = (SearchTextBox)dependencyObject;
+            obj.SetStyle((string)args.NewValue);
+        }
+
         private void SetStyle(string style)
         {
             ResourceDictionary mystyles;
             try
             {
-                if (!style.Equals("Normal"))
+                if (!style.Equals("Normal") && !style.Equals(""))
                 {
                     mystyles = new ResourceDictionary();
                     mystyles.Source = new Uri($"/WPFDemo;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
                     this.Resources = mystyles;
-                    this.Style = mystyles[style] as Style;
+                    NewTextBox.Style = mystyles["SearchTextBox"] as Style;
                 }
             }
             catch (Exception ex)
@@ -47,8 +64,9 @@ namespace WPFDemo.Control
         }
         public SearchTextBox()
         {
-            
             InitializeComponent();
+            SetStyle(StyleName);
         }
+        
     }
 }

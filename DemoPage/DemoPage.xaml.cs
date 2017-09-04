@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
+using WPFDemo.Control;
 
 namespace WPFDemo
 {
@@ -20,6 +22,8 @@ namespace WPFDemo
     /// </summary>
     public partial class DemoPage : Window
     {
+        public string StyleName { get; set; }
+
         public DemoPage(string style)
         {
             UpdateStyle(style);
@@ -39,6 +43,7 @@ namespace WPFDemo
                     this.Resources = mystyles;
                     this.Style = mystyles[style] as Style;
                 }
+                StyleName = style;
             }
             catch (Exception ex)
             {
