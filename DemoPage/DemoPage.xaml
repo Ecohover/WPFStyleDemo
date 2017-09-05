@@ -14,7 +14,7 @@
         <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,105,0,0" VerticalAlignment="Top" IsChecked="True"/>
         <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,87,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,107,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbStyleName" HorizontalAlignment="Left" Margin="28,315,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" />
+        <ComboBox x:Name="cbStyleName" HorizontalAlignment="Left" Margin="26,304,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" />
         <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,125,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,126,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,145,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="True"/>
@@ -28,9 +28,13 @@
             </TabItem>
         </TabControl>
         <Button x:Name="tbSearch" Content="C001-按鈕-1" HorizontalAlignment="Left" Margin="28,36,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click" Height="34"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="28,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="111"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="28,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="111" KeyDown="TextBox_KeyDown"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="28,203,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <control:SearchTextBox x:Name="stb01" Height="23" Margin="28,240,378,0" VerticalAlignment="Top" Width="120" StyleName="{Binding ElementName=windows, Path=StyleName, Mode=OneWay}"/>
-        <control:SearchTextBox x:Name="stb02" Height="23" Margin="28,268,378,0" VerticalAlignment="Top" Width="120" IsEnabled="False" StyleName="{Binding ElementName=windows, Path=StyleName, Mode=OneWay}"/>
+        <control:SearchTextBox x:Name="stb01" Height="23" Margin="0,240,378,0" VerticalAlignment="Top" Width="120" StyleName="{Binding ElementName=windows, Path=StyleName, Mode=OneWay}" HorizontalAlignment="Right"/>
+        <control:SearchTextBox x:Name="stb02" Height="23" Margin="0,268,378,0" VerticalAlignment="Top" Width="120" IsEnabled="False" StyleName="{Binding ElementName=windows, Path=StyleName, Mode=OneWay}" HorizontalAlignment="Right"/>
+        <ComboBox x:Name="cbStyleName2" HorizontalAlignment="Left" Margin="28,339,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" />
+        <ComboBox x:Name="cbStyleName3" HorizontalAlignment="Left" Margin="26,365,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEnabled="False" />
+        <ComboBox x:Name="cbStyleName4" HorizontalAlignment="Left" Margin="28,400,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" IsEnabled="False" />
+
     </Grid>
 </Window>

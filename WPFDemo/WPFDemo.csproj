@@ -130,5 +130,8 @@
   <ItemGroup>
     <Resource Include="Image\TextBox_Search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ComboBox_DownArrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

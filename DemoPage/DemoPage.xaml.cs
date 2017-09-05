@@ -82,6 +82,9 @@ namespace WPFDemo
             cbStyleName.DisplayMemberPath = "Value";
             cbStyleName.SelectedValuePath = "Key";
             cbStyleName.ItemsSource = cmbList;
+            cbStyleName2.ItemsSource = cmbList;
+            cbStyleName3.ItemsSource = cmbList;
+            cbStyleName4.ItemsSource = cmbList;
         }
 
         private void PART_TITLEBAR_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -120,6 +123,15 @@ namespace WPFDemo
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                e.Handled = true;
+                MessageBox.Show("");
+            }
         }
     }
     public class TestList

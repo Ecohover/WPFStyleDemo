@@ -18,3 +18,4 @@ D:\(00)Work\WPFDemo\DemoPage\obj\Debug\WorkWindows.baml
 D:\(00)Work\WPFDemo\DemoPage\obj\Debug\Control\SearchTextBox.g.cs
 D:\(00)Work\WPFDemo\DemoPage\obj\Debug\Control\SearchTextBox.baml
 D:\(00)Work\WPFDemo\DemoPage\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\(00)Work\WPFDemo\DemoPage\obj\Debug\DemoPage.csprojResolveAssemblyReference.cache
