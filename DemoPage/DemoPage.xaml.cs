@@ -29,6 +29,7 @@ namespace WPFDemo
             UpdateStyle(style);
             InitializeComponent();
             UpdateComdoBox();
+            UpdatDataGrid();
         }
 
         private void UpdateStyle(string style)
@@ -50,6 +51,25 @@ namespace WPFDemo
 
             }
         }
+        private void UpdatDataGrid()
+        {
+            ObservableCollection<DataGridData> list = new ObservableCollection<DataGridData>();
+
+            list.Add(new DataGridData("A", true));
+            list.Add(new DataGridData("B", true));
+            list.Add(new DataGridData("C", false));
+            list.Add(new DataGridData("D", true));
+            list.Add(new DataGridData("E", true));
+            list.Add(new DataGridData("F", true));
+            list.Add(new DataGridData("G", false));
+            list.Add(new DataGridData("H", false));
+            list.Add(new DataGridData("I", true));
+            list.Add(new DataGridData("J", true));
+            list.Add(new DataGridData("K", false));
+
+            gridtest.ItemsSource = list;
+        }
+
         private void UpdateComdoBox()
         {
 
@@ -142,6 +162,20 @@ namespace WPFDemo
         {
             Key = key;
             Value = value;
+        }
+    }
+    public class DataGridData
+    {
+        public string C1 { get; set; }
+        public string C2 { get; set; }
+        public string C3 { get; set; }
+        public bool C4 { get; set; }
+        public DataGridData(string c, bool b)
+        {
+            C1 = c + "_1";
+            C2 = c + "_1";
+            C3 = c + "_1";
+            C4 = b;
         }
     }
 }
