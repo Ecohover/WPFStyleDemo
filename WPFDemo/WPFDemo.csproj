@@ -70,6 +70,9 @@
     <Compile Include="StyleableWindow\WindowMaximizeCommand.cs" />
     <Compile Include="StyleableWindow\WindowMinimizeCommand.cs" />
     <Compile Include="StyleableWindow\WindowResizeBehavior.cs" />
+    <Compile Include="WorkSpace.xaml.cs">
+      <DependentUpon>WorkSpace.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="WorkSpace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DemoPage\DemoPage.csproj">
@@ -132,6 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\ComboBox_DownArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ScrollBar_DownArrow.png" />
+    <Resource Include="Image\ScrollBar_LeftArrow.png" />
+    <Resource Include="Image\ScrollBar_RightArrow.png" />
+    <Resource Include="Image\ScrollBar_UpArrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

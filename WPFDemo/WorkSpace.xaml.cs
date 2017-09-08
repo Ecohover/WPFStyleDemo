@@ -16,36 +16,16 @@ using System.Windows.Shapes;
 namespace WPFDemo
 {
     /// <summary>
-    /// WorkWindows.xaml 的互動邏輯
+    /// WorkSpace.xaml 的互動邏輯
     /// </summary>
-    public partial class WorkWindows : Window
+    public partial class WorkSpace : Window
     {
-        public WorkWindows()
+        public WorkSpace()
         {
-            UpdateStyle();
             InitializeComponent();
             UpdateComdoBox();
         }
 
-        private void UpdateStyle()
-        {
-            ResourceDictionary mystyles;
-            try
-            {
-                string style = "Dark01";
-                if (!style.Equals("Normal"))
-                {
-                    mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"/WPFDemo;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
-                    this.Resources = mystyles;
-                    this.Style = mystyles[style] as Style;
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
         private void UpdateComdoBox()
         {
 
@@ -74,10 +54,11 @@ namespace WPFDemo
             cmbList.Add(new TestList("19", "9"));
             cmbList.Add(new TestList("20", "10"));
 
-
-            cbStyleName.DisplayMemberPath = "Value";
-            cbStyleName.SelectedValuePath = "Key";
+            
             cbStyleName.ItemsSource = cmbList;
+            cbStyleName2.ItemsSource = cmbList;
+            cbStyleName3.ItemsSource = cmbList;
+            cbStyleName4.ItemsSource = cmbList;
         }
     }
 }

@@ -59,8 +59,7 @@ namespace WPFDemo
 
         private void btn_Test_Click(object sender, RoutedEventArgs e)
         {
-            WorkWindows obj = new WorkWindows();
-            obj.ShowDialog();
+
         }
     }
 

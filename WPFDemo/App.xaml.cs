@@ -7,7 +7,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-
 namespace WPFDemo
 {
     /// <summary>
@@ -20,7 +19,11 @@ namespace WPFDemo
         protected override void OnStartup(StartupEventArgs e)
         {
             log4net.Config.XmlConfigurator.Configure();
+#if DEBUG
+            WorkSpace fm = new WorkSpace();
+#else
             StartPage fm = new StartPage();
+#endif
             fm.Show();
             base.OnStartup(e);
         }
