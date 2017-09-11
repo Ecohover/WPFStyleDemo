@@ -11,7 +11,7 @@
         x:Name="windows">
     <Window.Resources>
 
-        
+
     </Window.Resources>
 
     <Grid>
@@ -34,13 +34,22 @@
         <ComboBox x:Name="cbStyleName3" HorizontalAlignment="Left" Margin="231,138,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEnabled="False" TabIndex="18" />
         <ComboBox x:Name="cbStyleName4" HorizontalAlignment="Left" Margin="396,138,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" IsEnabled="False" TabIndex="18" />
         <ScrollBar HorizontalAlignment="Left" Margin="564,36,0,0" VerticalAlignment="Top" Height="190" Width="17"/>
-        <DataGrid x:Name="gridtest" HorizontalAlignment="Left" Height="165" Margin="10,290,0,0" VerticalAlignment="Top" Width="192" AutoGenerateColumns="False">
+        <DataGrid x:Name="gridtest" HorizontalAlignment="Left" Height="265" Margin="10,180,0,0" VerticalAlignment="Top" Width="500" AutoGenerateColumns="False">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="C1" Width="60" Binding="{Binding C1}" ClipboardContentBinding="{x:Null}"/>
                 <DataGridTextColumn Header="C2" Width="60" Binding="{Binding C2}" ClipboardContentBinding="{x:Null}"/>
                 <DataGridTextColumn Header="C3" Width="60" Binding="{Binding C3}" ClipboardContentBinding="{x:Null}"/>
-                <DataGridCheckBoxColumn Header="C4" Width="60" Binding="{Binding C4}" ClipboardContentBinding="{x:Null}"/>
+
+                <DataGridTemplateColumn Header="C4" Width="60" ClipboardContentBinding="{x:Null}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Center">
+                                <CheckBox IsChecked="{Binding C4}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <ScrollBar HorizontalAlignment="Left" Margin="245,11,0,0" VerticalAlignment="Top" Height="20" Width="314" Orientation="Horizontal"/>

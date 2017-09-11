@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ActiproSoftware.Windows.Controls.Docking;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -107,37 +108,21 @@ namespace WPFDemo
             cbStyleName4.ItemsSource = cmbList;
         }
 
-        private void PART_TITLEBAR_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
-
-        private void PART_CLOSE_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void PART_MAXIMIZE_RESTORE_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.WindowState == System.Windows.WindowState.Normal)
-            {
-                this.WindowState = System.Windows.WindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = System.Windows.WindowState.Normal;
-            }
-        }
-
-        private void PART_MINIMIZE_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = System.Windows.WindowState.Minimized;
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Height += 10;
-            this.Width += 10;
+            try
+            {
+                ToolWindow toolwindos = new ToolWindow();
+                DemoUserControl Content = new DemoUserControl(StyleName);
+                toolwindos.Content = Content;
+                System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
+                Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
+                toolwindos.Float(pt2, new Size(800, 600));
+            }
+            catch(Exception ex)
+            {
+            }
+
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
