@@ -34,6 +34,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Abt.Controls.SciChart.Wpf">
+      <HintPath>..\DemoPage\dll\Abt.Controls.SciChart.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Abt.Controls.SciChart3D.Wpf">
+      <HintPath>..\DemoPage\dll\Abt.Controls.SciChart3D.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Charts.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Charts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Docking.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Docking.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Editors.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Editors.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.MicroCharts.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.MicroCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Shared.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Shared.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.Python.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.SyntaxEditor.Addons.Python.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.SyntaxEditor.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Text.Addons.Python.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Text.Addons.Python.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Text.LanguageGeneration.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Text.LanguageGeneration.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Text.LLParser.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Text.LLParser.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Text.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Text.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Views.Wpf">
+      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Views.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
