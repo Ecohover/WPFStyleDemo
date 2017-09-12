@@ -52,6 +52,7 @@ namespace WPFDemo
 
             }
         }
+
         private void UpdatDataGrid()
         {
             ObservableCollection<DataGridData> list = new ObservableCollection<DataGridData>();
