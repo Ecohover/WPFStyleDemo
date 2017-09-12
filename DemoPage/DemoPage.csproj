@@ -84,6 +84,9 @@
     <Compile Include="Control\DemoUserControl.xaml.cs">
       <DependentUpon>DemoUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\PictureButton.xaml.cs">
+      <DependentUpon>PictureButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\SearchTextBox.xaml.cs">
       <DependentUpon>SearchTextBox.xaml</DependentUpon>
     </Compile>
@@ -97,6 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Control\DemoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\PictureButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,7 +125,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy $(TargetPath) D:\(05)Demo\WPFDemo</PostBuildEvent>
   </PropertyGroup>
 </Project>

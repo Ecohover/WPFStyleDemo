@@ -261,81 +261,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="DataGridCheckBox" TargetType="{x:Type CheckBox}">
-        <Setter Property="Background" Value="{StaticResource WindowColorDark}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Foreground" Value="{StaticResource WindowForeColor}"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type CheckBox}">
-                    <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid x:Name="markGrid">
-                            <Image x:Name="frame" 
-                                   Grid.Column="0" 
-                                   Height="12" Width="12" 
-                                   Source="../Image/CheckBox_Frame.png" 
-                                   Stretch="Uniform"  
-                                   Margin="0" 
-                                   Opacity="1"></Image>
-                            <Image x:Name="click" 
-                                   Grid.Column="0" 
-                                   Height="8" Width="8" 
-                                   Source="../Image/CheckBox_Click.png" 
-                                   Stretch="Uniform" 
-                                   Margin="0" 
-                                   Opacity="0"></Image>
-                            <Rectangle x:Name="mask" 
-                                       Fill="{StaticResource WindowColorLight}" 
-                                       Height="12" Width="12" 
-                                       Margin="0" 
-                                       StrokeThickness="0" 
-                                       Opacity="0"/>
-                        </Grid>
-                        <ContentPresenter x:Name="contentPresenter" 
-                                          Grid.Column="1" Focusable="False" 
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          Margin="{TemplateBinding Padding}" 
-                                          RecognizesAccessKey="True" 
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-
-                        </ContentPresenter>
-                    </Grid>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="HasContent" Value="true">
-                            <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocus}"/>
-                            <Setter Property="Padding" Value="1,2,1,2"/>
-                        </Trigger>
-
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Opacity" TargetName="frame" Value="0.8"></Setter>
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Opacity" TargetName="mask" Value="0.8"></Setter>
-                        </Trigger>
-
-                        <Trigger Property="IsEnabled" Value="true">
-                            <Setter Property="Opacity" TargetName="mask" Value="0"></Setter>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Opacity" TargetName="click" Value="0.8"></Setter>
-
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="true">
-                            <Setter Property="Opacity" TargetName="click" Value="1"></Setter>
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="{x:Null}">
-                            <Setter Property="Opacity" TargetName="click" Value="0"></Setter>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
     <!-- CheckBox 定義 End-->
 
     <!-- RadioButton 定義 Start-->
@@ -448,6 +373,85 @@
                                               RecognizesAccessKey="True" 
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsDefaulted" Value="true">
+                            <Setter Property="Fill" TargetName="rectangle" Value="{StaticResource WindowColorLight}"></Setter>
+                        </Trigger>
+                        <Trigger Property="HasContent" Value="true">
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonMarkFocus}"/>
+                            <Setter Property="Padding" Value="-1,-1,-1,-1"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Fill" TargetName="rectangle" Value="{StaticResource BlueBackground60}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Fill" TargetName="rectangle" Value="{StaticResource BlueBackground}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="rectangle" Value="0.5"/>
+                            <Setter Property="Opacity" TargetName="contentPresenter" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="PictureButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource WindowColorLight}"/>
+        <Setter Property="Foreground" Value="{StaticResource WindowForeColor}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                    <Grid>
+                        <Rectangle x:Name="rectangle" 
+                                   HorizontalAlignment="Stretch" 
+                                   Margin="0" 
+                                   VerticalAlignment="Stretch" 
+                                   RadiusY="4" RadiusX="4" 
+                                   Fill="{StaticResource WindowColorLight}" />
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.Column="0"
+                                    Margin="0" 
+                                    Padding="2" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    SnapsToDevicePixels="true" >
+                                <Image 
+                                    Source="../Image/TextBox_Search.png"  
+                                    Focusable="false" 
+                                    Width="10" Height="10" 
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Stretch="UniformToFill" 
+                                    Margin="2"></Image>
+                            </Border>
+                            <Border x:Name="border" 
+                                    Grid.Column="1"
+                                    Margin="0" 
+                                    Padding="2" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    SnapsToDevicePixels="true">
+                                <ContentPresenter x:Name="contentPresenter" 
+                                              Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Margin="0" 
+                                              RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </Border>
+                        </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">

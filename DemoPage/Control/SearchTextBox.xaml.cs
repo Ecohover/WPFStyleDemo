@@ -21,11 +21,6 @@ namespace WPFDemo.Control
     /// </summary>
     public partial class SearchTextBox : UserControl 
     {
-        //public string StyleName
-        //{
-        //    set { SetStyle(value); }
-        //}
-
         public static readonly DependencyProperty StyleNameProperty =
             DependencyProperty.Register("StyleName", typeof(string), typeof(SearchTextBox), new FrameworkPropertyMetadata { PropertyChangedCallback = Callback });
 
