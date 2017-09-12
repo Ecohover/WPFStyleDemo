@@ -7,7 +7,7 @@
              xmlns:control="clr-namespace:WPFDemo.Control" 
              xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" 
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="800">
     <Grid Margin="0,0,-225,-165">
         <Button Content="C001-按鈕" HorizontalAlignment="Left" Margin="26,11,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click" TabIndex="1"/>
         <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,85,0,0" VerticalAlignment="Top" TabIndex="3"/>
