@@ -41,6 +41,7 @@ namespace WPFDemo
         {
             try
             {
+                this.Title=this.Title + "  V-" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
                 string stylekey = selobj.Key;
                 DemoPage win = new DemoPage(stylekey);
