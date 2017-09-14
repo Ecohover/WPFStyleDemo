@@ -124,12 +124,12 @@ namespace WPFDemo
         {
             try
             {
-                ToolWindow toolwindos = new ToolWindow();
-                DemoUserControl Content = new DemoUserControl(StyleName);
-                toolwindos.Content = Content;
-                System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
-                Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
-                toolwindos.Float(pt2, new Size(800, 600));
+                //ToolWindow toolwindos = new ToolWindow();
+                //DemoUserControl Content = new DemoUserControl(StyleName);
+                //toolwindos.Content = Content;
+                //System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
+                //Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
+                //toolwindos.Float(pt2, new Size(800, 600));
             }
             catch(Exception ex)
             {

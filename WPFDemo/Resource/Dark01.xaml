@@ -35,6 +35,13 @@
         <GradientStop Color="#FF104DD8" Offset="0"/>
         <GradientStop Color="#FF0FB2CA" Offset="1"/>
     </LinearGradientBrush>
+
+
+    <SolidColorBrush x:Key="TabControlItemSelected" Color="#FF47627C"/>
+    <LinearGradientBrush x:Key="TabControlItemNormal" EndPoint="0,0" StartPoint="0,1">
+        <GradientStop Color="#FFACC4CE" Offset="0"/>
+        <GradientStop Color="#FFA2B5BD" Offset="1"/>
+    </LinearGradientBrush>
     
     <sw:WindowMinimizeCommand x:Key="MinimizeCommand"></sw:WindowMinimizeCommand>
     <sw:WindowMaximizeCommand x:Key="MaximizeCommand"></sw:WindowMaximizeCommand>
@@ -650,9 +657,11 @@
                     <Grid x:Name="markGrid">
                         <Rectangle x:Name="mask" 
                                    Fill="{TemplateBinding Background}"  
-                                   Margin="0" StrokeThickness="0" 
+                                   Margin="0" 
+                                   StrokeThickness="0" 
                                    RadiusX="4" RadiusY="4" 
-                                   Opacity="0" Panel.ZIndex="2"/>
+                                   Opacity="0" 
+                                   Panel.ZIndex="10"/>
                         <Border x:Name="templateRoot" 
                                 Background="{TemplateBinding Background}" 
                                 CornerRadius="4" 
@@ -667,7 +676,7 @@
                                 <Image x:Name="arrow" 
                                        Height="8" Width="8" 
                                        Source="/Image/ComboBox_DownArrow.png" Stretch="Uniform" 
-                                       Margin="0"></Image>
+                                       Margin="0"/>
                             </Border>
                         </Border>
                     </Grid>
@@ -799,13 +808,6 @@
                           IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                           Style="{StaticResource ComboBoxToggleButton}"/>
             <Grid>
-                <Rectangle x:Name="mask" 
-                           Fill="{TemplateBinding Background}"  
-                           Margin="0" 
-                           StrokeThickness="0"
-                           RadiusX="4" RadiusY="4"
-                           Opacity="0"
-                           Panel.ZIndex="2"/>
                 <ContentPresenter x:Name="contentPresenter" 
                                   ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" 
                                   ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
@@ -822,7 +824,6 @@
                 <MultiDataTrigger.Conditions>
                     <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
                 </MultiDataTrigger.Conditions>
-                <Setter Property="Opacity" TargetName="mask" Value="0.8"></Setter>
             </MultiDataTrigger>
             <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
                 <Setter Property="Margin" TargetName="shadow" Value="0,0,5,5"/>
@@ -864,7 +865,7 @@
                                 Margin="0" CornerRadius="4,0,0,4" 
                                 Background="{TemplateBinding Background}" 
                                 SnapsToDevicePixels="True" 
-                                Panel.ZIndex="3" >
+                                Panel.ZIndex="5" >
                             <ScrollViewer x:Name="PART_ContentHost" 
                                           Focusable="false"
                                           HorizontalScrollBarVisibility="Hidden" 
@@ -929,19 +930,13 @@
                           IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                           Style="{StaticResource ComboBoxToggleButton}"/>
             <Grid>
-                <Rectangle x:Name="mask" Fill="{TemplateBinding Background}" 
-                       Margin="0" 
-                       StrokeThickness="0" 
-                       RadiusX="4" RadiusY="4" 
-                       Opacity="0" 
-                       Panel.ZIndex="2"/>
                 <TextBox x:Name="PART_EditableTextBox"
-                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                     IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
-                     Margin="{TemplateBinding Padding}" 
-                     Padding="3"
-                     Style="{StaticResource ComboBoxEditableTextBox}"
-                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                         IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
+                         Margin="0" 
+                         Padding="0"
+                         Style="{StaticResource ComboBoxEditableTextBox}"
+                         VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
             </Grid>
         </Grid>
         <ControlTemplate.Triggers>
@@ -949,7 +944,6 @@
                 <MultiDataTrigger.Conditions>
                     <Condition Binding="{Binding IsEnabled, RelativeSource={RelativeSource Self}}" Value="false"/>
                 </MultiDataTrigger.Conditions>
-                <Setter Property="Opacity" TargetName="mask" Value="0.8"></Setter>
             </MultiDataTrigger>
             <Trigger Property="IsKeyboardFocused" Value="true">
                 <Setter Property="Opacity" TargetName="PART_EditableTextBox" Value="0.8"/>
@@ -1810,10 +1804,139 @@
     <!-- DataGrid 定義 End-->
 
 
-    <!--  定義 Start-->
-    <!--  定義 End-->
-    <!--  定義 Start-->
-    <!--  定義 End-->
+    <!-- TabControl 定義 Start-->
+    <Style TargetType="{x:Type TabControl}">
+        <Setter Property="OverridesDefaultStyle"  Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="{StaticResource WindowColorDark}" />
+        <Setter Property="Foreground" Value="{StaticResource WindowForeColor}" />
+        <Setter Property="BorderBrush" Value="{StaticResource WindowColorGray}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="BorderTabPanel"
+                                Grid.Row="0"
+                                Panel.ZIndex="1"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                CornerRadius="2">
+                            <TabPanel x:Name="HeaderPanel"
+                                  Margin="4,0,4,0"
+                                  IsItemsHost="True"
+                                  KeyboardNavigation.TabIndex="1"
+                                  Background="{TemplateBinding Background}"/>
+                        </Border>
+                        <Border x:Name="BorderContent"
+                                Grid.Row="1"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="2"
+                                KeyboardNavigation.TabNavigation="Local"
+                                KeyboardNavigation.DirectionalNavigation="Contained"
+                                KeyboardNavigation.TabIndex="2">
+                            <ContentPresenter x:Name="PART_SelectedContentHost"
+                                              Margin="4"
+                                              ContentSource="SelectedContent" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="OldTabControl" TargetType="{x:Type TabControl}">
+        <Setter Property="OverridesDefaultStyle"  Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="{StaticResource WindowColorDark}" />
+        <Setter Property="Foreground" Value="{StaticResource WindowForeColor}" />
+        <Setter Property="BorderBrush" Value="{StaticResource WindowColorGray}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabControl}">
+                    <Grid KeyboardNavigation.TabNavigation="Local">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="BorderTabPanel"
+                                Grid.Row="0"
+                                Panel.ZIndex="1"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                CornerRadius="2"
+                                Margin="0,0,0,5">
+                            <ScrollViewer x:Name="TabScrollViewer"
+                                          HorizontalScrollBarVisibility="Auto" 
+                                          VerticalScrollBarVisibility="Disabled"
+                                          Margin="4,0,4,0">
+                                <TabPanel Panel.ZIndex ="0" 
+                                          KeyboardNavigation.TabIndex="1"
+                                          Margin="2"
+                                          IsItemsHost="true"/>
+                            </ScrollViewer>
+                        </Border>
+                        <Border x:Name="BorderContent"
+                                Grid.Row="1"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="2"
+                                KeyboardNavigation.TabNavigation="Local"
+                                KeyboardNavigation.DirectionalNavigation="Contained"
+                                KeyboardNavigation.TabIndex="2">
+                            <ContentPresenter x:Name="PART_SelectedContentHost"
+                                              Margin="4"
+                                              ContentSource="SelectedContent" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- TabControl 定義 End-->
+
+    <!-- TabItem 定義 Start-->
+    <Style TargetType="{x:Type TabItem}">
+        <Setter Property="Background" Value="{StaticResource WindowColorDark}" />
+        <Setter Property="Foreground" Value="{StaticResource WindowForeColor}" />
+        <Setter Property="BorderBrush" Value="{StaticResource WindowColorGray}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid x:Name="Root">
+                        <Border x:Name="BorderRectangle">
+                            <Rectangle x:Name="Rectangle" 
+                                   HorizontalAlignment="Stretch" 
+                                   Margin="2" 
+                                   VerticalAlignment="Stretch" 
+                                   Height="14"
+                                   RadiusY="4" RadiusX="4" 
+                                   Fill="{StaticResource TabControlItemNormal}" />
+                        </Border>
+                        <Border x:Name="Border">
+                            <ContentPresenter x:Name="ContentSite"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"
+                                              ContentSource="Header"
+                                              Margin="12,2,12,2"
+                                              RecognizesAccessKey="True" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Fill"  TargetName="Rectangle" Value="{StaticResource TabControlItemSelected}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- TabItem 定義 End-->
+    
+    
     <!--  定義 Start-->
     <!--  定義 End-->
     <!--  定義 Start-->

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ActiproSoftware.Windows.Controls.Docking;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFDemo.Control;
 
 namespace WPFDemo
 {
@@ -25,6 +27,8 @@ namespace WPFDemo
         public StartPage()
         {
             InitializeComponent();
+
+            this.Title = this.Title + "  V-" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             var temp = Application.Current.Resources;
 
@@ -40,9 +44,7 @@ namespace WPFDemo
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
-            {
-                this.Title=this.Title + "  V-" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-                PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
+            { PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
                 string stylekey = selobj.Key;
                 DemoPage win = new DemoPage(stylekey);
                 win.Show();
@@ -58,9 +60,27 @@ namespace WPFDemo
 
         }
 
-        private void btn_Test_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void btn_DockTest_Click(object sender, RoutedEventArgs e)
+        {
+            DemoUserControl frm = null;
+            try
+            {
+                PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
+                string stylekey = selobj.Key;
+                frm = new DemoUserControl(stylekey);
+            }
+            catch
+            { }
+            NewDock(frm);
+        }
+        private static void NewDock(UserControl frm)
+        {
+            ToolWindow toolwindos = new ToolWindow();
+            toolwindos.Content = frm;
+            System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
+            Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
+            toolwindos.Float(pt2, new Size(800, 600));
         }
     }
 

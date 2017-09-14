@@ -21,7 +21,7 @@ namespace WPFDemo.Control
     public partial class PictureButton : UserControl
     {
         public static readonly DependencyProperty StyleNameProperty =
-               DependencyProperty.Register("StyleName", typeof(string), typeof(SearchTextBox), new FrameworkPropertyMetadata { PropertyChangedCallback = Callback });
+               DependencyProperty.Register("StyleName", typeof(string), typeof(PictureButton), new FrameworkPropertyMetadata { PropertyChangedCallback = Callback });
 
         public string StyleName
         {

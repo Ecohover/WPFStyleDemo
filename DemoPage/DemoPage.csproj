@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>CS0168</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Abt.Controls.SciChart3D.Wpf, Version=3.5.0.7128, Culture=neutral, PublicKeyToken=b55dd9efe817e823, processorArchitecture=MSIL">
@@ -87,6 +88,9 @@
     <Compile Include="Control\DemoUserControl.xaml.cs">
       <DependentUpon>DemoUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\OldTabControl.xaml.cs">
+      <DependentUpon>OldTabControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\PictureButton.xaml.cs">
       <DependentUpon>PictureButton.xaml</DependentUpon>
     </Compile>
@@ -103,6 +107,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Control\DemoUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\OldTabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
