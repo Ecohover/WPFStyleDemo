@@ -106,6 +106,14 @@
     <Compile Include="StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StyleableWindow\ControlDoubleClickBehavior.cs" />
+    <Compile Include="StyleableWindow\ShowSystemMenuBehavior.cs" />
+    <Compile Include="StyleableWindow\SystemMenuManager.cs" />
+    <Compile Include="StyleableWindow\WindowCloseCommand.cs" />
+    <Compile Include="StyleableWindow\WindowDragBehavior.cs" />
+    <Compile Include="StyleableWindow\WindowMaximizeCommand.cs" />
+    <Compile Include="StyleableWindow\WindowMinimizeCommand.cs" />
+    <Compile Include="StyleableWindow\WindowResizeBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Control\DemoUserControl.xaml">
@@ -128,6 +136,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resource\Dark01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\Light01.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="StartPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -135,6 +151,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\CheckBox_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\CheckBox_Frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ComboBox_Arrow_Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ComboBox_DownArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\RadioButton_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\RadioButton_Frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ScrollBar_DownArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ScrollBar_LeftArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ScrollBar_RightArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ScrollBar_UpArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\TextBox_Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Win_Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Win_Max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Win_Mini.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

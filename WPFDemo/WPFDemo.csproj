@@ -44,10 +44,6 @@
     <Reference Include="ActiproSoftware.Charts.Wpf">
       <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Charts.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="ActiproSoftware.Docking.Interop.Prism.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Actipro Software\WPF-Controls\v15.1.0621\Assemblies\ActiproSoftware.Docking.Interop.Prism.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="ActiproSoftware.Docking.Wpf">
       <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Docking.Wpf.dll</HintPath>
     </Reference>
@@ -111,17 +107,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="StyleableWindow\ControlDoubleClickBehavior.cs" />
-    <Compile Include="StyleableWindow\ShowSystemMenuBehavior.cs" />
-    <Compile Include="StyleableWindow\SystemMenuManager.cs" />
-    <Compile Include="StyleableWindow\WindowCloseCommand.cs" />
-    <Compile Include="StyleableWindow\WindowDragBehavior.cs" />
-    <Compile Include="StyleableWindow\WindowMaximizeCommand.cs" />
-    <Compile Include="StyleableWindow\WindowMinimizeCommand.cs" />
-    <Compile Include="StyleableWindow\WindowResizeBehavior.cs" />
-    <Compile Include="WorkSpace.xaml.cs">
-      <DependentUpon>WorkSpace.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -137,7 +122,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -159,46 +143,12 @@
       <Generator>MSBuild:Compile</Generator>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
-    <Page Include="Resource\Dark01.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resource\Light01.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="WorkSpace.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DemoPage\DemoPage.csproj">
       <Project>{8ad2f11a-4daa-4b35-8c53-13530c90b34a}</Project>
       <Name>DemoPage</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\CheckBox_Click.png" />
-    <Resource Include="Image\CheckBox_Frame.png" />
-    <Resource Include="Image\ComboBox_Arrow_Open.png" />
-    <Resource Include="Image\RadioButton_Click.png" />
-    <Resource Include="Image\RadioButton_Frame.png" />
-    <Resource Include="Image\Win_Close.png" />
-    <Resource Include="Image\Win_Max.png" />
-    <Resource Include="Image\Win_Mini.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\TextBox_Search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\ComboBox_DownArrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\ScrollBar_DownArrow.png" />
-    <Resource Include="Image\ScrollBar_LeftArrow.png" />
-    <Resource Include="Image\ScrollBar_RightArrow.png" />
-    <Resource Include="Image\ScrollBar_UpArrow.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

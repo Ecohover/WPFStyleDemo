@@ -47,7 +47,7 @@ namespace WPFDemo.Control
                     Logger.Debug("============ >Setp01 <============");
                     mystyles = new ResourceDictionary();
                     Logger.Debug("============ >Setp02 <============");
-                    mystyles.Source = new Uri($"/WPFDemo;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
+                    mystyles.Source = new Uri($"/DemoPage;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
                     Logger.Debug("============ >Setp03 <============");
                     this.Resources = mystyles;
                     Logger.Debug("============ >Setp04 <============");
