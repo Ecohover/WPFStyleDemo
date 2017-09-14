@@ -4,7 +4,7 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <StartAction>Project</StartAction>
-    <StartProgram>D:\%2805%29Demo\WPFDemo\WPFDemo.exe</StartProgram>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Demo\WPFDemo\WPFDemo.exe</StartProgram>
   </PropertyGroup>
 </Project>

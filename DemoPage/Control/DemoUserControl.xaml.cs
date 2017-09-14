@@ -28,7 +28,7 @@ namespace WPFDemo.Control
 
         public DemoUserControl(string style)
         {
-           // UpdateStyle(style);
+            UpdateStyle(style);
             InitializeComponent();
             UpdateComdoBox();
             UpdatDataGrid();

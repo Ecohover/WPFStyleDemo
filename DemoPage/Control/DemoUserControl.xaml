@@ -42,7 +42,7 @@
                 <Button Content="Test10" />
             </TabItem>
         </TabControl>
-        <!--<control:OldTabControl Margin="340,196,166.333,185.333" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}"/>-->
+        <control:OldTabControl Margin="340,196,166.333,185.333" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}"/>
 
         <DataGrid x:Name="gridtest" Margin="590,12,0,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="211" Height="147" VerticalAlignment="Top">
 
@@ -75,8 +75,8 @@
         <Button x:Name="tbSearch" Content="C001-按鈕-1" HorizontalAlignment="Left" Margin="13,35,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click" Height="34" TabIndex="2" IsEnabled="False"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="220,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="111" KeyDown="TextBox_KeyDown" TabIndex="12"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="220,75,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False" TabIndex="13"/>
-        <!--<control:SearchTextBox x:Name="stb01" Height="23" Margin="355,48,0,0" VerticalAlignment="Top" Width="120" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}" HorizontalAlignment="Left" TabIndex="13"/>-->
-        <!--<control:SearchTextBox x:Name="stb02" Height="23" Margin="355,76,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}" HorizontalAlignment="Left" TabIndex="14"/>-->
+        <control:SearchTextBox x:Name="stb01" Height="23" Margin="355,48,0,0" VerticalAlignment="Top" Width="120" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}" HorizontalAlignment="Left" TabIndex="13"/>
+        <control:SearchTextBox x:Name="stb02" Height="23" Margin="355,76,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}" HorizontalAlignment="Left" TabIndex="14"/>
         <ComboBox x:Name="cbStyleName2" HorizontalAlignment="Left" Margin="381,106,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" TabIndex="18" />
         <ComboBox x:Name="cbStyleName3" HorizontalAlignment="Left" Margin="216,137,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEnabled="False" TabIndex="18" />
         <ComboBox x:Name="cbStyleName4" HorizontalAlignment="Left" Margin="381,137,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" IsEnabled="False" TabIndex="18" />

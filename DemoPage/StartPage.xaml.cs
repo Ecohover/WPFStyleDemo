@@ -1,19 +1,11 @@
 ﻿using ActiproSoftware.Windows.Controls.Docking;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using WPFDemo.Command;
 using WPFDemo.Control;
+
 
 namespace WPFDemo
 {
@@ -90,6 +82,7 @@ namespace WPFDemo
                 ToolWindow toolwindows = new ToolWindow(true);
                 toolwindows.Title = "DemoDock";
                 toolwindows.Content = frm;
+                MyDockManager.GetInstance().ToolWindows.Add(toolwindows);
                 System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
                 Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
                 toolwindows.Float(pt2, new Size(800, 600));
