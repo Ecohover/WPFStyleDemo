@@ -10,7 +10,7 @@
         <Button Content="开启页面" HorizontalAlignment="Left" Margin="230,25,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <ComboBox x:Name="cbStyleName" HorizontalAlignment="Left" Margin="100,23,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="1" SelectionChanged="cbStyleName_SelectionChanged"/>
         <Button x:Name="btn_Test" Content="Test" Visibility="Collapsed" HorizontalAlignment="Left" Margin="175.678,72.987,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btn_DockTest" Content="开启Dock页面" HorizontalAlignment="Left" Margin="230,49,0,0" VerticalAlignment="Top" Width="95" Click="btn_DockTest_Click"/>
+        <Button x:Name="btn_DockTest" Content="开启Dock页面" HorizontalAlignment="Left" Margin="230,49,0,0" VerticalAlignment="Top" Width="95" Click="btn_DockTest_Click" />
 
     </Grid>
 </Window>
