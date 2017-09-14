@@ -8,45 +8,7 @@
              xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" 
              mc:Ignorable="d"
              d:DesignHeight="600" d:DesignWidth="800">
-    <Grid Margin="0,0,-225,-165">
-        <Button Content="C001-按鈕" HorizontalAlignment="Left" Margin="26,11,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click" TabIndex="1"/>
-        <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,85,0,0" VerticalAlignment="Top" TabIndex="3"/>
-        <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,105,0,0" VerticalAlignment="Top" IsChecked="True" TabIndex="4"/>
-        <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,87,0,0" VerticalAlignment="Top" TabIndex="7"/>
-        <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,107,0,0" VerticalAlignment="Top" TabIndex="8"/>
-        <ComboBox x:Name="cbStyleName" HorizontalAlignment="Left" Margin="231,108,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" TabIndex="18" />
-        <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,125,0,0" VerticalAlignment="Top" IsEnabled="False" TabIndex="5"/>
-        <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,126,0,0" VerticalAlignment="Top" IsEnabled="False" TabIndex="9"/>
-        <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="28,145,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="True" TabIndex="6"/>
-        <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="115,145,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="True" TabIndex="10"/>
-        <Button x:Name="tbSearch" Content="C001-按鈕-1" HorizontalAlignment="Left" Margin="28,36,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click" Height="34" TabIndex="2"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="235,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="111" TabIndex="12"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="235,76,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False" TabIndex="13"/>
-        <control:SearchTextBox x:Name="stb01" Height="23" Margin="0,48,35,0" VerticalAlignment="Top" Width="120" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}" HorizontalAlignment="Right" TabIndex="13"/>
-        <control:SearchTextBox x:Name="stb02" Height="23" Margin="0,76,35,0" VerticalAlignment="Top" Width="120" IsEnabled="False" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}" HorizontalAlignment="Right" TabIndex="14"/>
-        <ComboBox x:Name="cbStyleName2" HorizontalAlignment="Left" Margin="396,107,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" TabIndex="18" />
-        <ComboBox x:Name="cbStyleName3" HorizontalAlignment="Left" Margin="231,138,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEnabled="False" TabIndex="18" />
-        <ComboBox x:Name="cbStyleName4" HorizontalAlignment="Left" Margin="396,138,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" IsEnabled="False" TabIndex="18" />
-        <ScrollBar HorizontalAlignment="Left" Margin="564,36,0,0" VerticalAlignment="Top" Height="190" Width="17"/>
-        <DataGrid x:Name="gridtest" HorizontalAlignment="Left" Height="265" Margin="10,180,0,0" VerticalAlignment="Top" Width="500" AutoGenerateColumns="False">
-
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="C1" Width="60" Binding="{Binding C1}" ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Header="C2" Width="60" Binding="{Binding C2}" ClipboardContentBinding="{x:Null}"/>
-                <DataGridTextColumn Header="C3" Width="60" Binding="{Binding C3}" ClipboardContentBinding="{x:Null}"/>
-
-                <DataGridTemplateColumn Header="C4" Width="60" ClipboardContentBinding="{x:Null}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Grid HorizontalAlignment="Center">
-                                <CheckBox IsChecked="{Binding C4}"/>
-                            </Grid>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-        <ScrollBar HorizontalAlignment="Left" Margin="245,11,0,0" VerticalAlignment="Top" Height="20" Width="314" Orientation="Horizontal"/>
-
+    <Grid Margin="0,0,0,0">
+      
     </Grid>
 </UserControl>
