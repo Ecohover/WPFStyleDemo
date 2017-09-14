@@ -48,7 +48,7 @@ namespace WPFDemo
                 PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
                 string stylekey = selobj.Key;
                 DemoPage win = new DemoPage(stylekey);
-               // win.Show();
+                win.Show();
             }
             catch (Exception ex)
             {
@@ -66,44 +66,37 @@ namespace WPFDemo
         //    {
         //        NewDock();
         //    }
-        //    public void NewDock()
-        //    {
-        //        DemoUserControl frm = null;
-        //        try
-        //        {
-        //            PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
-        //            string stylekey = selobj.Key;
-        //            //frm.Width = Double.NaN;
-        //            //frm.Height = Double.NaN;
-        //            //frm.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
-        //            //frm.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
-        //            //frm.Tag = Guid.NewGuid().ToString();
-        //            //frm = new DemoUserControl(stylekey);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //        }
-        //        //DockingWindow toolwindows = new DockingWindow(true);
-        //        //toolwindows.Title = "DemoDock";
-        //        //toolwindows.Content = frm;
-        //        //System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
-        //        //Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
-        //        //toolwindows.Float(pt2, new Size(800, 600));
-        //    }
+
         private void btn_DockTest_Click(object sender, RoutedEventArgs e)
         {
 
-          // DemoUserControl frm = null;
+           DemoUserControl frm = null;
             try
             {
-                //PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
-                //string stylekey = selobj.Key;
-                //frm.Width = Double.NaN;
-                //frm.Height = Double.NaN;
-                //frm.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
-                //frm.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
-                //frm.Tag = Guid.NewGuid().ToString();
-                //frm = new DemoUserControl(stylekey);
+                PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
+                string stylekey = selobj.Key;
+                frm.Width = Double.NaN;
+                frm.Height = Double.NaN;
+                frm.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
+                frm.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+                frm.Tag = Guid.NewGuid().ToString();
+                frm = new DemoUserControl(stylekey);
+            }
+            catch (Exception ex)
+            {
+            }
+            NewDock(frm);
+        }
+        public void NewDock(UserControl frm)
+        {
+            try
+            {
+                DockingWindow toolwindows = new DockingWindow(true);
+                toolwindows.Title = "DemoDock";
+                toolwindows.Content = frm;
+                System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
+                Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
+                toolwindows.Float(pt2, new Size(800, 600));
             }
             catch (Exception ex)
             {

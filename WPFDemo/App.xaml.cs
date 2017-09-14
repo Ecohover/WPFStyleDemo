@@ -19,11 +19,7 @@ namespace WPFDemo
         {
             string log4netPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config/log4net.config");
             log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(log4netPath));
-#if DEBUG
-            WorkSpace fm = new WorkSpace();
-#else
             StartPage fm = new StartPage();
-#endif
             fm.Show();
             base.OnStartup(e);
         }
