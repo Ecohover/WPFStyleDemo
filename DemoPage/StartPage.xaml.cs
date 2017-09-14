@@ -23,7 +23,7 @@ namespace WPFDemo
     public partial class StartPage : Window
     {
         public ObservableCollection<PageStyle> PageStyleList = new ObservableCollection<PageStyle>();
-
+        private static PageStyle SelectedPageStyle = null;
         public StartPage()
         {
             InitializeComponent();
@@ -55,11 +55,7 @@ namespace WPFDemo
             }
 
         }
-
-        private void cbStyleName_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
 
 
         //    private void btn_DockTest_Click(object sender, RoutedEventArgs e)
@@ -73,14 +69,14 @@ namespace WPFDemo
            DemoUserControl frm = null;
             try
             {
-                PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
-                string stylekey = selobj.Key;
+                string stylekey = SelectedPageStyle.Key;
+                frm = new DemoUserControl(stylekey);
+
                 frm.Width = Double.NaN;
                 frm.Height = Double.NaN;
                 frm.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
                 frm.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
                 frm.Tag = Guid.NewGuid().ToString();
-                frm = new DemoUserControl(stylekey);
             }
             catch (Exception ex)
             {
@@ -91,7 +87,7 @@ namespace WPFDemo
         {
             try
             {
-                DockingWindow toolwindows = new DockingWindow(true);
+                ToolWindow toolwindows = new ToolWindow(true);
                 toolwindows.Title = "DemoDock";
                 toolwindows.Content = frm;
                 System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
@@ -101,6 +97,11 @@ namespace WPFDemo
             catch (Exception ex)
             {
             }
+        }
+
+        private void cbStyleName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SelectedPageStyle = (PageStyle)cbStyleName.SelectedItem;
         }
     }
 

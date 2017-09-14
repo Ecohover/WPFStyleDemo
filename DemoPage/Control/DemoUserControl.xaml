@@ -7,8 +7,81 @@
              xmlns:control="clr-namespace:WPFDemo.Control" 
              xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" 
              mc:Ignorable="d"
-             d:DesignHeight="600" d:DesignWidth="800">
-    <Grid Margin="0,0,0,0" Background="White">
-      
+             d:DesignHeight="640" d:DesignWidth="820">
+    
+    <Grid Margin="0,0,0,0" >
+        <TabControl Margin="30,196,476.333,185.333">
+            <TabItem Header="TabItem1">
+                <Button Content="Test1" />
+            </TabItem>
+            <TabItem Header="TabItem2">
+                <Button Content="Test2" />
+            </TabItem>
+            <TabItem Header="TabItem3">
+                <Button Content="Test3" />
+            </TabItem>
+            <TabItem Header="TabItem4">
+                <Button Content="Test4" />
+            </TabItem>
+            <TabItem Header="TabItem5">
+                <Button Content="Test5" />
+            </TabItem>
+            <TabItem Header="TabItem6">
+                <Button Content="Test6" />
+            </TabItem>
+            <TabItem Header="TabItem7">
+                <Button Content="Test7" />
+            </TabItem>
+            <TabItem Header="TabItem8">
+                <Button Content="Test8" />
+            </TabItem>
+            <TabItem Header="TabItem9">
+                <Button Content="Test9" />
+            </TabItem>
+            <TabItem Header="TabItem10">
+                <Button Content="Test10" />
+            </TabItem>
+        </TabControl>
+        <!--<control:OldTabControl Margin="340,196,166.333,185.333" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}"/>-->
+
+        <DataGrid x:Name="gridtest" Margin="590,12,0,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="211" Height="147" VerticalAlignment="Top">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="C1" Width="60" Binding="{Binding C1}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="C2" Width="60" Binding="{Binding C2}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="C3" Width="60" Binding="{Binding C3}" ClipboardContentBinding="{x:Null}"/>
+
+                <DataGridTemplateColumn Header="C4" Width="60" ClipboardContentBinding="{x:Null}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Center">
+                                <CheckBox IsChecked="{Binding C4}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="C001-按鈕" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" Width="94" Click="Button_Click" TabIndex="1"/>
+        <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="13,84,0,0" VerticalAlignment="Top" TabIndex="3"/>
+        <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="13,104,0,0" VerticalAlignment="Top" IsChecked="True" TabIndex="4"/>
+        <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="100,86,0,0" VerticalAlignment="Top" TabIndex="7"/>
+        <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="100,106,0,0" VerticalAlignment="Top" TabIndex="8"/>
+        <ComboBox x:Name="cbStyleName" HorizontalAlignment="Left" Margin="216,107,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" TabIndex="18" />
+        <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="13,124,0,0" VerticalAlignment="Top" IsEnabled="False" TabIndex="5"/>
+        <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="100,125,0,0" VerticalAlignment="Top" IsEnabled="False" TabIndex="9"/>
+        <CheckBox Content="C002-多选" HorizontalAlignment="Left" Margin="13,144,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="True" TabIndex="6"/>
+        <RadioButton Content="C003-单选" HorizontalAlignment="Left" Margin="100,144,0,0" VerticalAlignment="Top" IsEnabled="False" IsChecked="True" TabIndex="10"/>
+        <Button x:Name="tbSearch" Content="C001-按鈕-1" HorizontalAlignment="Left" Margin="13,35,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click" Height="34" TabIndex="2" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="220,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="111" KeyDown="TextBox_KeyDown" TabIndex="12"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="220,75,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False" TabIndex="13"/>
+        <!--<control:SearchTextBox x:Name="stb01" Height="23" Margin="355,48,0,0" VerticalAlignment="Top" Width="120" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}" HorizontalAlignment="Left" TabIndex="13"/>-->
+        <!--<control:SearchTextBox x:Name="stb02" Height="23" Margin="355,76,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}" HorizontalAlignment="Left" TabIndex="14"/>-->
+        <ComboBox x:Name="cbStyleName2" HorizontalAlignment="Left" Margin="381,106,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" TabIndex="18" />
+        <ComboBox x:Name="cbStyleName3" HorizontalAlignment="Left" Margin="216,137,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEnabled="False" TabIndex="18" />
+        <ComboBox x:Name="cbStyleName4" HorizontalAlignment="Left" Margin="381,137,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" IsEnabled="False" TabIndex="18" />
+        <ScrollBar HorizontalAlignment="Left" Margin="549,9,0,0" VerticalAlignment="Top" Height="150" Width="17"/>
+        <ScrollBar HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Height="20" Width="314" Orientation="Horizontal"/>
+
     </Grid>
 </UserControl>

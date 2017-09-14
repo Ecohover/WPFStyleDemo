@@ -7,7 +7,7 @@
         xmlns:control="clr-namespace:WPFDemo.Control" 
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="WPFDemo.DemoPage" 
         mc:Ignorable="d"
-        Title="DemoPage" Height="631" Width="818.333"
+        Title="DemoPage" Height="640" Width="820"
         x:Name="windows">
     <Window.Resources>
 
