@@ -24,6 +24,7 @@ namespace WPFDemo.Control
     {
         private static readonly ILog Logger = LogManager.GetLogger(typeof(DemoUserControl));
         public string StyleName { get; set; }
+        public string UserControlStyleName { get; set; }
 
 
         public DemoUserControl(string style)
@@ -44,24 +45,17 @@ namespace WPFDemo.Control
             {
                 if (!style.Equals("Normal"))
                 {
-                    Logger.Debug("============ >Setp01 <============");
                     mystyles = new ResourceDictionary();
-                    Logger.Debug("============ >Setp02 <============");
                     mystyles.Source = new Uri($"/DemoPage;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
-                    Logger.Debug("============ >Setp03 <============");
                     this.Resources = mystyles;
-                    Logger.Debug("============ >Setp04 <============");
-                    this.Style = mystyles[style] as Style;
-                    Logger.Debug("============ >Setp05 <============");
+                    UserControlStyleName = string.Format("{0}_{1}", style, "UserControl");
+                    this.Style = mystyles[UserControlStyleName] as Style;
                 }
-                Logger.Debug("============ >Setp06 <============");
                 StyleName = style;
-                Logger.Debug("============ >Setp07 <============");
             }
             catch (Exception ex)
             {
                 Logger.Error(ex.Message.ToString());
-
             }
         }
 

@@ -46,7 +46,7 @@ namespace WPFDemo.Control
                 if (!style.Equals("Normal") && !style.Equals(""))
                 {
                     mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"/WPFDemo;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
+                    mystyles.Source = new Uri($"/DemoPage;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
                     this.Resources = mystyles;
                     NewButton.Style = mystyles["PictureButton"] as Style;
                 }

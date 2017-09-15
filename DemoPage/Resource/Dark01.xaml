@@ -152,7 +152,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style x:Key="Dark01" TargetType="{x:Type Window}">
+    <Style x:Key="Dark01_Window" TargetType="{x:Type Window}">
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="MinWidth" Value="100"/>
@@ -212,7 +212,15 @@
     </Style>
     <!-- Command Setting End-->
 
-    <!-- CheckBox 定義 Start-->
+
+
+    <!-- UserControl 定義 Start-->
+    <Style x:Key="Dark01_UserControl" TargetType="{x:Type UserControl}">
+        <Setter Property="Background" Value="{StaticResource WindowColorDark}"/>
+    </Style>
+            <!-- UserControl 定義 End-->
+
+            <!-- CheckBox 定義 Start-->
     <Style TargetType="{x:Type CheckBox}">
         <Setter Property="Background" Value="{StaticResource WindowColorDark}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -1942,6 +1950,10 @@
     <!-- TabItem 定義 End-->
 
 
+    
+    
+    
+    
     <!-- DockingWindow 定義 Start-->
     <!-- Converters -->
     <shared:CornerRadiusConverter x:Key="CornerRadiusConverter" />
@@ -2379,8 +2391,6 @@
     
     
     
-    <!--  定義 Start-->
-    <!--  定義 End-->
     <!--  定義 Start-->
     <!--  定義 End-->
     <!--  定義 Start-->

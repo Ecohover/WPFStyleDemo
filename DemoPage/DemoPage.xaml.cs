@@ -26,6 +26,7 @@ namespace WPFDemo
     {
         private static readonly ILog Logger = LogManager.GetLogger(typeof(DemoPage));
         public string StyleName { get; set; }
+        public string WindowsStyleName { get; set; }
 
         public DemoPage(string style)
         {
@@ -43,19 +44,14 @@ namespace WPFDemo
             {
                 if (!style.Equals("Normal"))
                 {
-                    Logger.Debug("============ >Setp01 <============");
                     mystyles = new ResourceDictionary();
-                    Logger.Debug("============ >Setp02 <============");
                     mystyles.Source = new Uri($"/WPFDemo;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
-                    Logger.Debug("============ >Setp03 <============");
                     this.Resources = mystyles;
-                    Logger.Debug("============ >Setp04 <============");
-                    this.Style = mystyles[style] as Style;
-                    Logger.Debug("============ >Setp05 <============");
+
+                    WindowsStyleName = string.Format("{0}_{1}", style, "Windows");
+                    this.Style = mystyles[WindowsStyleName] as Style;
                 }
-                Logger.Debug("============ >Setp06 <============");
                 StyleName = style;
-                Logger.Debug("============ >Setp07 <============");
             }
             catch (Exception ex)
             {
