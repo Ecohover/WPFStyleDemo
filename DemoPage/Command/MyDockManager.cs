@@ -9,33 +9,45 @@ using System.Windows;
 
 namespace WPFDemo.Command
 {
-    public class MyDockManager : DockSite
-    {
-        private readonly ILog Logger = LogManager.GetLogger(typeof(MyDockManager));
+    public class MyDockSiteManager
+    { 
+        private readonly ILog Logger = LogManager.GetLogger(typeof(MyDockSiteManager));
+        public Dictionary<string, MyDockSite> DockSites = new Dictionary<string, MyDockSite>();
 
-        private static MyDockManager instance = null;
+        private static MyDockSiteManager instance = null;
         private static object objLock = new object();
-        public static MyDockManager GetInstance()
+        public static MyDockSiteManager GetInstance()
         {
             if (instance == null)
             {
                 lock (objLock)
                 {
-                    if (instance == null) instance = new MyDockManager();
+                    if (instance == null) instance = new MyDockSiteManager();
                 }
             }
             return instance;
         }
-        private MyDockManager() :
-            base()
+        private MyDockSiteManager() 
         {
         }
-        protected override ActiproSoftware.Windows.Controls.Docking.Primitives.IRaftingWindow CreateRaftingWindow(RaftingHost raftingHost)
+
+        public void CreateDockSite(string name)
         {
-            ActiproSoftware.Windows.Controls.Docking.Primitives.IRaftingWindow win = base.CreateRaftingWindow(raftingHost);
-            ((Window)win).ShowInTaskbar = true;
-            ToolWindow tw = win as ToolWindow;
-            return win;
+            DockSites.Add(name, new MyDockSite());
         }
+
+        public MyDockSite GetDockSite(string name)
+        {
+            MyDockSite Result = null;
+            if (DockSites.ContainsKey(name)) Result = DockSites[name];
+            return Result;
+        }
+        //protected override ActiproSoftware.Windows.Controls.Docking.Primitives.IRaftingWindow CreateRaftingWindow(RaftingHost raftingHost)
+        //{
+        //    ActiproSoftware.Windows.Controls.Docking.Primitives.IRaftingWindow win = base.CreateRaftingWindow(raftingHost);
+        //    ((Window)win).ShowInTaskbar = true;
+        //    ToolWindow tw = win as ToolWindow;
+        //    return win;
+        //}
     }
 }

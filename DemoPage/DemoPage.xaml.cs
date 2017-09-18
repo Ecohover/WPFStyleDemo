@@ -26,7 +26,7 @@ namespace WPFDemo
     {
         private static readonly ILog Logger = LogManager.GetLogger(typeof(DemoPage));
         public string StyleName { get; set; }
-        public string WindowsStyleName { get; set; }
+        public string WindowStyleName { get; set; }
 
         public DemoPage(string style)
         {
@@ -45,11 +45,11 @@ namespace WPFDemo
                 if (!style.Equals("Normal"))
                 {
                     mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"/WPFDemo;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
+                    mystyles.Source = new Uri($"/DemoPage;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
                     this.Resources = mystyles;
 
-                    WindowsStyleName = string.Format("{0}_{1}", style, "Windows");
-                    this.Style = mystyles[WindowsStyleName] as Style;
+                    WindowStyleName = "Window";
+                    this.Style = mystyles[WindowStyleName] as Style;
                 }
                 StyleName = style;
             }

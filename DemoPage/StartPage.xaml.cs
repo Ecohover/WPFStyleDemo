@@ -3,6 +3,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using WPFDemo.Command;
 using WPFDemo.Control;
 
@@ -20,8 +21,9 @@ namespace WPFDemo
         {
             InitializeComponent();
 
+            MyColor.GetInstance();
             this.Title = this.Title + "  V-" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-
+            MyDockSiteManager.GetInstance().CreateDockSite("Demo");
             var temp = Application.Current.Resources;
 
             PageStyleList.Add(new PageStyle("Normal", "预设"));
@@ -58,11 +60,11 @@ namespace WPFDemo
         private void btn_DockTest_Click(object sender, RoutedEventArgs e)
         {
 
-           DemoUserControl frm = null;
+           MyUserControl frm = null;
             try
             {
                 string stylekey = SelectedPageStyle.Key;
-                frm = new DemoUserControl(stylekey);
+                frm = new MyUserControl(stylekey);
 
                 frm.Width = Double.NaN;
                 frm.Height = Double.NaN;
@@ -82,10 +84,11 @@ namespace WPFDemo
                 ToolWindow toolwindows = new ToolWindow(true);
                 toolwindows.Title = "DemoDock";
                 toolwindows.Content = frm;
-                MyDockManager.GetInstance().ToolWindows.Add(toolwindows);
+                toolwindows.Style = (Style)frm.Resources["ToolWindow"];
+                MyDockSiteManager.GetInstance().GetDockSite("Demo").ToolWindows.Add(toolwindows);
                 System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
                 Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
-                toolwindows.Float(pt2, new Size(800, 600));
+                toolwindows.Float(pt2, new Size(850, 600));
             }
             catch (Exception ex)
             {
@@ -95,6 +98,11 @@ namespace WPFDemo
         private void cbStyleName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SelectedPageStyle = (PageStyle)cbStyleName.SelectedItem;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MyColor.GetInstance().SetColor();
         }
     }
 
