@@ -145,11 +145,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DemoPage\DemoPage.csproj">
+    <ProjectReference Include="..\DemoPage\MyStyle.csproj">
       <Project>{8ad2f11a-4daa-4b35-8c53-13530c90b34a}</Project>
-      <Name>DemoPage</Name>
+      <Name>MyStyle</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
