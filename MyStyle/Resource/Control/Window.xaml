@@ -54,18 +54,18 @@
                                 Width="30" 
                                 Command="{StaticResource MinimizeCommand}" 
                                 CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
-                            <Image Source="pack://application:,,,/DemoPage;component/Image/Win_Mini.png"  Stretch="Uniform" Margin="7"></Image>
+                            <Image Source="pack://application:,,,/MyStyle;component/Image/Win_Mini.png"  Stretch="Uniform" Margin="7"></Image>
                         </Button>
                         <Button DockPanel.Dock="Right" 
                                 Width="30" Command="{StaticResource MaximizeCommand}" 
                                 CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
-                            <Image Source="pack://application:,,,/DemoPage;component/Image/Win_Max.png"  Stretch="Uniform" Margin="6"></Image>
+                            <Image Source="pack://application:,,,/MyStyle;component/Image/Win_Max.png"  Stretch="Uniform" Margin="6"></Image>
                         </Button>
                         <Button DockPanel.Dock="Right" 
                                 Width="30" 
                                 Command="{StaticResource CloseCommand}" 
                                 CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}">
-                            <Image Source="pack://application:,,,/DemoPage;component/Image/Win_Close.png"  Stretch="Uniform" Margin="6"></Image>
+                            <Image Source="pack://application:,,,/MyStyle;component/Image/Win_Close.png"  Stretch="Uniform" Margin="6"></Image>
                         </Button>
                     </StackPanel>
                 </Grid>

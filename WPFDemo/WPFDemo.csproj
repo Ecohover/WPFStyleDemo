@@ -35,12 +35,6 @@
     <NoWarn>CS0168</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abt.Controls.SciChart.Wpf">
-      <HintPath>..\DemoPage\dll\Abt.Controls.SciChart.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Abt.Controls.SciChart3D.Wpf">
-      <HintPath>..\DemoPage\dll\Abt.Controls.SciChart3D.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="ActiproSoftware.Charts.Wpf">
       <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Charts.Wpf.dll</HintPath>
     </Reference>
@@ -145,7 +139,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DemoPage\MyStyle.csproj">
+    <ProjectReference Include="..\MyStyle\MyStyle.csproj">
       <Project>{8ad2f11a-4daa-4b35-8c53-13530c90b34a}</Project>
       <Name>MyStyle</Name>
     </ProjectReference>

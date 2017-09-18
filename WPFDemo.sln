@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFDemo", "WPFDemo\WPFDemo.csproj", "{1CBEC745-BE96-492F-AC1E-D01EA3499031}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStyle", "DemoPage\MyStyle.csproj", "{8AD2F11A-4DAA-4B35-8C53-13530C90B34A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStyle", "MyStyle\MyStyle.csproj", "{8AD2F11A-4DAA-4B35-8C53-13530C90B34A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -230,7 +230,9 @@
   <ItemGroup>
     <Resource Include="Image\Win_Mini.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Windows\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy $(TargetPath) C:\Demo\WPFDemo</PostBuildEvent>
