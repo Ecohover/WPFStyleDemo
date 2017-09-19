@@ -19,10 +19,11 @@ namespace MyStyle.Control
     /// <summary>
     /// SearchTextBox.xaml 的互動邏輯
     /// </summary>
-    public partial class SearchTextBox : UserControl 
+    public partial class SearchTextBox : TextBox
     {
         public static readonly DependencyProperty StyleNameProperty =
             DependencyProperty.Register("StyleName", typeof(string), typeof(SearchTextBox), new FrameworkPropertyMetadata { PropertyChangedCallback = Callback });
+
 
         public string StyleName
         {
@@ -47,9 +48,9 @@ namespace MyStyle.Control
                 if (!style.Equals("Normal") && !style.Equals(""))
                 {
                     mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"/DemoPage;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
+                    mystyles.Source = new Uri($"/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
                     this.Resources = mystyles;
-                    NewTextBox.Style = mystyles["SearchTextBox"] as Style;
+                    this.Style = mystyles["SearchTextBox"] as Style;
                 }
             }
             catch (Exception ex)
@@ -59,8 +60,15 @@ namespace MyStyle.Control
         }
         public SearchTextBox()
         {
+            SetResourceReference(System.Windows.Controls.Control.StyleProperty, typeof(TextBox));
             InitializeComponent();
             SetStyle(StyleName);
+            ResetText();
+        }
+
+        public void ResetText()
+        {
+            //Text = LanguageAide.LanguageSupport.GetString("String_flash_filterinfo");
         }
         
     }

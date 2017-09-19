@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyStyle"
         mc:Ignorable="d"
-        Title="StartPage" Height="149.851" Width="438.333">
+        Title="StartPage" Height="185.926" Width="468.333">
     <Grid>
         <Button Content="开启页面" HorizontalAlignment="Left" Margin="230,25,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click"/>
         <ComboBox x:Name="cbStyleName" HorizontalAlignment="Left" Margin="100,23,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="1" SelectionChanged="cbStyleName_SelectionChanged"/>
         <Button x:Name="btn_Test" Content="Test" Visibility="Collapsed" HorizontalAlignment="Left" Margin="175.678,72.987,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btn_DockTest" Content="开启Dock页面" HorizontalAlignment="Left" Margin="230,49,0,0" VerticalAlignment="Top" Width="95" Click="btn_DockTest_Click" />
         <Button Content="Test" HorizontalAlignment="Left" Margin="230,91,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click_1"/>
+        <Button Content="期貨報價" HorizontalAlignment="Left" Margin="346,11,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
 
     </Grid>
 </Window>

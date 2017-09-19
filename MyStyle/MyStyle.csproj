@@ -64,7 +64,8 @@
       <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Views.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdParty\log4net-1.2.13\build\bin\net\2.0\debug\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -118,6 +119,10 @@
     <Compile Include="StyleableWindow\WindowMaximizeCommand.cs" />
     <Compile Include="StyleableWindow\WindowMinimizeCommand.cs" />
     <Compile Include="StyleableWindow\WindowResizeBehavior.cs" />
+    <Compile Include="Windows\MyControl.xaml.cs" />
+    <Compile Include="Windows\FuturesQuotes.xaml.cs">
+      <DependentUpon>FuturesQuotes.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Control\MyUserControl.xaml">
@@ -184,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\FuturesQuotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -230,11 +239,9 @@
   <ItemGroup>
     <Resource Include="Image\Win_Mini.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Windows\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) C:\Demo\WPFDemo</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetPath) C:\AuroraQuantitative\RamenTrader</PostBuildEvent>
   </PropertyGroup>
 </Project>

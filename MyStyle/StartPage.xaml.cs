@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using MyStyle.Command;
 using MyStyle.Control;
-
+using MyStyle.Windows;
 
 namespace MyStyle
 {
@@ -20,7 +20,7 @@ namespace MyStyle
         public StartPage()
         {
             InitializeComponent();
-
+            MyDockSiteManager.GetInstance().StyleEnum = StyleEnum.Dark01;
             MyColor.GetInstance();
             this.Title = this.Title + "  V-" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             MyDockSiteManager.GetInstance().CreateDockSite("Demo");
@@ -59,13 +59,16 @@ namespace MyStyle
 
         private void btn_DockTest_Click(object sender, RoutedEventArgs e)
         {
+            PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
+            string stylekey = selobj.Key;
+            MyUserControl frm = new MyUserControl(stylekey);
+            OpenonDock(frm);
+        }
 
-           MyUserControl frm = null;
+        private void OpenonDock(UserControl frm)
+        {
             try
             {
-                string stylekey = SelectedPageStyle.Key;
-                frm = new MyUserControl(stylekey);
-
                 frm.Width = Double.NaN;
                 frm.Height = Double.NaN;
                 frm.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
@@ -77,6 +80,7 @@ namespace MyStyle
             }
             NewDock(frm);
         }
+
         public void NewDock(UserControl frm)
         {
             try
@@ -103,6 +107,12 @@ namespace MyStyle
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MyColor.GetInstance().SetColor();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            FuturesQuotes frm = new FuturesQuotes();
+            OpenonDock(frm);
         }
     }
 

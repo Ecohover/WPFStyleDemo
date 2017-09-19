@@ -18,7 +18,7 @@ namespace MyStyle.Control
     /// <summary>
     /// PictureButton.xaml 的互動邏輯
     /// </summary>
-    public partial class PictureButton : UserControl
+    public partial class PictureButton : Button
     {
         public static readonly DependencyProperty StyleNameProperty =
                DependencyProperty.Register("StyleName", typeof(string), typeof(PictureButton), new FrameworkPropertyMetadata { PropertyChangedCallback = Callback });
@@ -46,9 +46,9 @@ namespace MyStyle.Control
                 if (!style.Equals("Normal") && !style.Equals(""))
                 {
                     mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"/DemoPage;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
+                    mystyles.Source = new Uri($"/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
                     this.Resources = mystyles;
-                    NewButton.Style = mystyles["PictureButton"] as Style;
+                    this.Style = mystyles["PictureButton"] as Style;
                 }
             }
             catch (Exception ex)
@@ -58,6 +58,7 @@ namespace MyStyle.Control
         }
         public PictureButton()
         {
+            SetResourceReference(System.Windows.Controls.Control.StyleProperty, typeof(Button));
             InitializeComponent();
             SetStyle(StyleName);
         }

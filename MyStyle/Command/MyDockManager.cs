@@ -13,7 +13,7 @@ namespace MyStyle.Command
     { 
         private readonly ILog Logger = LogManager.GetLogger(typeof(MyDockSiteManager));
         public Dictionary<string, MyDockSite> DockSites = new Dictionary<string, MyDockSite>();
-
+        public StyleEnum StyleEnum = StyleEnum.Dark01;
         private static MyDockSiteManager instance = null;
         private static object objLock = new object();
         public static MyDockSiteManager GetInstance()
@@ -42,12 +42,10 @@ namespace MyStyle.Command
             if (DockSites.ContainsKey(name)) Result = DockSites[name];
             return Result;
         }
-        //protected override ActiproSoftware.Windows.Controls.Docking.Primitives.IRaftingWindow CreateRaftingWindow(RaftingHost raftingHost)
-        //{
-        //    ActiproSoftware.Windows.Controls.Docking.Primitives.IRaftingWindow win = base.CreateRaftingWindow(raftingHost);
-        //    ((Window)win).ShowInTaskbar = true;
-        //    ToolWindow tw = win as ToolWindow;
-        //    return win;
-        //}
+    }
+    public enum StyleEnum
+    {
+        Normal,
+        Dark01
     }
 }

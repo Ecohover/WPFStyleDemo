@@ -1,24 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MyStyle.Control
 {
     /// <summary>
     /// OldTabControl.xaml 的互動邏輯
     /// </summary>
-    public partial class OldTabControl : UserControl
+    public partial class OldTabControl : TabControl
     {
         public static readonly DependencyProperty StyleNameProperty =
                DependencyProperty.Register("StyleName", typeof(string), typeof(OldTabControl), new FrameworkPropertyMetadata { PropertyChangedCallback = Callback });
@@ -46,9 +35,9 @@ namespace MyStyle.Control
                 if (!style.Equals("Normal") && !style.Equals(""))
                 {
                     mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"/DemoPage;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
+                    mystyles.Source = new Uri($"/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
                     this.Resources = mystyles;
-                    NewTabControl.Style = mystyles["OldTabControl"] as Style;
+                    this.Style = mystyles["OldTabControl"] as Style;
                 }
             }
             catch (Exception ex)
@@ -58,6 +47,7 @@ namespace MyStyle.Control
         }
         public OldTabControl()
         {
+            SetResourceReference(System.Windows.Controls.Control.StyleProperty, typeof(TabControl));
             InitializeComponent();
             SetStyle(StyleName);
         }
