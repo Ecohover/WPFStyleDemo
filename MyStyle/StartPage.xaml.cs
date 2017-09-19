@@ -62,10 +62,11 @@ namespace MyStyle
             PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
             string stylekey = selobj.Key;
             MyUserControl frm = new MyUserControl(stylekey);
-            OpenonDock(frm);
+            string title = "DockDemo";
+            OpenonDock(frm, title);
         }
 
-        private void OpenonDock(UserControl frm)
+        private void OpenonDock(UserControl frm, string title)
         {
             try
             {
@@ -78,21 +79,21 @@ namespace MyStyle
             catch (Exception ex)
             {
             }
-            NewDock(frm);
+            NewDock(frm, title);
         }
 
-        public void NewDock(UserControl frm)
+        public void NewDock(UserControl frm, string title)
         {
             try
             {
                 ToolWindow toolwindows = new ToolWindow(true);
-                toolwindows.Title = "DemoDock";
+                toolwindows.Title = title;
                 toolwindows.Content = frm;
                 toolwindows.Style = (Style)frm.Resources["ToolWindow"];
                 MyDockSiteManager.GetInstance().GetDockSite("Demo").ToolWindows.Add(toolwindows);
                 System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
                 Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
-                toolwindows.Float(pt2, new Size(850, 600));
+                toolwindows.Float(pt2, new Size(850, 650));
             }
             catch (Exception ex)
             {
@@ -112,7 +113,13 @@ namespace MyStyle
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             FuturesQuotes frm = new FuturesQuotes();
-            OpenonDock(frm);
+            OpenonDock(frm, "期权报价");
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            CommodityQuotes frm = new CommodityQuotes();
+            OpenonDock(frm, "商品报价");
         }
     }
 

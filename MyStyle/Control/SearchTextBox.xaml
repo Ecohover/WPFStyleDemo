@@ -3,5 +3,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" >
+             mc:Ignorable="d" 
+             xmlns:command ="clr-namespace:MyStyle.Command" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus">
+    <TextBox.Resources>
+        <Style x:Key="TextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{x:Static command:MyColor.WindowColorLight}"/>
+            <Setter Property="Foreground" Value="{x:Static command:MyColor.WindowForeColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <Rectangle  x:Name="rectangle" 
+                                    Focusable="false" 
+                                    HorizontalAlignment="Stretch" 
+                                    VerticalAlignment="Stretch" 
+                                    Margin="0" 
+                                    RadiusY="4" RadiusX="4" 
+                                    Fill="{x:Static command:MyColor.WindowColorLight}" />
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="18"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Border x:Name="border"  
+                                Grid.Column="1" 
+                                VerticalAlignment="Center" 
+                                Margin="4,0,0,0" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                SnapsToDevicePixels="True" >
+                                    <ScrollViewer x:Name="PART_ContentHost" 
+                                          Focusable="false" 
+                                          HorizontalScrollBarVisibility="Hidden" 
+                                          VerticalScrollBarVisibility="Hidden"/>
+                                </Border>
+                                <Border x:Name="image" 
+                                Grid.Column="0" 
+                                Margin="0" 
+                                Padding="0" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                SnapsToDevicePixels="true">
+                                    <Image 
+                                    Source="pack://application:,,,/MyStyle;component/Image/TextBox_Search.png"  
+                                    Focusable="false" 
+                                    Width="10" Height="10" 
+                                    VerticalAlignment="Center"
+                                    Stretch="UniformToFill" 
+                                    Margin="2"></Image>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="rectangle" Value="0.3"/>
+                                <Setter Property="Opacity" TargetName="PART_ContentHost" Value="0.3"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Opacity" TargetName="rectangle" Value="0.5"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="Opacity" TargetName="rectangle" Value="0.8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </TextBox.Resources>
 </TextBox>

@@ -92,6 +92,9 @@
     <Compile Include="Command\MyColor.cs" />
     <Compile Include="Command\MyDockManager.cs" />
     <Compile Include="Command\MyDockSite.cs" />
+    <Compile Include="Control\FlashOrderButton.xaml.cs">
+      <DependentUpon>FlashOrderButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\MyUserControl.xaml.cs">
       <DependentUpon>MyUserControl.xaml</DependentUpon>
     </Compile>
@@ -119,12 +122,23 @@
     <Compile Include="StyleableWindow\WindowMaximizeCommand.cs" />
     <Compile Include="StyleableWindow\WindowMinimizeCommand.cs" />
     <Compile Include="StyleableWindow\WindowResizeBehavior.cs" />
+    <Compile Include="Windows\CommodityQuotes.xaml.cs">
+      <DependentUpon>CommodityQuotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CommodityQuotesLivePanel.xaml.cs">
+      <DependentUpon>CommodityQuotesLivePanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MyControl.xaml.cs" />
     <Compile Include="Windows\FuturesQuotes.xaml.cs">
       <DependentUpon>FuturesQuotes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ViewModel\CommodityQuotesLivePanelViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Control\FlashOrderButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Control\MyUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,6 +203,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\CommodityQuotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CommodityQuotesLivePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\FuturesQuotes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -239,7 +261,13 @@
   <ItemGroup>
     <Resource Include="Image\Win_Mini.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\Sample\CommodityQuotesSample.jpg" />
+    <Resource Include="Image\Sample\CommodityQuotesSample2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Button_Flash.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy $(TargetPath) C:\AuroraQuantitative\RamenTrader</PostBuildEvent>

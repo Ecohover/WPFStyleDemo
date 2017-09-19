@@ -24,6 +24,7 @@ namespace MyStyle.Control
         public static readonly DependencyProperty StyleNameProperty =
             DependencyProperty.Register("StyleName", typeof(string), typeof(SearchTextBox), new FrameworkPropertyMetadata { PropertyChangedCallback = Callback });
 
+        public bool UseGloablStyle { get; set; }
 
         public string StyleName
         {
@@ -45,22 +46,37 @@ namespace MyStyle.Control
             ResourceDictionary mystyles;
             try
             {
-                if (!style.Equals("Normal") && !style.Equals(""))
+                if (UseGloablStyle)
                 {
-                    mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
-                    this.Resources = mystyles;
-                    this.Style = mystyles["SearchTextBox"] as Style;
+                    if (!style.Equals("Normal") && !style.Equals(""))
+                    {
+                        mystyles = new ResourceDictionary();
+                        mystyles.Source = new Uri($"/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
+                        this.Resources = mystyles;
+                        this.Style = mystyles["SearchTextBox"] as Style;
+                    }
                 }
+                else
+                {
+                    this.Style = this.Resources["TextBox"] as Style;
+                }
+
             }
             catch (Exception ex)
             {
 
             }
         }
+
+     
         public SearchTextBox()
         {
-            SetResourceReference(System.Windows.Controls.Control.StyleProperty, typeof(TextBox));
+            UseGloablStyle = false;
+            Initial();
+        }
+
+        public void Initial()
+        {
             InitializeComponent();
             SetStyle(StyleName);
             ResetText();
@@ -69,7 +85,17 @@ namespace MyStyle.Control
         public void ResetText()
         {
             //Text = LanguageAide.LanguageSupport.GetString("String_flash_filterinfo");
+            Text = "输入商品代码/名称";
         }
-        
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Text = string.Empty;
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            ResetText();
+        }
     }
 }

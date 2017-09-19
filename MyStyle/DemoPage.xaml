@@ -49,7 +49,7 @@
         </TabControl>
         <control:OldTabControl Margin="390,196,116.333,252" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}"/>
 
-        <DataGrid x:Name="gridtest" Margin="584,12,0,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="211" Height="147" VerticalAlignment="Top">
+        <DataGrid RowHeaderWidth="30" x:Name="gridtest" Margin="584,12,0,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="211" Height="147" VerticalAlignment="Top">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="C1" Width="60" Binding="{Binding C1}" ClipboardContentBinding="{x:Null}"/>

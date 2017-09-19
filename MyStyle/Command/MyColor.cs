@@ -26,6 +26,11 @@ namespace MyStyle.Command
         public static Brush TabControlItemSelected;
         public static Brush TabControlItemNormal;
 
+        public static Brush GridBackGroundGray;
+        public static Brush GridForeColorYellow;
+        public static Brush GridForeColorWhite;
+        public static Brush GridForeColorRed;
+
 
         private readonly ILog Logger = LogManager.GetLogger(typeof(MyDockSiteManager));
 
@@ -49,6 +54,12 @@ namespace MyStyle.Command
             WindowColorLight = GetSolidColorBrush("#FF222C36");
             WindowForeColor = GetSolidColorBrush("#FFFFFFFF");
             WindowColorGray = GetSolidColorBrush("#FF6B727C");
+
+            GridBackGroundGray = GetSolidColorBrush("#FF384959");
+            GridForeColorYellow = GetSolidColorBrush("#FFFAE808");
+            GridForeColorWhite = GetSolidColorBrush("#FFFFFFFF");
+            GridForeColorRed = GetSolidColorBrush("#FFFF3838");
+
             TabControlItemSelected = GetSolidColorBrush("#FF47627C");
 
             GradientStopCollection stops;
