@@ -1,0 +1,430 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:editors="http://schemas.actiprosoftware.com/winfx/xaml/editors"
+                    xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared"
+                    xmlns:themes="http://schemas.actiprosoftware.com/winfx/xaml/themes"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="{x:Type editors:Int32EditBox}">
+        <Setter Property="Hint" Value="No value"/>
+        <Setter Property="DropDownHorizontalAlignment" Value="Right"/>
+        <Setter Property="MinDropDownHeight" Value="150"/>
+        <Setter Property="MinDropDownWidth" Value="150"/>
+        <Setter Property="DropDownContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <editors:Calculator BorderThickness="0" DisplayMode="Standard">
+                        <editors:Calculator.Value>
+                            <Binding Mode="TwoWay" Path="Value" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type editors:Int32EditBox}}">
+                                <Binding.Converter>
+                                    <editors:IntegerToDoubleConverter/>
+                                </Binding.Converter>
+                            </Binding>
+                        </editors:Calculator.Value>
+                    </editors:Calculator>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.BasedOn>
+            <Style TargetType="{x:Type editors:PartEditBox}">
+                <Style.Resources>
+                    <Style x:Key="{x:Type shared:PopupButton}" TargetType="{x:Type shared:PopupButton}">
+                        <Style.BasedOn>
+                            <Style TargetType="{x:Type shared:PopupButton}">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Setter Property="BorderThickness" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderNormalThicknessKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                <Setter Property="Padding" Value="0"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                <Setter Property="themes:ThemeProperties.DisabledOpacity" Value="0.4"/>
+                                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type shared:PopupButton}">
+                                            <Grid SnapsToDevicePixels="True">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition x:Name="contentColumn" Width="*"/>
+                                                    <ColumnDefinition MaxWidth="1" Width="1"/>
+                                                    <ColumnDefinition x:Name="indicatorColumn" Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Border x:Name="contentArea" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.ColumnSpan="2" Grid.Column="0" SnapsToDevicePixels="True">
+                                                    <Border.CornerRadius>
+                                                        <TemplateBinding ConverterParameter="Left" Property="themes:ThemeProperties.CornerRadius">
+                                                            <!--<TemplateBinding.Converter>
+                                                                <shared:CornerRadiusConverter/>
+                                                            </TemplateBinding.Converter>-->
+                                                        </TemplateBinding>
+                                                    </Border.CornerRadius>
+                                                    <Grid>
+                                                        <Border x:Name="contentInnerBorder" BorderBrush="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" BorderThickness="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderNormalThicknessKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" CornerRadius="{TemplateBinding themes:ThemeProperties.CornerRadius}" SnapsToDevicePixels="True"/>
+                                                        <shared:PixelSnapper VerticalRoundMode="CeilingToEven">
+                                                            <ContentPresenter x:Name="presenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                        </shared:PixelSnapper>
+                                                    </Grid>
+                                                </Border>
+                                                <Border x:Name="PART_IndicatorArea" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.ColumnSpan="2" Grid.Column="1" SnapsToDevicePixels="True" ToolTip="{TemplateBinding PopupIndicatorToolTip}">
+                                                    <Border.CornerRadius>
+                                                        <TemplateBinding ConverterParameter="Right" Property="themes:ThemeProperties.CornerRadius">
+                                                            <!--<TemplateBinding.Converter>
+                                                                <shared:CornerRadiusConverter/>
+                                                            </TemplateBinding.Converter>-->
+                                                        </TemplateBinding>
+                                                    </Border.CornerRadius>
+                                                    <Grid>
+                                                        <Border x:Name="indicatorInnerBorder" BorderBrush="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" BorderThickness="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderNormalThicknessKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" CornerRadius="{TemplateBinding themes:ThemeProperties.CornerRadius}" SnapsToDevicePixels="True"/>
+                                                        <shared:PixelSnapper VerticalRoundMode="CeilingToEven">
+                                                            <ContentPresenter x:Name="indicatorPresenter" ContentTemplate="{TemplateBinding PopupIndicatorTemplate}" Content="{TemplateBinding PopupIndicator}" HorizontalAlignment="Center" Margin="1,0" SnapsToDevicePixels="True" VerticalAlignment="Center"/>
+                                                        </shared:PixelSnapper>
+                                                    </Grid>
+                                                </Border>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsPopupOpen" Value="True">
+                                                    <Setter Property="Background" TargetName="PART_IndicatorArea" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundCheckedNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderCheckedNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" TargetName="indicatorInnerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderCheckedNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" SourceName="contentArea" Value="True">
+                                                    <Setter Property="Background" TargetName="contentArea" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="Border.BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" TargetName="contentInnerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="TextElement.Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" SourceName="PART_IndicatorArea" Value="True">
+                                                    <Setter Property="Background" TargetName="PART_IndicatorArea" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="Border.BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" TargetName="indicatorInnerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="TextElement.Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                </Trigger>
+                                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                                    <Setter Property="Background" TargetName="contentArea" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" TargetName="contentInnerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                </Trigger>
+                                                <MultiTrigger>
+                                                    <MultiTrigger.Conditions>
+                                                        <Condition Property="DisplayMode" Value="PopupOnly"/>
+                                                        <Condition Property="IsKeyboardFocused" Value="True"/>
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="Background" TargetName="PART_IndicatorArea" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" TargetName="indicatorInnerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                </MultiTrigger>
+                                                <MultiTrigger>
+                                                    <MultiTrigger.Conditions>
+                                                        <Condition Property="IsMouseOver" SourceName="PART_IndicatorArea" Value="True"/>
+                                                        <Condition Property="IsPopupOpen" Value="True"/>
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="Background" TargetName="PART_IndicatorArea" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" TargetName="indicatorInnerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                </MultiTrigger>
+                                                <MultiTrigger>
+                                                    <MultiTrigger.Conditions>
+                                                        <Condition Property="DisplayMode" Value="PopupOnly"/>
+                                                        <Condition Property="IsKeyboardFocused" Value="True"/>
+                                                        <Condition Property="IsPopupOpen" Value="True"/>
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="Background" TargetName="PART_IndicatorArea" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" TargetName="indicatorInnerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                </MultiTrigger>
+                                                <Trigger Property="IsPressed" Value="True">
+                                                    <Setter Property="Background" TargetName="contentArea" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundPressedBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderPressedBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="BorderBrush" TargetName="contentInnerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderPressedBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="False">
+                                                    <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ControlForegroundDisabledBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                    <Setter Property="Opacity" TargetName="presenter" Value="{Binding (themes:ThemeProperties.DisabledOpacity), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <Setter Property="Opacity" TargetName="indicatorPresenter" Value="{Binding (themes:ThemeProperties.DisabledOpacity), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                </Trigger>
+                                                <Trigger Property="DisplayMode" Value="ButtonOnly">
+                                                    <Setter Property="Visibility" TargetName="PART_IndicatorArea" Value="Collapsed"/>
+                                                    <Setter Property="CornerRadius" TargetName="contentArea" Value="{Binding (themes:ThemeProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                </Trigger>
+                                                <Trigger Property="DisplayMode" Value="PopupOnly">
+                                                    <Setter Property="Visibility" TargetName="contentArea" Value="Collapsed"/>
+                                                    <Setter Property="Width" TargetName="contentColumn" Value="0"/>
+                                                    <Setter Property="Width" TargetName="indicatorColumn" Value="*"/>
+                                                    <Setter Property="CornerRadius" TargetName="PART_IndicatorArea" Value="{Binding (themes:ThemeProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                    <Setter Property="Margin" TargetName="indicatorPresenter" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                </Trigger>
+                                                <Trigger Property="IsRounded" Value="False">
+                                                    <Setter Property="CornerRadius" TargetName="contentArea" Value="0"/>
+                                                    <Setter Property="CornerRadius" TargetName="PART_IndicatorArea" Value="0"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="PopupMenuDataContext" Value="{Binding}"/>
+                                <Setter Property="PopupIndicatorTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <Path Data="M0,0L2.5,3 5,0z" Fill="{DynamicResource {ComponentResourceKey ResourceId=ToolBarDropDownGlyphBackgroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" SnapsToDevicePixels="True" VerticalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="DisplayMode" Value="Merged">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type shared:PopupButton}">
+                                                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding themes:ThemeProperties.CornerRadius}" SnapsToDevicePixels="True">
+                                                        <Grid x:Name="PART_IndicatorArea">
+                                                            <Border x:Name="innerBorder" BorderBrush="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" BorderThickness="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderNormalThicknessKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" CornerRadius="{TemplateBinding themes:ThemeProperties.CornerRadius}" SnapsToDevicePixels="True"/>
+                                                            <shared:PixelSnapper VerticalRoundMode="CeilingToEven">
+                                                                <Grid Margin="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <ContentPresenter x:Name="presenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                                    <ContentPresenter x:Name="indicatorPresenter" ContentTemplate="{TemplateBinding PopupIndicatorTemplate}" Content="{TemplateBinding PopupIndicator}" Grid.Column="1" HorizontalAlignment="Center" Margin="1,0,0,0" SnapsToDevicePixels="True" VerticalAlignment="Center"/>
+                                                                </Grid>
+                                                            </shared:PixelSnapper>
+                                                        </Grid>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsPopupOpen" Value="True">
+                                                            <Setter Property="Background" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundCheckedNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderCheckedNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" TargetName="innerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderCheckedNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" TargetName="innerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsKeyboardFocused" Value="True">
+                                                            <Setter Property="Background" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" TargetName="innerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                        </Trigger>
+                                                        <MultiTrigger>
+                                                            <MultiTrigger.Conditions>
+                                                                <Condition Property="IsMouseOver" Value="True"/>
+                                                                <Condition Property="IsPopupOpen" Value="True"/>
+                                                            </MultiTrigger.Conditions>
+                                                            <Setter Property="Background" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" TargetName="innerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                        </MultiTrigger>
+                                                        <MultiTrigger>
+                                                            <MultiTrigger.Conditions>
+                                                                <Condition Property="IsKeyboardFocused" Value="True"/>
+                                                                <Condition Property="IsPopupOpen" Value="True"/>
+                                                            </MultiTrigger.Conditions>
+                                                            <Setter Property="Background" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" TargetName="innerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderCheckedHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                        </MultiTrigger>
+                                                        <Trigger Property="IsPressed" Value="True">
+                                                            <Setter Property="Background" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBackgroundPressedBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonBorderPressedBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="BorderBrush" TargetName="innerBorder" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonInnerBorderPressedBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ToolBarButtonForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled" Value="False">
+                                                            <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ControlForegroundDisabledBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                                            <Setter Property="Opacity" TargetName="presenter" Value="{Binding (themes:ThemeProperties.DisabledOpacity), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                            <Setter Property="Opacity" TargetName="indicatorPresenter" Value="{Binding (themes:ThemeProperties.DisabledOpacity), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsRounded" Value="False">
+                                                            <Setter Property="CornerRadius" TargetName="innerBorder" Value="0"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Style.BasedOn>
+                    </Style>
+                </Style.Resources>
+                <Setter Property="Background" Value="{DynamicResource {ComponentResourceKey ResourceId=EditBackgroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource {ComponentResourceKey ResourceId=EditBorderNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                <Setter Property="BorderThickness" Value="{DynamicResource {ComponentResourceKey ResourceId=EditBorderNormalThicknessKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ControlForegroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                <Setter Property="Padding" Value="{DynamicResource {ComponentResourceKey ResourceId=EditBoxEditPaddingNormalThicknessKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                <Setter Property="themes:ThemeProperties.CornerRadius" Value="{DynamicResource {ComponentResourceKey ResourceId=EditBorderNormalCornerRadiusKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                <Setter Property="BackgroundEditable" Value="Transparent"/>
+                <Setter Property="BackgroundNonEditable" Value="Transparent"/>
+                <Setter Property="ForegroundNonEditable" Value="{DynamicResource {ComponentResourceKey ResourceId=ControlForegroundDisabledBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                <Setter Property="Hint" Value="No value"/>
+                <Setter Property="AllowDrop" Value="True"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="KeyboardNavigation.DirectionalNavigation" Value="Cycle"/>
+                <Setter Property="KeyboardNavigation.TabNavigation" Value="Once"/>
+                <Setter Property="PromptIndicatorVisibility" Value="Always"/>
+                <Setter Property="themes:ThemeProperties.IsAnimationEnabled" Value="{DynamicResource {ComponentResourceKey ResourceId=EditIsAnimationEnabledBooleanKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                <Setter Property="CheckBoxTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsChecked, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type editors:PartEditBox}}}" Margin="0,0,0,1" Padding="0" Style="{DynamicResource {ComponentResourceKey ResourceId=CheckBoxStyleKey, TypeInTargetAssembly={x:Type themes:SharedResourceKeys}}}" VerticalAlignment="Center">
+                                <CheckBox.IsEnabled>
+                                    <Binding Path="IsReadOnly" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type editors:PartEditBox}}">
+                                        <Binding.Converter>
+                                            <shared:BooleanNotConverter/>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </CheckBox.IsEnabled>
+                            </CheckBox>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="DropDownButtonMargin" Value="{DynamicResource {ComponentResourceKey ResourceId=DropDownMarginNormalThicknessKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                <Setter Property="DropDownButtonTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <editors:DropDownButton IsTransparencyModeEnabled="{Binding IsDropDownButtonTransparencyModeEnabled, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type editors:PartEditBox}}}" IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type editors:PartEditBox}}}" Margin="0,-1,-1,-1">
+                                <editors:DropDownButton.IsEnabled>
+                                    <Binding Path="IsReadOnly" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type editors:PartEditBox}}">
+                                        <Binding.Converter>
+                                            <shared:BooleanNotConverter/>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </editors:DropDownButton.IsEnabled>
+                            </editors:DropDownButton>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="SpinnerMargin" Value="1,-1,-1,-1"/>
+                <Setter Property="SpinnerTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <editors:Spinner CommandTarget="{Binding RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type editors:PartEditBox}}}">
+                                <editors:Spinner.IsEnabled>
+                                    <Binding Path="IsReadOnly" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type editors:PartEditBox}}">
+                                        <Binding.Converter>
+                                            <shared:BooleanNotConverter/>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </editors:Spinner.IsEnabled>
+                            </editors:Spinner>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type editors:PartEditBox}">
+                            <Grid x:Name="grid" SnapsToDevicePixels="True">
+                                <Border x:Name="popupPlacementTarget"/>
+                                <Popup x:Name="PART_Popup" AllowsTransparency="True" TextElement.FontWeight="Normal" TextElement.FontStyle="Normal" Focusable="False" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom" StaysOpen="{TemplateBinding DropDownStaysOpen}">
+                                    <shared:DropShadowChrome x:Name="dropShadow" Color="Transparent" MaxWidth="{TemplateBinding MaxDropDownWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding MinDropDownWidth}" MinHeight="{TemplateBinding MinDropDownHeight}">
+                                        <Border x:Name="dropDownBorder" BorderBrush="{DynamicResource {ComponentResourceKey ResourceId=PopupBorderNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" BorderThickness="{DynamicResource {ComponentResourceKey ResourceId=PopupBorderNormalThicknessKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" Background="{DynamicResource {ComponentResourceKey ResourceId=PopupBackgroundNormalBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}">
+                                            <ContentPresenter ContentTemplate="{TemplateBinding DropDownContentTemplate}" Content="{TemplateBinding DropDownContent}"/>
+                                        </Border>
+                                    </shared:DropShadowChrome>
+                                </Popup>
+                                <shared:ElementChrome x:Name="chrome" BorderBrush="{TemplateBinding BorderBrush}" BackgroundHover="{DynamicResource {ComponentResourceKey ResourceId=EditBackgroundHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" BorderBrushDisabled="{DynamicResource {ComponentResourceKey ResourceId=EditBorderDisabledBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrushHover="{DynamicResource {ComponentResourceKey ResourceId=EditBorderHoverBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" BackgroundDisabled="{DynamicResource {ComponentResourceKey ResourceId=EditBackgroundDisabledBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" BorderStyle="{DynamicResource {ComponentResourceKey ResourceId=EditElementChromeBorderStyleKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" Background="{TemplateBinding Background}" BackgroundFocused="{DynamicResource {ComponentResourceKey ResourceId=EditBackgroundFocusedBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" BorderBrushFocused="{DynamicResource {ComponentResourceKey ResourceId=EditBorderFocusedBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}" CornerRadius="{TemplateBinding themes:ThemeProperties.CornerRadius}" IsAnimationEnabled="{TemplateBinding themes:ThemeProperties.IsAnimationEnabled}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                                    <editors:SlottedItemsPresenter x:Name="PART_ItemsPresenter">
+                                        <editors:SlottedItemsPresenter.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </editors:SlottedItemsPresenter.ColumnDefinitions>
+                                    </editors:SlottedItemsPresenter>
+                                </shared:ElementChrome>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="themes:ThemeProperties.UseBackgroundStates" Value="False">
+                                    <Setter Property="BackgroundFocused" TargetName="chrome" Value="{x:Null}"/>
+                                    <Setter Property="BackgroundHover" TargetName="chrome" Value="{x:Null}"/>
+                                </Trigger>
+                                <Trigger Property="themes:ThemeProperties.UseBorderStates" Value="False">
+                                    <Setter Property="BorderBrushDisabled" TargetName="chrome" Value="{x:Null}"/>
+                                    <Setter Property="BorderBrushFocused" TargetName="chrome" Value="{x:Null}"/>
+                                    <Setter Property="BorderBrushHover" TargetName="chrome" Value="{x:Null}"/>
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="themes:ThemeProperties.UseBorderStates" Value="False"/>
+                                        <Condition Property="BorderBrush" Value="Transparent"/>
+                                    </MultiTrigger.Conditions>
+                                    <Setter Property="BorderStyle" TargetName="chrome" Value="Default"/>
+                                </MultiTrigger>
+                                <Trigger Property="DropDownHorizontalAlignment" Value="Center">
+                                    <Setter Property="HorizontalAlignment" TargetName="popupPlacementTarget" Value="Center"/>
+                                    <Setter Property="Width" TargetName="popupPlacementTarget" Value="{Binding ActualWidth, ElementName=dropShadow}"/>
+                                    <Setter Property="PlacementTarget" TargetName="PART_Popup" Value="{Binding ElementName=popupPlacementTarget}"/>
+                                </Trigger>
+                                <Trigger Property="DropDownHorizontalAlignment" Value="Left">
+                                    <Setter Property="HorizontalAlignment" TargetName="popupPlacementTarget" Value="Left"/>
+                                    <Setter Property="Width" TargetName="popupPlacementTarget" Value="{Binding ActualWidth, ElementName=dropShadow}"/>
+                                    <Setter Property="PlacementTarget" TargetName="PART_Popup" Value="{Binding ElementName=popupPlacementTarget}"/>
+                                </Trigger>
+                                <Trigger Property="DropDownHorizontalAlignment" Value="Right">
+                                    <Setter Property="HorizontalAlignment" TargetName="popupPlacementTarget" Value="Right"/>
+                                    <Setter Property="Width" TargetName="popupPlacementTarget" Value="{Binding ActualWidth, ElementName=dropShadow}"/>
+                                    <Setter Property="PlacementTarget" TargetName="PART_Popup" Value="{Binding ElementName=popupPlacementTarget}"/>
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="DropDownHorizontalAlignment" Value="Stretch"/>
+                                        <Condition Property="MinDropDownWidth" Value="NaN"/>
+                                    </MultiTrigger.Conditions>
+                                    <Setter Property="MinWidth" TargetName="dropShadow" Value="{Binding ActualWidth, ElementName=grid}"/>
+                                </MultiTrigger>
+                                <Trigger Property="HasDropDownContent" Value="False">
+                                    <Setter Property="Height" TargetName="dropDownBorder" Value="95"/>
+                                </Trigger>
+                                <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="True">
+                                    <Setter Property="Margin" TargetName="dropShadow" Value="0,0,5,5"/>
+                                    <Setter Property="Color" TargetName="dropShadow" Value="#71000000"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="State" TargetName="chrome" Value="Hover"/>
+                                </Trigger>
+                                <Trigger Property="IsDropDownOpen" Value="True">
+                                    <Setter Property="State" TargetName="chrome" Value="Focused"/>
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                    <Setter Property="State" TargetName="chrome" Value="Focused"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=ControlForegroundDisabledBrushKey, TypeInTargetAssembly={x:Type themes:AssetResourceKeys}}}"/>
+                                    <Setter Property="State" TargetName="chrome" Value="Disabled"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <DataTrigger Value="false">
+                        <DataTrigger.Binding>
+                            <Binding Path="Background" RelativeSource="{RelativeSource Self}">
+                                <Binding.Converter>
+                                    <shared:IsNullOrTransparentBrushConverter/>
+                                </Binding.Converter>
+                            </Binding>
+                        </DataTrigger.Binding>
+                        <Setter Property="editors:CaretLayer.CaretBrush">
+                            <Setter.Value>
+                                <Binding Path="Background" RelativeSource="{RelativeSource Self}">
+                                    <Binding.Converter>
+                                        <editors:CaretBrushConverter/>
+                                    </Binding.Converter>
+                                </Binding>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Style.BasedOn>
+    </Style>
+</ResourceDictionary>

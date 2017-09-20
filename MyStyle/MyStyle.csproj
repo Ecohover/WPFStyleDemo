@@ -42,6 +42,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Docking.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="ActiproSoftware.Editors.Wpf">
+      <HintPath>dll\ActiproSoftware.Editors.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="ActiproSoftware.Shared.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9" />
     <Reference Include="ActiproSoftware.SyntaxEditor.Addons.Python.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -159,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resource\Control\Int32EditBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resource\Control\UserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -270,6 +277,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) C:\AuroraQuantitative\RamenTrader</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetPath) C:\AuroraQuantitative\RamenTrader
+copy $(TargetPath) C:\Demo\WPFDemo</PostBuildEvent>
   </PropertyGroup>
 </Project>

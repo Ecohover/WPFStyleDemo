@@ -5,7 +5,6 @@
                     xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
 		            xmlns:docking="clr-namespace:ActiproSoftware.Windows.Controls.Docking;assembly=ActiproSoftware.Docking.Wpf"
 		            xmlns:dockingPrimitives="clr-namespace:ActiproSoftware.Windows.Controls.Docking.Primitives;assembly=ActiproSoftware.Docking.Wpf"
-		            xmlns:productsDocking="clr-namespace:ActiproSoftware.Products.Docking;assembly=ActiproSoftware.Docking.Wpf" 
 		            xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared"
 		            xmlns:themes="http://schemas.actiprosoftware.com/winfx/xaml/themes"
 		            xmlns:dockingThemes="clr-namespace:ActiproSoftware.Windows.Themes;assembly=ActiproSoftware.Docking.Wpf"

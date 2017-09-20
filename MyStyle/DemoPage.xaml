@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyStyle"
+        xmlns:editors="http://schemas.actiprosoftware.com/winfx/xaml/editors"
         xmlns:control="clr-namespace:MyStyle.Control" 
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="MyStyle.DemoPage" 
         mc:Ignorable="d"
@@ -15,7 +16,7 @@
     </Window.Resources>
 
     <Grid>
-        <TabControl Margin="30,196,476.333,252">
+        <TabControl Margin="32,280,474.667,168.333">
             <TabItem Header="TabItem1">
                 <Button Content="Test1" />
             </TabItem>
@@ -87,6 +88,12 @@
         <ComboBox x:Name="cbStyleName4" HorizontalAlignment="Left" Margin="381,137,0,0" VerticalAlignment="Top" Width="149" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" IsEditable="True" IsEnabled="False" TabIndex="18" />
         <ScrollBar HorizontalAlignment="Left" Margin="549,9,0,0" VerticalAlignment="Top" Height="150" Width="17"/>
         <ScrollBar HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Height="20" Width="314" Orientation="Horizontal"/>
+
+        <editors:Int32EditBox x:Name="updOrderVolume" Value="1" 
+                              Minimum="0" Maximum="999"
+                              SpinnerVisibility="Visible" 
+                              CenterSlotHorizontalAlignment="Right" 
+                               Margin="13,192,701.667,451.333"/>
 
     </Grid>
 </Window>
