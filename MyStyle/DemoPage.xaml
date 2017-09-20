@@ -16,7 +16,7 @@
     </Window.Resources>
 
     <Grid>
-        <TabControl Margin="32,280,474.667,168.333">
+        <TabControl Margin="45,375,461.667,73.333">
             <TabItem Header="TabItem1">
                 <Button Content="Test1" />
             </TabItem>
@@ -94,6 +94,9 @@
                               SpinnerVisibility="Visible" 
                               CenterSlotHorizontalAlignment="Right" 
                                Margin="13,192,701.667,451.333"/>
+        <control:RedButton Content="Button" HorizontalAlignment="Left" Margin="65,240,0,0" VerticalAlignment="Top" Width="75"/>
+        <control:BlueButton Content="Button" HorizontalAlignment="Left" Margin="65,264,0,0" VerticalAlignment="Top" Width="75"/>
+        <control:GreenButton Content="Button" HorizontalAlignment="Left" Margin="65,288,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

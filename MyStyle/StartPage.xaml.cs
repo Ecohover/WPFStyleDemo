@@ -21,7 +21,7 @@ namespace MyStyle
         {
             InitializeComponent();
             MyDockSiteManager.GetInstance().StyleEnum = StyleEnum.Dark01;
-            MyColor.GetInstance();
+            MyStyle.Command.MyStyleManager.GetInstance();
             this.Title = this.Title + "  V-" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             MyDockSiteManager.GetInstance().CreateDockSite("Demo");
             var temp = Application.Current.Resources;
@@ -29,6 +29,15 @@ namespace MyStyle
             PageStyleList.Add(new PageStyle("Normal", "预设"));
             PageStyleList.Add(new PageStyle("Dark01", "深色01"));
             PageStyleList.Add(new PageStyle("Light01", "浅色01"));
+            PageStyleList.Add(new PageStyle("Aero.NormalColor", "Aero.NormalColor"));
+            PageStyleList.Add(new PageStyle("Aero2.NormalColor", "Aero2.NormalColor"));
+            PageStyleList.Add(new PageStyle("AeroLite.NormalColor", "AeroLite.NormalColor"));
+            PageStyleList.Add(new PageStyle("Classic", "Classic"));
+            PageStyleList.Add(new PageStyle("Generic", "Generic"));
+            PageStyleList.Add(new PageStyle("Luna.Homestead", "Luna.Homestead"));
+            PageStyleList.Add(new PageStyle("Luna.Metallic", "Luna.Metallic"));
+            PageStyleList.Add(new PageStyle("Luna.NormalColor", "Luna.NormalColor"));
+            PageStyleList.Add(new PageStyle("Royale.NormalColor", "Royale.NormalColor"));
             cbStyleName.DisplayMemberPath = "Value";
             cbStyleName.SelectedValuePath = "Key";
             cbStyleName.ItemsSource = PageStyleList;
@@ -107,7 +116,7 @@ namespace MyStyle
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MyColor.GetInstance().SetColor();
+            //MyStyle.GetInstance().SetColor();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

@@ -384,21 +384,21 @@
             <Trigger Property="State" Value="AutoHide">
                 <Setter Property="Padding" Value="2,1,2,1" />
                 <Setter Property="Margin" Value="1,3,1,3" />
-                <Setter Property="TabBackground"  Value="{x:Static command:MyColor.TabControlItemNormal}"/>
+                <Setter Property="TabBackground"  Value="{x:Static command:MyStyleManager.BrushTabControlItemNormal}"/>
                 <Setter Property="TabBorderBrush" Value="Transparent"/>
                 <Setter Property="TabBorderThickness" Value="0"/>
                 <Setter Property="themes:ThemeProperties.CornerRadius" Value="4"/>
-                <Setter Property="TabForeground" Value="{x:Static command:MyColor.WindowForeColor}"/>
+                <Setter Property="TabForeground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
                 <Setter Property="Template" Value="{StaticResource ToolWindowDockedTemplateKey}" />
             </Trigger>
             <Trigger Property="State" Value="Docked">
                 <Setter Property="Padding" Value="2,1,2,1" />
                 <Setter Property="Margin" Value="1,3,1,3" />
-                <Setter Property="TabBackground"  Value="{x:Static command:MyColor.TabControlItemNormal}"/>
+                <Setter Property="TabBackground"  Value="{x:Static command:MyStyleManager.BrushTabControlItemNormal}"/>
                 <Setter Property="TabBorderBrush" Value="Transparent" />
                 <Setter Property="TabBorderThickness" Value="0" />
                 <Setter Property="themes:ThemeProperties.CornerRadius" Value="4"/>
-                <Setter Property="TabForeground" Value="{x:Static command:MyColor.WindowForeColor}"/>
+                <Setter Property="TabForeground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
                 <Setter Property="Template" Value="{StaticResource ToolWindowDockedTemplateKey}" />
             </Trigger>
 			<MultiTrigger>
@@ -407,7 +407,7 @@
 					<Condition Property="IsSelected" Value="true" />
 					<Condition Property="docking:DockSite.ToolWindowsTabPlacement" Value="Bottom" />
                 </MultiTrigger.Conditions>
-                <Setter Property="TabBackground" Value="{x:Static command:MyColor.TabControlItemSelected}"/>
+                <Setter Property="TabBackground" Value="{x:Static command:MyStyleManager.BrushTabControlItemSelected}"/>
             </MultiTrigger>
 			<MultiTrigger>
 				<MultiTrigger.Conditions>
@@ -415,16 +415,16 @@
                     <Condition Property="IsSelected" Value="true" />
 					<Condition Property="docking:DockSite.ToolWindowsTabPlacement" Value="Top" />
                 </MultiTrigger.Conditions>
-                <Setter Property="TabBackground" Value="{x:Static command:MyColor.TabControlItemSelected}"/>
+                <Setter Property="TabBackground" Value="{x:Static command:MyStyleManager.BrushTabControlItemSelected}"/>
             </MultiTrigger>
             <Trigger Property="State" Value="Floating">
                 <Setter Property="Padding" Value="2,1,2,1" />
                 <Setter Property="Margin" Value="1,3,1,3" />
-                <Setter Property="TabBackground"  Value="{x:Static command:MyColor.TabControlItemNormal}"/>
+                <Setter Property="TabBackground"  Value="{x:Static command:MyStyleManager.BrushTabControlItemNormal}"/>
                 <Setter Property="TabBorderBrush" Value="Transparent" />
                 <Setter Property="TabBorderThickness" Value="0" />
                 <Setter Property="themes:ThemeProperties.CornerRadius" Value="4"/>
-                <Setter Property="TabForeground" Value="{x:Static command:MyColor.WindowForeColor}"/>
+                <Setter Property="TabForeground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
                 <Setter Property="Template" Value="{StaticResource ToolWindowDockedTemplateKey}" />
             </Trigger>
 			<MultiTrigger>
@@ -433,7 +433,7 @@
 					<Condition Property="IsSelected" Value="true" />
 					<Condition Property="docking:DockSite.ToolWindowsTabPlacement" Value="Bottom" />
 				</MultiTrigger.Conditions>
-                <Setter Property="TabBackground" Value="{x:Static command:MyColor.TabControlItemSelected}"/>
+                <Setter Property="TabBackground" Value="{x:Static command:MyStyleManager.BrushTabControlItemSelected}"/>
 			</MultiTrigger>
 			<MultiTrigger>
 				<MultiTrigger.Conditions>
@@ -441,7 +441,7 @@
 					<Condition Property="IsSelected" Value="False" />
 					<Condition Property="docking:DockSite.ToolWindowsTabPlacement" Value="Top" />
                 </MultiTrigger.Conditions>
-                <Setter Property="TabBackground" Value="{x:Static command:MyColor.TabControlItemSelected}"/>
+                <Setter Property="TabBackground" Value="{x:Static command:MyStyleManager.BrushTabControlItemSelected}"/>
             </MultiTrigger>
 		</Style.Triggers>
 	</Style>

@@ -7,12 +7,13 @@
         <ResourceDictionary Source="Control/Window.xaml"/>
         <ResourceDictionary Source="Control/UserControl.xaml"/>
         <ResourceDictionary Source="Docking/RaftingWindow.xaml"/>
+        <ResourceDictionary Source="ActiproSoftware/Editors/Themes/Includes/Styles/PartEditBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <!--<SolidColorBrush x:Key="WindowColorDark" Color="#FF1D1E26"/>-->
-    <!--<SolidColorBrush x:Key="WindowColorLight" Color="#FF222C36"/>
-    <SolidColorBrush x:Key="WindowForeColor" Color="#FFFFFFFF"/>
-    <SolidColorBrush x:Key="WindowColorGray" Color="#FF6B727C"/>-->
+    <!--<SolidColorBrush x:Key="BrushWindowBackgrond" Color="#FF1D1E26"/>-->
+    <!--<SolidColorBrush x:Key="BrushWindowTitleBackgrond" Color="#FF222C36"/>
+    <SolidColorBrush x:Key="BrushWindowForeground" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="BrushWindowBorderBrush" Color="#FF6B727C"/>-->
 
     <!--<LinearGradientBrush x:Key="BlueBackground" EndPoint="0,0" StartPoint="0,1">
         <GradientStop Color="#FF0FC8CA" Offset="0"/>
@@ -24,7 +25,7 @@
         <GradientStop Color="#FF109ED7" Offset="1"/>
     </LinearGradientBrush>
 
-    <LinearGradientBrush x:Key="ScrollBarNormal" EndPoint="0,0" StartPoint="0,1">
+    <LinearGradientBrush x:Key="BrushScrollBarNormal" EndPoint="0,0" StartPoint="0,1">
         <GradientStop Color="#FF109CD8" Offset="0"/>
         <GradientStop Color="#FF0FC8CA" Offset="1"/>
     </LinearGradientBrush>
@@ -39,7 +40,7 @@
         <GradientStop Color="#FF0FB2CA" Offset="1"/>
     </LinearGradientBrush>
 
-    <SolidColorBrush x:Key="TabControlItemSelected" Color="#FF47627C"/>
+    <SolidColorBrush x:Key="BrushTabControlItemSelected" Color="#FF47627C"/>
     <LinearGradientBrush x:Key="TabControlItemNormal" EndPoint="0,0" StartPoint="0,1">
         <GradientStop Color="#FFACC4CE" Offset="0"/>
         <GradientStop Color="#FFA2B5BD" Offset="1"/>

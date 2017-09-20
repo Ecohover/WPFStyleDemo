@@ -13,9 +13,9 @@
         <Style TargetType="{x:Type TabControl}">
             <Setter Property="OverridesDefaultStyle"  Value="True" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Background" Value="{StaticResource WindowColorDark}" />
-            <Setter Property="Foreground" Value="{StaticResource WindowForeColor}" />
-            <Setter Property="BorderBrush" Value="{StaticResource WindowColorGray}" />
+            <Setter Property="Background" Value="{StaticResource BrushWindowBackgrond}" />
+            <Setter Property="Foreground" Value="{StaticResource BrushWindowForeground}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushWindowBorderBrush}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TabControl}">
@@ -56,9 +56,9 @@
         <Style x:Key="OldTabControl" TargetType="{x:Type TabControl}">
             <Setter Property="OverridesDefaultStyle"  Value="True" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Background" Value="{StaticResource WindowColorDark}" />
-            <Setter Property="Foreground" Value="{StaticResource WindowForeColor}" />
-            <Setter Property="BorderBrush" Value="{StaticResource WindowColorGray}" />
+            <Setter Property="Background" Value="{StaticResource BrushWindowBackgrond}" />
+            <Setter Property="Foreground" Value="{StaticResource BrushWindowForeground}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushWindowBorderBrush}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TabControl}">
@@ -105,9 +105,9 @@
 
         <!-- TabItem 定義 Start-->
         <Style TargetType="{x:Type TabItem}">
-            <Setter Property="Background" Value="{StaticResource WindowColorDark}" />
-            <Setter Property="Foreground" Value="{StaticResource WindowForeColor}" />
-            <Setter Property="BorderBrush" Value="{StaticResource WindowColorGray}" />
+            <Setter Property="Background" Value="{StaticResource BrushWindowBackgrond}" />
+            <Setter Property="Foreground" Value="{StaticResource BrushWindowForeground}" />
+            <Setter Property="BorderBrush" Value="{StaticResource BrushWindowBorderBrush}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TabItem}">
@@ -132,7 +132,7 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter Property="Fill"  TargetName="Rectangle" Value="{StaticResource TabControlItemSelected}" />
+                                <Setter Property="Fill"  TargetName="Rectangle" Value="{StaticResource BrushTabControlItemSelected}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

@@ -9,7 +9,7 @@
                 <ControlTemplate>
                     <Rectangle Margin="14,0,0,0" 
                                SnapsToDevicePixels="true" 
-                               Stroke="{StaticResource WindowForeColor}" 
+                               Stroke="{StaticResource BrushWindowForeground}" 
                                StrokeThickness="1" 
                                StrokeDashArray="1 2"/>
                 </ControlTemplate>
@@ -19,9 +19,9 @@
 
     <!-- RadioButton 定義 Start-->
     <Style TargetType="{x:Type RadioButton}">
-        <Setter Property="Background" Value="{x:Static command:MyColor.WindowColorDark}"/>
+        <Setter Property="Background" Value="{x:Static command:MyStyleManager.BrushWindowBackgrond}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Foreground" Value="{x:Static command:MyColor.WindowForeColor}"/>
+        <Setter Property="Foreground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
@@ -47,7 +47,7 @@
                                        Margin="0"
                                        Opacity="0"></Image>
                                 <Ellipse x:Name="mask" 
-                                         Grid.Column="0" Fill="{x:Static command:MyColor.WindowColorDark}" 
+                                         Grid.Column="0" Fill="{x:Static command:MyStyleManager.BrushWindowBackgrond}" 
                                          Height="12" Width="12" 
                                          Margin="0" 
                                          StrokeThickness="0" 

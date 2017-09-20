@@ -7,8 +7,8 @@
              xmlns:command ="clr-namespace:MyStyle.Command" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus">
     <TextBox.Resources>
         <Style x:Key="TextBox" TargetType="{x:Type TextBox}">
-            <Setter Property="Background" Value="{x:Static command:MyColor.WindowColorLight}"/>
-            <Setter Property="Foreground" Value="{x:Static command:MyColor.WindowForeColor}"/>
+            <Setter Property="Background" Value="{x:Static command:MyStyleManager.BrushWindowTitleBackgrond}"/>
+            <Setter Property="Foreground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -26,7 +26,7 @@
                                     VerticalAlignment="Stretch" 
                                     Margin="0" 
                                     RadiusY="4" RadiusX="4" 
-                                    Fill="{x:Static command:MyColor.WindowColorLight}" />
+                                    Fill="{x:Static command:MyStyleManager.BrushWindowTitleBackgrond}" />
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="18"/>

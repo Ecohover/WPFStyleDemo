@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 using MyStyle.Control;
+using MyStyle.Command;
 
 namespace MyStyle
 {
@@ -30,6 +31,7 @@ namespace MyStyle
 
         public DemoPage(string style)
         {
+            MyStyle.Command.MyStyleManager.GetInstance();
             UpdateStyle(style);
             InitializeComponent();
             UpdateComdoBox();
@@ -45,7 +47,8 @@ namespace MyStyle
                 if (!style.Equals("Normal"))
                 {
                     mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
+                    mystyles.Source = new Uri($"pack://application:,,,/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
+                    MyResource.GetInstance().SetMyResource(mystyles);
                     this.Resources = mystyles;
 
                     WindowStyleName = "Window";
