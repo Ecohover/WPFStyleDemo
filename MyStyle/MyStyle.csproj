@@ -34,43 +34,48 @@
     <NoWarn>CS0168</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abt.Controls.SciChart3D.Wpf, Version=3.5.0.7128, Culture=neutral, PublicKeyToken=b55dd9efe817e823, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>dll\Abt.Controls.SciChart3D.Wpf.dll</HintPath>
+    <Reference Include="ActiproSoftware.Charts.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Charts.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="ActiproSoftware.Docking.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Docking.Wpf.dll</HintPath>
+    <Reference Include="ActiproSoftware.Docking.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Docking.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="ActiproSoftware.Editors.Wpf">
-      <HintPath>dll\ActiproSoftware.Editors.Wpf.dll</HintPath>
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Editors.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="ActiproSoftware.Shared.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9" />
-    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.Python.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.SyntaxEditor.Addons.Python.Wpf.dll</HintPath>
+    <Reference Include="ActiproSoftware.MicroCharts.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.MicroCharts.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="ActiproSoftware.Text.LanguageGeneration.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Text.LanguageGeneration.Wpf.dll</HintPath>
+    <Reference Include="ActiproSoftware.Shared.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Shared.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="ActiproSoftware.Text.LLParser.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Text.LLParser.Wpf.dll</HintPath>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Addons.Python.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.SyntaxEditor.Addons.Python.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="ActiproSoftware.Text.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Text.Wpf.dll</HintPath>
+    <Reference Include="ActiproSoftware.SyntaxEditor.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.SyntaxEditor.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="ActiproSoftware.Views.Wpf, Version=15.1.621.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Trunk\capitalpipe\ThirdParty\ActiproControls\ActiproSoftware.Views.Wpf.dll</HintPath>
+    <Reference Include="ActiproSoftware.Text.Addons.Python.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Text.Addons.Python.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Text.LanguageGeneration.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Text.LanguageGeneration.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Text.LLParser.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Text.LLParser.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Text.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Text.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.Views.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Views.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdParty\log4net-1.2.13\build\bin\net\2.0\debug\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -94,9 +99,9 @@
     <Compile Include="Command\MyDockManager.cs" />
     <Compile Include="Command\MyDockSite.cs" />
     <Compile Include="Command\MyResource.cs" />
+    <Compile Include="Command\MyStyleManagerImage.cs" />
     <Compile Include="Command\MyStyleManagerBrush.cs" />
     <Compile Include="Command\MyStyleManager.cs" />
-    <Compile Include="Command\MyStyleManagerImage.cs" />
     <Compile Include="Control\Button\BlueButton.xaml.cs">
       <DependentUpon>BlueButton.xaml</DependentUpon>
     </Compile>
@@ -106,17 +111,20 @@
     <Compile Include="Control\Button\GreenButton.xaml.cs">
       <DependentUpon>GreenButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\MyUserControl.xaml.cs">
-      <DependentUpon>MyUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Control\OldTabControl.xaml.cs">
-      <DependentUpon>OldTabControl.xaml</DependentUpon>
+    <Compile Include="Control\Button\NoColorButton.xaml.cs">
+      <DependentUpon>NoColorButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\Button\PictureButton.xaml.cs">
       <DependentUpon>PictureButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\Button\RedButton.xaml.cs">
       <DependentUpon>RedButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MyUserControl.xaml.cs">
+      <DependentUpon>MyUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\OldTabControl.xaml.cs">
+      <DependentUpon>OldTabControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\SearchTextBox.xaml.cs">
       <DependentUpon>SearchTextBox.xaml</DependentUpon>
@@ -150,30 +158,34 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Control\Button\BlueButton.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\Button\FlashOrderButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Button\GreenButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Button\NoColorButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\Button\GreenButton.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Control\Button\PictureButton.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Button\RedButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\MyUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\OldTabControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Control\Button\PictureButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Control\Button\RedButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,10 +198,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resource\ActiproSoftware\Editors\Themes\Includes\Styles\PartEditBox.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resource\Control\Buttons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -251,9 +259,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\CheckBox_Click.png" />
   </ItemGroup>
   <ItemGroup>
@@ -303,18 +308,32 @@
     <Resource Include="Image\Button_Flash.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\FlashOrder\Button_Center.png" />
+    <Resource Include="Image\FlashOrder\Button_Pin.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Image\FlashOrder\Button_Chart.png" />
     <Resource Include="Image\FlashOrder\Button_Eye.png" />
     <Resource Include="Image\FlashOrder\Button_LeftArrow.png" />
+    <Resource Include="Image\FlashOrder\Button_RightArrow.png" />
     <Resource Include="Image\FlashOrder\Button_List.png" />
     <Resource Include="Image\FlashOrder\Button_MITDelete.png" />
     <Resource Include="Image\FlashOrder\Button_NextArrow.png" />
     <Resource Include="Image\FlashOrder\Button_OrderDelete.png" />
     <Resource Include="Image\FlashOrder\Button_PreviousArrow.png" />
-    <Resource Include="Image\FlashOrder\Button_RightArrow.png" />
     <Resource Include="Image\FlashOrder\Button_Setting.png" />
     <Resource Include="Image\FlashOrder\Button_Target.png" />
     <Resource Include="Image\FlashOrder\Button_Tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\FlashOrder\Button_Unpin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Button_DownArrow.png" />
+    <Resource Include="Image\Button_UpArrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

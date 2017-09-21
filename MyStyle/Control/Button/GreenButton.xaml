@@ -49,7 +49,13 @@
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               Margin="0" 
                                               RecognizesAccessKey="True" 
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                    <ContentPresenter.Resources>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Foreground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
+                                        </Style>
+                                    </ContentPresenter.Resources>
+                                </ContentPresenter>
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>

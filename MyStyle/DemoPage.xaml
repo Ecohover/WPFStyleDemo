@@ -8,7 +8,7 @@
         xmlns:control="clr-namespace:MyStyle.Control" 
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="MyStyle.DemoPage" 
         mc:Ignorable="d"
-        Title="DemoPage" Height="701" Width="820"
+        Title="DemoPage" Height="800.333" Width="820"
         x:Name="windows" ResizeMode="NoResize">
     <Window.Resources>
 
@@ -16,7 +16,7 @@
     </Window.Resources>
 
     <Grid>
-        <TabControl Margin="45,375,461.667,73.333">
+        <TabControl Margin="13,227,493.667,320">
             <TabItem Header="TabItem1">
                 <Button Content="Test1" />
             </TabItem>
@@ -33,7 +33,7 @@
                 <Button Content="Test5" />
             </TabItem>
             <TabItem Header="TabItem6">
-                <Button Content="Test6" />
+                <Button Content="Test6" Margin="0,0,0,-0.667" />
             </TabItem>
             <TabItem Header="TabItem7">
                 <Button Content="Test7" />
@@ -48,7 +48,7 @@
                 <Button Content="Test10" />
             </TabItem>
         </TabControl>
-        <control:OldTabControl Margin="390,196,116.333,252" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}"/>
+        <control:OldTabControl Margin="11,457,495.667,122" StyleName="{Binding StyleName, ElementName=windows, Mode=OneWay}"/>
 
         <DataGrid RowHeaderWidth="30" x:Name="gridtest" Margin="584,12,0,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="211" Height="147" VerticalAlignment="Top">
 
@@ -93,10 +93,13 @@
                               Minimum="0" Maximum="999"
                               SpinnerVisibility="Visible" 
                               CenterSlotHorizontalAlignment="Right" 
-                               Margin="13,192,701.667,451.333"/>
-        <control:RedButton Content="Button" HorizontalAlignment="Left" Margin="65,240,0,0" VerticalAlignment="Top" Width="75"/>
-        <control:BlueButton Content="Button" HorizontalAlignment="Left" Margin="65,264,0,0" VerticalAlignment="Top" Width="75"/>
-        <control:GreenButton Content="Button" HorizontalAlignment="Left" Margin="65,288,0,0" VerticalAlignment="Top" Width="75"/>
+                               Margin="30,186,684.667,547"/>
+        <control:RedButton Content="Button" HorizontalAlignment="Left" Margin="155,182,0,0" VerticalAlignment="Top" Width="75"/>
+        <control:BlueButton Content="Button" HorizontalAlignment="Left" Margin="235,182,0,0" VerticalAlignment="Top" Width="75"/>
+        <control:GreenButton Content="Button" HorizontalAlignment="Left" Margin="310,182,0,0" VerticalAlignment="Top" Width="75"/>
+        <Expander Header="Expander" HorizontalAlignment="Left" Height="100" Margin="341,227,0,0" VerticalAlignment="Top" Width="359">
+            <Grid Background="#FFE5E5E5"/>
+        </Expander>
 
     </Grid>
 </Window>

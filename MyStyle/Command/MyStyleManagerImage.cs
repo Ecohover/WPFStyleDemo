@@ -26,6 +26,9 @@ namespace MyStyle.Command
 
         public static ImageSource ImageFlashSetting;
         public static ImageSource ImageFlashTarget;
+        public static ImageSource ImageFlashPin;
+        public static ImageSource ImageFlashUnpin;
+        public static ImageSource ImageFlashCenter;
         #endregion
 
         public void SetDefalutFalshImage()
@@ -49,6 +52,9 @@ namespace MyStyle.Command
 
             ImageFlashSetting = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_Setting.png"));
             ImageFlashTarget = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_Target.png"));
+            ImageFlashPin = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_Pin.png"));
+            ImageFlashUnpin = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_Unpin.png"));
+            ImageFlashCenter = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_Center.png"));
 
         }
 
