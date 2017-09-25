@@ -8,6 +8,7 @@
         xmlns:control="clr-namespace:MyStyle.Control" 
         xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Class="MyStyle.DemoPage" 
         mc:Ignorable="d"
+        xmlns:docking="http://schemas.actiprosoftware.com/winfx/xaml/docking"
         Title="DemoPage" Height="800.333" Width="820"
         x:Name="windows" ResizeMode="NoResize">
     <Window.Resources>
@@ -94,12 +95,23 @@
                               SpinnerVisibility="Visible" 
                               CenterSlotHorizontalAlignment="Right" 
                                Margin="30,186,684.667,547"/>
-        <control:RedButton Content="Button" HorizontalAlignment="Left" Margin="155,182,0,0" VerticalAlignment="Top" Width="75"/>
+        <control:RedButton x:Name="TestButton" Content="Button" 
+                           HorizontalAlignment="Left" Margin="155,182,0,0" 
+                           VerticalAlignment="Top" Width="75" Click="RedButton_Click"/>
         <control:BlueButton Content="Button" HorizontalAlignment="Left" Margin="235,182,0,0" VerticalAlignment="Top" Width="75"/>
-        <control:GreenButton Content="Button" HorizontalAlignment="Left" Margin="310,182,0,0" VerticalAlignment="Top" Width="75"/>
+        <control:GreenButton Content="Button" HorizontalAlignment="Left" Margin="320,182,0,0" VerticalAlignment="Top" Width="75"/>
         <Expander Header="Expander" HorizontalAlignment="Left" Height="100" Margin="341,227,0,0" VerticalAlignment="Top" Width="359">
             <Grid Background="#FFE5E5E5"/>
         </Expander>
+        <docking:NonTopmostPopup x:Name="popupFlashToolSetting" 
+                   IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"  >
+            <Grid  Height="124" Width="126" Background="LightYellow"  >
+                <Border BorderThickness="1" BorderBrush="#AA000000">
+                    <Grid  Margin="10" Background="LightYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
 
+                    </Grid>
+                </Border>
+            </Grid>
+        </docking:NonTopmostPopup>
     </Grid>
 </Window>

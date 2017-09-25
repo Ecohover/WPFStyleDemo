@@ -149,6 +149,26 @@ namespace MyStyle
                 MessageBox.Show("");
             }
         }
+
+        private void RedButton_Click(object sender, RoutedEventArgs e)
+        {
+            RedButton temp = (RedButton)sender;
+            popupFlashToolSettingOpen(temp);
+        }
+
+        private void popupFlashToolSettingOpen(RedButton obj)
+        {
+            if (popupFlashToolSetting.IsOpen)
+            {
+                popupFlashToolSetting.IsOpen = false;
+            }
+            else
+            {
+                popupFlashToolSetting.PlacementTarget = obj;
+                popupFlashToolSetting.Placement = System.Windows.Controls.Primitives.PlacementMode.Bottom;
+                popupFlashToolSetting.IsOpen = true;
+            }
+        }
     }
     public class TestList
     {
