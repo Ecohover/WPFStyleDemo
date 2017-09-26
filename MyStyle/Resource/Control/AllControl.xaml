@@ -1622,9 +1622,24 @@
                 <ControlTemplate TargetType="{x:Type Expander}">
                     <Border BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
-                            Background="{TemplateBinding Background}" CornerRadius="3" SnapsToDevicePixels="True">
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="3" SnapsToDevicePixels="True">
                         <DockPanel>
-                            <ToggleButton x:Name="HeaderSite" ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" DockPanel.Dock="Top" Foreground="{TemplateBinding Foreground}" FontWeight="{TemplateBinding FontWeight}" FontStyle="{TemplateBinding FontStyle}" FontStretch="{TemplateBinding FontStretch}" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" MinWidth="0" MinHeight="0" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <ToggleButton x:Name="HeaderSite" 
+                                          ContentTemplate="{TemplateBinding HeaderTemplate}" 
+                                          Content="{TemplateBinding Header}" 
+                                          DockPanel.Dock="Top" 
+                                          Foreground="{TemplateBinding Foreground}" 
+                                          FontWeight="{TemplateBinding FontWeight}" 
+                                          FontStyle="{TemplateBinding FontStyle}" 
+                                          FontStretch="{TemplateBinding FontStretch}"
+                                          FontSize="{TemplateBinding FontSize}" 
+                                          FontFamily="{TemplateBinding FontFamily}" 
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                                          Margin="1" MinWidth="0" MinHeight="0"
+                                          Padding="{TemplateBinding Padding}" 
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
                                 <ToggleButton.FocusVisualStyle>
                                     <Style>
                                         <Setter Property="Control.Template">
@@ -1646,22 +1661,21 @@
                                                     <Border Padding="{TemplateBinding Padding}">
                                                         <Grid Background="Transparent" SnapsToDevicePixels="False">
                                                             <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="19"/>
+                                                                <ColumnDefinition Width="20"/>
                                                                 <ColumnDefinition Width="*"/>
                                                             </Grid.ColumnDefinitions>
                                                             <Rectangle x:Name="mask" 
-                                                                       Grid.Column="1" 
+                                                                       Grid.Column="0" 
                                                                        Fill="{x:Static command:MyStyleManager.BrushWindowBackgrond}"
                                                                        Margin="0" 
-                                                                       Opacity="0"/>
-                                                            
+                                                                       Opacity="0"
+                                                                       Panel.ZIndex="20"/>
                                                             <Image x:Name="arrow" 
                                                                    Grid.Column="0" 
-                                                                   Height="4" Width="4" 
+                                                                   Height="10" Width="14" 
                                                                    Source="pack://application:,,,/MyStyle;component/Image/Button_DownArrow.png" 
-                                                                   Stretch="Uniform" 
-                                                                   Margin="0"
-                                                                   Opacity="0"/>
+                                                                   Stretch="Fill" 
+                                                                   Margin="0"/>
                                                             <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" 
                                                                               Content="{TemplateBinding Content}" Grid.Column="1" 
                                                                               ContentStringFormat="{TemplateBinding ContentStringFormat}" 
@@ -1691,7 +1705,16 @@
                                     </Style>
                                 </ToggleButton.Style>
                             </ToggleButton>
-                            <ContentPresenter x:Name="ExpandSite" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" DockPanel.Dock="Bottom" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" Visibility="Collapsed" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="ExpandSite" 
+                                              ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                              Content="{TemplateBinding Content}" 
+                                              ContentStringFormat="{TemplateBinding ContentStringFormat}" 
+                                              DockPanel.Dock="Bottom" 
+                                              Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              Margin="{TemplateBinding Padding}"
+                                              Visibility="Collapsed" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </DockPanel>
                     </Border>
                     <ControlTemplate.Triggers>

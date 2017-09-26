@@ -120,6 +120,9 @@
     <Compile Include="Control\Button\RedButton.xaml.cs">
       <DependentUpon>RedButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\ListBoxWithAutoScroll.xaml.cs">
+      <DependentUpon>ListBoxWithAutoScroll.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\MyUserControl.xaml.cs">
       <DependentUpon>MyUserControl.xaml</DependentUpon>
     </Compile>
@@ -180,6 +183,10 @@
     <Page Include="Control\Button\RedButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\ListBoxWithAutoScroll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\MyUserControl.xaml">
       <SubType>Designer</SubType>

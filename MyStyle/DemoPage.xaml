@@ -101,17 +101,22 @@
         <control:BlueButton Content="Button" HorizontalAlignment="Left" Margin="235,182,0,0" VerticalAlignment="Top" Width="75"/>
         <control:GreenButton Content="Button" HorizontalAlignment="Left" Margin="320,182,0,0" VerticalAlignment="Top" Width="75"/>
         <Expander Header="Expander" HorizontalAlignment="Left" Height="100" Margin="341,227,0,0" VerticalAlignment="Top" Width="359">
-            <Grid Background="#FFE5E5E5"/>
+            <Grid Background="Transparent">
+                <control:ListBoxWithAutoScroll x:Name ="Listboxtemp"></control:ListBoxWithAutoScroll>
+            </Grid>
         </Expander>
         <docking:NonTopmostPopup x:Name="popupFlashToolSetting" 
                    IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"  >
             <Grid  Height="124" Width="126" Background="LightYellow"  >
-                <Border BorderThickness="1" BorderBrush="#AA000000">
+                <Border BorderThickness="1" BorderBrush="#AA666666">
                     <Grid  Margin="10" Background="LightYellow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
 
                     </Grid>
                 </Border>
             </Grid>
         </docking:NonTopmostPopup>
+        <Expander Header="Expander" HorizontalAlignment="Left" Height="100" Margin="341,332,0,0" VerticalAlignment="Top" Width="359" ExpandDirection="Left">
+            <Grid Background="#FFE5E5E5"/>
+        </Expander>
     </Grid>
 </Window>

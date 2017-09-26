@@ -36,6 +36,7 @@ namespace MyStyle
             InitializeComponent();
             UpdateComdoBox();
             UpdatDataGrid();
+            UpdatListBox();
         }
 
         private void UpdateStyle(string style)
@@ -118,6 +119,24 @@ namespace MyStyle
             cbStyleName3.ItemsSource = cmbList;
             cbStyleName4.ItemsSource = cmbList;
         }
+        private void UpdatListBox()
+        {
+            ObservableCollection<string> list = new ObservableCollection<string>();
+
+            list.Add("A0001");
+            list.Add("A0002");
+            list.Add("A0003");
+            list.Add("A0004");
+            list.Add("A0005");
+            list.Add("A0006");
+            list.Add("A0007");
+            list.Add("A0008");
+            list.Add("A0009");
+            list.Add("A0010");
+
+            Listboxtemp.ItemsSource = list;
+        }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

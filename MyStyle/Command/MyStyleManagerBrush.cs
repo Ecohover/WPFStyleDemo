@@ -40,11 +40,16 @@ namespace MyStyle.Command
 
         public static Brush BrushListBoxNormal;
         public static Brush BrushListBoxClick;
+
+
+        public static Brush BrushFlashOrederSetting;
+        public static Brush BrushFlashEnterTactics;
+        public static Brush BrushFlashExitTactics;
+
         #endregion
 
         public void SetBrushColor()
         {
-
             BrushWindowBackgrond = GetSolidColorBrush("#FF1D1E26");
             BrushWindowTitleBackgrond = GetSolidColorBrush("#FF222C36");
             BrushWindowForeground = GetSolidColorBrush("#FFFFFFFF");
@@ -59,6 +64,16 @@ namespace MyStyle.Command
 
             BrushListBoxNormal = GetSolidColorBrush("#FF4773A2");
             BrushListBoxClick = GetSolidColorBrush("#FF628EBD");
+
+
+
+            BrushFlashOrederSetting = GetSolidColorBrush("#FF4773A2");
+            BrushFlashEnterTactics = GetSolidColorBrush("#FF628EBD");
+            BrushFlashExitTactics = GetSolidColorBrush("#FF0B57A2");
+
+
+
+
             GradientStopCollection stops;
 
             stops = new GradientStopCollection
