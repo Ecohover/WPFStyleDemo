@@ -32,16 +32,18 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid >
                             <Rectangle x:Name="rectangle" 
-                                   HorizontalAlignment="Stretch" 
-                                   Margin="0" 
-                                   VerticalAlignment="Stretch" 
-                                   RadiusY="4" RadiusX="4" 
-                                   Fill="{x:Static command:MyStyleManager.BrushWindowBackgrond}"/>
+                                       HorizontalAlignment="Stretch" 
+                                       Margin="0" 
+                                       VerticalAlignment="Stretch" 
+                                       RadiusY="4" RadiusX="4" 
+                                       Fill="{x:Static command:MyStyleManager.BrushWindowBackgrond}"
+                                       Opacity="0"
+                                       Panel.ZIndex="100"/>
                             <Border x:Name="border" 
                                 Margin="0" 
                                 Padding="2" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="Transparent" 
+                                BorderThickness="0" 
                                 SnapsToDevicePixels="true">
                                 <ContentPresenter x:Name="contentPresenter" 
                                                   Focusable="False" 

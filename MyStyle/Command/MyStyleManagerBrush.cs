@@ -32,7 +32,6 @@ namespace MyStyle.Command
         public static Brush BrushGridForeColorWhite;
         public static Brush BrushGridForeColorRed;
 
-
         public static Brush BrushButtonGreen;
         public static Brush BrushButtonRed;
         public static Brush BrushButtonBlue;
@@ -41,10 +40,15 @@ namespace MyStyle.Command
         public static Brush BrushListBoxNormal;
         public static Brush BrushListBoxClick;
 
+        public static Brush BrushRed;
+        public static Brush BrushGreen;
+
 
         public static Brush BrushFlashOrederSetting;
         public static Brush BrushFlashEnterTactics;
         public static Brush BrushFlashExitTactics;
+
+        public static Brush BrushFlashIncreaseAndDecreaseRowHeader;
 
         #endregion
 
@@ -70,6 +74,11 @@ namespace MyStyle.Command
             BrushFlashOrederSetting = GetSolidColorBrush("#FF4773A2");
             BrushFlashEnterTactics = GetSolidColorBrush("#FF628EBD");
             BrushFlashExitTactics = GetSolidColorBrush("#FF0B57A2");
+            BrushFlashIncreaseAndDecreaseRowHeader = GetSolidColorBrush("#FF60E0D3");
+
+
+            BrushRed = GetSolidColorBrush("#FFF51605");
+
 
 
 
