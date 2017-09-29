@@ -153,6 +153,9 @@
     <Compile Include="Windows\CommodityQuotesLivePanel.xaml.cs">
       <DependentUpon>CommodityQuotesLivePanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\GeneralOrder.xaml.cs">
+      <DependentUpon>GeneralOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MyControl.xaml.cs" />
     <Compile Include="Windows\FuturesQuotes.xaml.cs">
       <DependentUpon>FuturesQuotes.xaml</DependentUpon>
@@ -261,6 +264,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\FuturesQuotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\GeneralOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

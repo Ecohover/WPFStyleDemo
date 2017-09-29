@@ -24,8 +24,6 @@ namespace MyStyle.Windows
             InitializeComponent();
         }
 
-
-
         private void RadioButton_HM_Checked(object sender, RoutedEventArgs e)
         {
             Image_HM.Visibility = Visibility.Visible;

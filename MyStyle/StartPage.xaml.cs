@@ -72,10 +72,10 @@ namespace MyStyle
             string stylekey = selobj.Key;
             MyUserControl frm = new MyUserControl(stylekey);
             string title = "DockDemo";
-            OpenonDock(frm, title);
+            OpenonDock(frm, title, new Size(800, 600));
         }
 
-        private void OpenonDock(UserControl frm, string title)
+        private void OpenonDock(UserControl frm, string title, Size size)
         {
             try
             {
@@ -88,10 +88,10 @@ namespace MyStyle
             catch (Exception ex)
             {
             }
-            NewDock(frm, title);
+            NewDock(frm, title, size);
         }
 
-        public void NewDock(UserControl frm, string title)
+        public void NewDock(UserControl frm, string title, Size size)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace MyStyle
                 MyDockSiteManager.GetInstance().GetDockSite("Demo").ToolWindows.Add(toolwindows);
                 System.Drawing.Point pt = System.Windows.Forms.Control.MousePosition;
                 Point pt2 = new Point((pt.X - 32), (pt.Y + 8));
-                toolwindows.Float(pt2, new Size(850, 650));
+                toolwindows.Float(pt2, size);
             }
             catch (Exception ex)
             {
@@ -122,13 +122,19 @@ namespace MyStyle
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             FuturesQuotes frm = new FuturesQuotes();
-            OpenonDock(frm, "期权报价");
+            OpenonDock(frm, "期权报价", new Size(800, 600));
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             CommodityQuotes frm = new CommodityQuotes();
-            OpenonDock(frm, "商品报价");
+            OpenonDock(frm, "商品报价", new Size(800, 600));
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            GeneralOrder frm = new GeneralOrder();
+            OpenonDock(frm, "一般下單",new Size(250, 270));
         }
     }
 
