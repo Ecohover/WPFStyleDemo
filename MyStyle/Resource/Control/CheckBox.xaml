@@ -17,9 +17,9 @@
     </Style>
     <!-- CheckBox 定義 Start-->
     <Style TargetType="{x:Type CheckBox}">
-        <Setter Property="Background" Value="{x:Static command:MyStyleManager.BrushWindowBackgrond}"/>
+        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Foreground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
+        <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
@@ -44,7 +44,7 @@
                                    Margin="0" 
                                    Opacity="0"></Image>
                             <Rectangle x:Name="mask" 
-                                       Fill="{x:Static command:MyStyleManager.BrushWindowBackgrond}" 
+                                       Fill="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}" 
                                        Height="12" Width="12" 
                                        Margin="0" 
                                        StrokeThickness="0" 

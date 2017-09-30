@@ -96,7 +96,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\MyDockManager.cs" />
+    <Compile Include="Command\MyDockSiteManager.cs" />
     <Compile Include="Command\MyDockSite.cs" />
     <Compile Include="Command\MyResource.cs" />
     <Compile Include="Command\MyStyleManagerImage.cs" />
@@ -348,6 +348,20 @@
   <ItemGroup>
     <Resource Include="Image\Button_DownArrow.png" />
     <Resource Include="Image\Button_UpArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BaseLibrary\LanguageAide\LanguageAide.csproj">
+      <Project>{10425704-09fc-4954-b176-5ee80b0bf2b0}</Project>
+      <Name>LanguageAide</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LiteTrading\LiteUIKit\LiteUIKit.csproj">
+      <Project>{3aab0bc3-4234-4f90-96d6-0438eb8961df}</Project>
+      <Name>LiteUIKit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\TreeView_DownArrow.png" />
+    <Resource Include="Image\TreeView_RightArrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

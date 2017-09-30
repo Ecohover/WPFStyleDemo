@@ -4,8 +4,8 @@
 
     <!-- UserControl 定義 Start-->
     <Style x:Key="UserControl" TargetType="{x:Type UserControl}">
-        <Setter Property="Background" Value="{x:Static command:MyStyleManager.BrushWindowBackgrond}"/>
-        <Setter Property="Foreground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
+        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}"/>
+        <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
     </Style>
     <!-- UserControl 定義 End-->
 </ResourceDictionary>

@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace MyStyle.Command
 {
-    public partial class MyStyleManager
+    public partial class MyCurrentStyleManager
     {
         #region Brush
         public static Brush BrushWindowBackgrond;
@@ -42,6 +42,7 @@ namespace MyStyle.Command
 
         public static Brush BrushRed;
         public static Brush BrushGreen;
+        public static Brush BrushBlue;
 
 
         public static Brush BrushFlashOrederSetting;
@@ -78,6 +79,8 @@ namespace MyStyle.Command
 
 
             BrushRed = GetSolidColorBrush("#FFF51605");
+            BrushGreen = GetSolidColorBrush("#FF52AD38");
+            BrushBlue = GetSolidColorBrush("#FF596BF4");
 
 
 

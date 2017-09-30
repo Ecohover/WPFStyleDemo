@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace MyStyle.Command
 {
-    public partial class MyStyleManager
+    public partial class MyCurrentStyleManager
     {
         #region Image
         public static ImageSource ImageFlashOrderDelete;
@@ -29,6 +29,10 @@ namespace MyStyle.Command
         public static ImageSource ImageFlashPin;
         public static ImageSource ImageFlashUnpin;
         public static ImageSource ImageFlashCenter;
+
+
+        public static ImageSource ImageTreeViewExpanded;
+        public static ImageSource ImageTreeViewCollapsed;
         #endregion
 
         public void SetDefalutFalshImage()
@@ -55,6 +59,10 @@ namespace MyStyle.Command
             ImageFlashPin = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_Pin.png"));
             ImageFlashUnpin = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_Unpin.png"));
             ImageFlashCenter = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_Center.png"));
+
+
+            ImageTreeViewExpanded = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/TreeView_DownArrow.png"));
+            ImageTreeViewCollapsed = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/TreeView_RightArrow.png"));
 
         }
 

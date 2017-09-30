@@ -13,7 +13,7 @@
     </Style>
 
     <ControlTemplate x:Key="WindowTemplate" TargetType="{x:Type Window}">
-        <Grid Background="{x:Static command:MyStyleManager.BrushWindowTitleBackgrond}">
+        <Grid Background="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"/>
@@ -41,7 +41,7 @@
                            VerticalContentAlignment="Center"
                            HorizontalAlignment="Stretch"
                            VerticalAlignment="Stretch"
-                           Foreground="{x:Static command:MyStyleManager.BrushWindowForeground}"  
+                           Foreground="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"  
                            FontSize="16"
                            sw:WindowDragBehavior.LeftMouseButtonDrag="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
                            sw:ControlDoubleClickBehavior.ExecuteCommand="{StaticResource MaximizeCommand}"
@@ -110,8 +110,8 @@
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="MinWidth" Value="100"/>
         <Setter Property="MinHeight" Value="100"/>
-        <Setter Property="Background" Value="{x:Static command:MyStyleManager.BrushWindowBackgrond}"/>
-        <Setter Property="BorderBrush" Value="{x:Static command:MyStyleManager.BrushWindowTitleBackgrond}"/>
+        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}"/>
+        <Setter Property="BorderBrush" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Template" Value="{StaticResource WindowTemplate}"/>

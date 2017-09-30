@@ -7,9 +7,9 @@
 
 	<!-- dockingPrimitives:RaftingWindow -->
 	<Style x:Key="RaftingWindow" TargetType="{x:Type dockingPrimitives:RaftingWindow}">
-        <Setter Property="Background" Value="{x:Static command:MyStyleManager.BrushWindowTitleBackgrond}" />
-        <Setter Property="Foreground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}" />
-        <Setter Property="BorderBrush" Value="{x:Static command:MyStyleManager.BrushWindowForeground}" />
+        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}" />
+        <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}" />
+        <Setter Property="BorderBrush" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}" />
 		<Setter Property="BorderThickness" Value="1" />
 		
 		<Setter Property="MinHeight" Value="30" />

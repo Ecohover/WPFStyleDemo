@@ -13,7 +13,7 @@
                     <ControlTemplate>
                         <Rectangle Margin="0,0,0,0" 
                                SnapsToDevicePixels="true" 
-                               Stroke="{x:Static command:MyStyleManager.BrushWindowForeground}" 
+                               Stroke="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}" 
                                StrokeThickness="1" 
                                StrokeDashArray="1 2"/>
                     </ControlTemplate>
@@ -21,8 +21,8 @@
             </Setter>
         </Style>
         <Style x:Key="FlashOrderButton" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="{x:Static command:MyStyleManager.BrushEvenTriggerLevel1}"/>
-            <Setter Property="Foreground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
+            <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushEvenTriggerLevel1}"/>
+            <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -36,7 +36,7 @@
                                    Margin="0" 
                                    VerticalAlignment="Stretch" 
                                    RadiusY="4" RadiusX="4" 
-                                   Fill="{x:Static command:MyStyleManager.BrushEvenTriggerLevel1}"/>
+                                   Fill="{x:Static command:MyCurrentStyleManager.BrushEvenTriggerLevel1}"/>
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="25"/>
@@ -78,17 +78,17 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyStyleManager.BrushWindowTitleBackgrond}"></Setter>
+                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"></Setter>
                             </Trigger>
                             <Trigger Property="HasContent" Value="true">
                                 <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonMarkFocus}"/>
                                 <Setter Property="Padding" Value="-1,-1,-1,-1"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyStyleManager.BrushEvenTriggerLevel2}" />
+                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushEvenTriggerLevel2}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyStyleManager.BrushEvenTriggerLevel1}" />
+                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushEvenTriggerLevel1}" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Opacity" TargetName="rectangle" Value="0.5"/>

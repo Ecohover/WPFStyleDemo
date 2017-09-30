@@ -14,7 +14,7 @@
                     <ControlTemplate>
                         <Rectangle Margin="0,0,0,0" 
                                SnapsToDevicePixels="true" 
-                               Stroke="{x:Static command:MyStyleManager.BrushWindowForeground}" 
+                               Stroke="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}" 
                                StrokeThickness="1" 
                                StrokeDashArray="1 2"/>
                     </ControlTemplate>
@@ -36,7 +36,7 @@
                                        Margin="0" 
                                        VerticalAlignment="Stretch" 
                                        RadiusY="4" RadiusX="4" 
-                                       Fill="{x:Static command:MyStyleManager.BrushWindowBackgrond}"
+                                       Fill="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}"
                                        Opacity="0"
                                        Panel.ZIndex="100"/>
                             <Border x:Name="border" 
@@ -54,7 +54,7 @@
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" >
                                     <ContentPresenter.Resources>
                                         <Style TargetType="{x:Type TextBlock}">
-                                            <Setter Property="Foreground" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"/>
+                                            <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
                                         </Style>
                                     </ContentPresenter.Resources>
                                 </ContentPresenter>
@@ -62,7 +62,7 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyStyleManager.BrushWindowForeground}"></Setter>
+                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"></Setter>
                             </Trigger>
                             <Trigger Property="HasContent" Value="true">
                                 <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonMarkFocus}"/>

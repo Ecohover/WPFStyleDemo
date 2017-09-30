@@ -9,29 +9,33 @@ using System.Windows.Media;
 
 namespace MyStyle.Command
 {
-    public partial class MyStyleManager
+    public partial class MyCurrentStyleManager
     {
         private readonly ILog Logger = LogManager.GetLogger(typeof(MyDockSiteManager));
-        private Dictionary<string, MyStyleManager> AllStyle = new Dictionary<string, MyStyleManager>();
-        
-        private static MyStyleManager instance = null;
+
+        private Dictionary<string, MyCurrentStyleManager> AllStyle = new Dictionary<string, MyCurrentStyleManager>();
+        private static MyCurrentStyleManager instance = null;
         private static object objLock = new object();
-        public static MyStyleManager GetInstance()
+        public static MyCurrentStyleManager GetInstance()
         {
             if (instance == null)
             {
                 lock (objLock)
                 {
-                    if (instance == null) instance = new MyStyleManager();
+                    if (instance == null) instance = new MyCurrentStyleManager();
                 }
             }
             return instance;
         }
-        private MyStyleManager() :
-            base()
+        public void ResetStyle()
         {
             SetBrushColor();
             SetFalshImage();
+        }
+        private MyCurrentStyleManager() :
+            base()
+        {
+            //ResetStyle();
         }
     }
 }

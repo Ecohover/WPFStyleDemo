@@ -31,7 +31,7 @@ namespace MyStyle
 
         public DemoPage(string style)
         {
-            MyStyle.Command.MyStyleManager.GetInstance();
+            MyStyle.Command.MyCurrentStyleManager.GetInstance();
             UpdateStyle(style);
             InitializeComponent();
             UpdateComdoBox();
@@ -41,19 +41,14 @@ namespace MyStyle
 
         private void UpdateStyle(string style)
         {
-            ResourceDictionary mystyles;
             Logger.Debug(" UpdateStyle style = " + style);
             try
             {
                 if (!style.Equals("Normal"))
                 {
-                    mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"pack://application:,,,/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
-                    MyResource.GetInstance().SetMyResource(mystyles);
-                    this.Resources = mystyles;
-
+                    this.Resources = MyResource.GetInstance().SetResources((StyleEnum)Enum.Parse(typeof(StyleEnum), style));
                     WindowStyleName = "Window";
-                    this.Style = mystyles[WindowStyleName] as Style;
+                    this.Style = this.Resources[WindowStyleName] as Style;
                 }
                 StyleName = style;
             }

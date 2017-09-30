@@ -1,4 +1,5 @@
 ﻿using log4net;
+using MyStyle.Command;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -39,17 +40,14 @@ namespace MyStyle.Control
 
         private void UpdateStyle(string style)
         {
-            ResourceDictionary mystyles;
             Logger.Debug(" UpdateStyle style = " + style);
             try
             {
                 if (!style.Equals("Normal"))
                 {
-                    mystyles = new ResourceDictionary();
-                    mystyles.Source = new Uri($"/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
-                    this.Resources = mystyles;
+                    this.Resources = MyResource.GetInstance().SetResources((StyleEnum)Enum.Parse(typeof(StyleEnum), style));
                     UserControlStyleName = "UserControl";
-                    this.Style = mystyles[UserControlStyleName] as Style;
+                    this.Style = this.Resources[UserControlStyleName] as Style;
                 }
                 StyleName = style;
             }
