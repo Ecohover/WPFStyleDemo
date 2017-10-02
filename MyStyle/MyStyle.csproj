@@ -34,17 +34,11 @@
     <NoWarn>CS0168</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiproSoftware.Charts.Wpf">
-      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Charts.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="ActiproSoftware.Docking.Wpf">
       <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Docking.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="ActiproSoftware.Editors.Wpf">
       <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Editors.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="ActiproSoftware.MicroCharts.Wpf">
-      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.MicroCharts.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="ActiproSoftware.Shared.Wpf">
       <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Shared.Wpf.dll</HintPath>
@@ -152,9 +146,6 @@
     </Compile>
     <Compile Include="Windows\CommodityQuotesLivePanel.xaml.cs">
       <DependentUpon>CommodityQuotesLivePanel.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\GeneralOrder.xaml.cs">
-      <DependentUpon>GeneralOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MyControl.xaml.cs" />
     <Compile Include="Windows\FuturesQuotes.xaml.cs">
@@ -267,10 +258,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\GeneralOrder.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\CheckBox_Click.png" />
@@ -348,16 +335,6 @@
   <ItemGroup>
     <Resource Include="Image\Button_DownArrow.png" />
     <Resource Include="Image\Button_UpArrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\BaseLibrary\LanguageAide\LanguageAide.csproj">
-      <Project>{10425704-09fc-4954-b176-5ee80b0bf2b0}</Project>
-      <Name>LanguageAide</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\LiteTrading\LiteUIKit\LiteUIKit.csproj">
-      <Project>{3aab0bc3-4234-4f90-96d6-0438eb8961df}</Project>
-      <Name>LiteUIKit</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\TreeView_DownArrow.png" />

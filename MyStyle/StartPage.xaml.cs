@@ -20,8 +20,7 @@ namespace MyStyle
         public StartPage()
         {
             InitializeComponent();
-            MyDockSiteManager.GetInstance().StyleEnum = StyleEnum.Dark01;
-            MyStyle.Command.MyStyleManager.GetInstance();
+            MyResource.GetInstance().StyleEnum = StyleEnum.Dark01;
             this.Title = this.Title + "  V-" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             MyDockSiteManager.GetInstance().CreateDockSite("Demo");
             var temp = Application.Current.Resources;
@@ -133,8 +132,8 @@ namespace MyStyle
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            GeneralOrder frm = new GeneralOrder();
-            OpenonDock(frm, "一般下單",new Size(250, 270));
+            //GeneralOrder frm = new GeneralOrder();
+            //OpenonDock(frm, "一般下單",new Size(250, 270));
         }
     }
 
