@@ -140,7 +140,7 @@
     <!-- CheckBox 定義 End-->
 
     <!-- RadioButton 定義 Start-->
-    <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}">
+    <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource {x:Type RadioButton}}">
         <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
@@ -1134,7 +1134,7 @@
     <!-- DataGrid 定義 Start-->
     <BooleanToVisibilityConverter x:Key="bool2VisibilityConverter" />
 
-    <!--Style and template for the button in the upper left corner of the DataGrid.-->
+
     <Style TargetType="{x:Type Button}"
        x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}">
         <Setter Property="Template">
@@ -1172,7 +1172,6 @@
         </Setter>
     </Style>
 
-    <!--Style and template for the DataGrid.-->
     <Style x:Key="{x:Type DataGrid}" TargetType="{x:Type DataGrid}">
         <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
         <Setter Property="BorderBrush" Value="{x:Static command:MyCurrentStyleManager.BrushWindowBorderBrush}"/>
@@ -1268,7 +1267,6 @@
         </Style.Triggers>
     </Style>
 
-    <!--Style and template for the DataGridCell.-->
     <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
@@ -1308,7 +1306,7 @@
         </Style.Triggers>
     </Style>
 
-    <!--Style and template for the DataGridRow.-->
+    
     <Style x:Key="{x:Type DataGridRow}" TargetType="{x:Type DataGridRow}">
         <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}"/>
         <Setter Property="BorderBrush" Value="{x:Static command:MyCurrentStyleManager.BrushWindowBorderBrush}"/>
@@ -1437,7 +1435,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <!--Style and template for the resize control on the DataGridRowHeader.-->
+    
     <Style x:Key="RowHeaderGripperStyle" TargetType="{x:Type Thumb}">
         <Setter Property="Height" Value="8" />
         <Setter Property="Background" Value="Transparent" />
@@ -1451,7 +1449,7 @@
         </Setter>
     </Style>
 
-    <!--Style and template for the DataGridRowHeader.-->
+    
     <Style x:Key="{x:Type DataGridRowHeader}" TargetType="{x:Type DataGridRowHeader}">
         <Setter Property="Width" Value="0"/>
         <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}" />
@@ -1459,7 +1457,7 @@
         <Setter Property="BorderThickness" Value="1" />
     </Style>
 
-    <!--Style and template for the resize control on the DataGridColumnHeader.-->
+    
     <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}">
         <Setter Property="Width" Value="8" />
         <Setter Property="Background" Value="Transparent" />
@@ -1473,7 +1471,7 @@
         </Setter>
     </Style>
 
-    <!--Style and template for the DataGridColumnHeader.-->
+    
     <Style x:Key="{x:Type DataGridColumnHeader}" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -1502,7 +1500,7 @@
         </Setter>
     </Style>
 
-    <!--Style and template for the DataGridColumnHeadersPresenter.-->
+    
     <Style x:Key="{x:Type DataGridColumnHeadersPresenter}" TargetType="{x:Type DataGridColumnHeadersPresenter}">
         <Setter Property="Template">
             <Setter.Value>
@@ -2657,7 +2655,7 @@
 
 
 
-    <!-- ridSplitter 定義 Start-->
+    <!-- GridSplitter 定義 Start-->
     <Style x:Key="{x:Type GridSplitter}" TargetType="{x:Type GridSplitter}" BasedOn="{StaticResource {x:Type GridSplitter}}">
         <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}" />
         <Setter Property="IsTabStop" Value="true" />
@@ -2707,7 +2705,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <!-- ridSplitter 定義 End-->
+    <!-- GridSplitter 定義 End-->
 
     <!-- GroupBox 定義 Start-->
     <Style x:Key="{x:Type GroupBox}" TargetType="{x:Type GroupBox}">

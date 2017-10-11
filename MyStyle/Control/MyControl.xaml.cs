@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyStyle.Windows
+namespace MyStyle.Control
 {
     /// <summary>
     /// DefultUserControl.xaml 的互動邏輯
@@ -28,23 +28,24 @@ namespace MyStyle.Windows
 
         public MyControl()
         {
+            MyResource.GetInstance().ResetResources();
             StyleName = MyResource.GetInstance().StyleEnum.ToString();
-            UpdateStyle(StyleName);
+            UpdateStyle();
         }
 
 
-        private void UpdateStyle(string style)
+        private void UpdateStyle()
         {
-            Logger.Debug(" UpdateStyle style = " + style);
+            Logger.Debug(" UpdateStyle style = " + StyleName);
             try
             {
-                if (!style.Equals("Normal"))
+                if (!StyleName.Equals("Normal"))
                 {
-                    this.Resources = MyResource.GetInstance().SetResources((StyleEnum)Enum.Parse(typeof(StyleEnum), style));
+                    this.Resources = MyResource.GetInstance().CloneMyResource((StyleEnum)Enum.Parse(typeof(StyleEnum), StyleName));
                     UserControlStyleName = "UserControl";
                     this.Style = this.Resources[UserControlStyleName] as Style;
                 }
-                StyleName = style;
+                StyleName = StyleName;
             }
             catch (Exception ex)
             {

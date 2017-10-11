@@ -117,11 +117,15 @@
     <Compile Include="Control\ListBoxWithAutoScroll.xaml.cs">
       <DependentUpon>ListBoxWithAutoScroll.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Control\MyControl.xaml.cs" />
     <Compile Include="Control\MyUserControl.xaml.cs">
       <DependentUpon>MyUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\OldTabControl.xaml.cs">
       <DependentUpon>OldTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\OptionViewDataGrid.xaml.cs">
+      <DependentUpon>OptionViewDataGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="Control\SearchTextBox.xaml.cs">
       <DependentUpon>SearchTextBox.xaml</DependentUpon>
@@ -129,6 +133,7 @@
     <Compile Include="DemoPage.xaml.cs">
       <DependentUpon>DemoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Feature\ScrollSynchronizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
@@ -147,9 +152,11 @@
     <Compile Include="Windows\CommodityQuotesLivePanel.xaml.cs">
       <DependentUpon>CommodityQuotesLivePanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\MyControl.xaml.cs" />
     <Compile Include="Windows\FuturesQuotes.xaml.cs">
       <DependentUpon>FuturesQuotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\OptionQuotes.xaml.cs">
+      <DependentUpon>OptionQuotes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ViewModel\CommodityQuotesLivePanelViewModel.cs" />
   </ItemGroup>
@@ -183,12 +190,16 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\MyUserControl.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\OldTabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\OptionViewDataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Control\SearchTextBox.xaml">
       <SubType>Designer</SubType>
@@ -255,6 +266,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\FuturesQuotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\OptionQuotes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
