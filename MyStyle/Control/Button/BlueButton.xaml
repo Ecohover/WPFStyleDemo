@@ -32,24 +32,24 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid >
                             <Rectangle x:Name="rectangle" 
-                                   HorizontalAlignment="Stretch" 
-                                   Margin="0" 
-                                   VerticalAlignment="Stretch" 
-                                   RadiusY="4" RadiusX="4" 
-                                   Fill="{x:Static command:MyCurrentStyleManager.BrushButtonBlue}"/>
+                                       HorizontalAlignment="Stretch" 
+                                       Margin="0" 
+                                       VerticalAlignment="Stretch" 
+                                       RadiusY="4" RadiusX="4" 
+                                       Fill="{x:Static command:MyCurrentStyleManager.BrushButtonBlue}"/>
                             <Border x:Name="border" 
-                                Margin="0" 
-                                Padding="2" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                SnapsToDevicePixels="true">
+                                    Margin="0" 
+                                    Padding="2" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    SnapsToDevicePixels="true">
                                 <ContentPresenter x:Name="contentPresenter" 
-                                              Focusable="False" 
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Margin="0" 
-                                              RecognizesAccessKey="True" 
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" >
+                                                  Focusable="False" 
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Margin="0" 
+                                                  RecognizesAccessKey="True" 
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" >
                                     <ContentPresenter.Resources>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>

@@ -1,10 +1,11 @@
 ﻿<TextBox x:Class="MyStyle.Control.SearchTextBox"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             xmlns:command ="clr-namespace:MyStyle.Command" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus">
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+         xmlns:command ="clr-namespace:MyStyle.Command"
+         mc:Ignorable="d" 
+         GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus">
     <TextBox.Resources>
         <Style x:Key="TextBox" TargetType="{x:Type TextBox}">
             <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"/>

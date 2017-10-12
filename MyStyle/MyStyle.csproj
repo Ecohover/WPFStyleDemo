@@ -34,11 +34,17 @@
     <NoWarn>CS0168</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActiproSoftware.Charts.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Charts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="ActiproSoftware.Docking.Wpf">
       <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Docking.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="ActiproSoftware.Editors.Wpf">
       <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Editors.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ActiproSoftware.MicroCharts.Wpf">
+      <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.MicroCharts.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="ActiproSoftware.Shared.Wpf">
       <HintPath>..\..\ThirdParty\ActiproControls\ActiproSoftware.Shared.Wpf.dll</HintPath>
@@ -93,9 +99,9 @@
     <Compile Include="Command\MyDockSiteManager.cs" />
     <Compile Include="Command\MyDockSite.cs" />
     <Compile Include="Command\MyResource.cs" />
-    <Compile Include="Command\MyStyleManagerImage.cs" />
-    <Compile Include="Command\MyStyleManagerBrush.cs" />
-    <Compile Include="Command\MyStyleManager.cs" />
+    <Compile Include="Command\MyCurrentStyleManagerImage.cs" />
+    <Compile Include="Command\MyCurrentStyleManagerBrush.cs" />
+    <Compile Include="Command\MyCurrentStyleManager.cs" />
     <Compile Include="Control\Button\BlueButton.xaml.cs">
       <DependentUpon>BlueButton.xaml</DependentUpon>
     </Compile>
@@ -117,10 +123,7 @@
     <Compile Include="Control\ListBoxWithAutoScroll.xaml.cs">
       <DependentUpon>ListBoxWithAutoScroll.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Control\MyControl.xaml.cs" />
-    <Compile Include="Control\MyUserControl.xaml.cs">
-      <DependentUpon>MyUserControl.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Control\MyControl.cs" />
     <Compile Include="Control\OldTabControl.xaml.cs">
       <DependentUpon>OldTabControl.xaml</DependentUpon>
     </Compile>
@@ -152,11 +155,20 @@
     <Compile Include="Windows\CommodityQuotesLivePanel.xaml.cs">
       <DependentUpon>CommodityQuotesLivePanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\GeneralOrder.xaml.cs">
+      <DependentUpon>GeneralOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\FuturesQuotes.xaml.cs">
       <DependentUpon>FuturesQuotes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\OptionQuotes.xaml.cs">
       <DependentUpon>OptionQuotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\OptionTactics.xaml.cs">
+      <DependentUpon>OptionTactics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\OrderSetting.xaml.cs">
+      <DependentUpon>OrderSetting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ViewModel\CommodityQuotesLivePanelViewModel.cs" />
   </ItemGroup>
@@ -189,17 +201,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Control\MyUserControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Control\OldTabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\OptionViewDataGrid.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\SearchTextBox.xaml">
       <SubType>Designer</SubType>
@@ -269,9 +277,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\OptionQuotes.xaml">
+    <Page Include="Windows\GeneralOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\OptionQuotes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\OptionTactics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\OrderSetting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -352,8 +372,39 @@
     <Resource Include="Image\Button_UpArrow.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BaseLibrary\LanguageAide\LanguageAide.csproj">
+      <Project>{10425704-09fc-4954-b176-5ee80b0bf2b0}</Project>
+      <Name>LanguageAide</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LiteTrading\LiteUIKit\LiteUIKit.csproj">
+      <Project>{3aab0bc3-4234-4f90-96d6-0438eb8961df}</Project>
+      <Name>LiteUIKit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Image\TreeView_DownArrow.png" />
     <Resource Include="Image\TreeView_RightArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Button_WhiteSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\OptionTactics\G02.png" />
+    <Resource Include="Image\OptionTactics\G03.png" />
+    <Resource Include="Image\OptionTactics\G04.png" />
+    <Resource Include="Image\OptionTactics\G05.png" />
+    <Resource Include="Image\OptionTactics\G06.png" />
+    <Resource Include="Image\OptionTactics\G07.png" />
+    <Resource Include="Image\OptionTactics\R02.png" />
+    <Resource Include="Image\OptionTactics\R03.png" />
+    <Resource Include="Image\OptionTactics\R04.png" />
+    <Resource Include="Image\OptionTactics\R05.png" />
+    <Resource Include="Image\OptionTactics\R06.png" />
+    <Resource Include="Image\OptionTactics\R07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\OptionTactics\G01.png" />
+    <Resource Include="Image\OptionTactics\R01.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

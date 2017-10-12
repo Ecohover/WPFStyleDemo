@@ -48,9 +48,9 @@ namespace MyStyle
         {
             try
             {
-                PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
-                string stylekey = selobj.Key;
-                DemoPage win = new DemoPage(stylekey);
+                //PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
+                //string stylekey = selobj.Key;
+                DemoPage win = new DemoPage("Normal");
                 win.Show();
             }
             catch (Exception ex)
@@ -140,19 +140,19 @@ namespace MyStyle
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             OptionQuotes frm = new OptionQuotes();
-            OpenonDock(frm, "期权报价", new Size(400, 300));
+            OpenonDock(frm, "期权报价", new Size(600, 300));
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
-            //GeneralOrder frm = new GeneralOrder();
-            //OpenonDock(frm, "期权策略单", new Size(250, 270));
+            OptionTactics frm = new OptionTactics();
+            OpenonDock(frm, "期权策略单", new Size(600, 600));
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            //GeneralOrder frm = new GeneralOrder();
-            //OpenonDock(frm, "下单设定", new Size(250, 270));
+            OrderSetting frm = new OrderSetting();
+            OpenonDock(frm, "下单设定", new Size(500, 230));
         }
     }
 

@@ -1,13 +1,13 @@
 ﻿<local:MyControl x:Class="MyStyle.Control.OptionViewDataGrid"
-                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-                 xmlns:command ="clr-namespace:MyStyle.Command" Margin="2"
-                 xmlns:local="clr-namespace:MyStyle.Control"
-                 xmlns:feature="clr-namespace:MyStyle.Feature"
-                 mc:Ignorable="d"
-                 Background="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}">
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                     xmlns:command ="clr-namespace:MyStyle.Command" 
+                     xmlns:local="clr-namespace:MyStyle.Control"
+                     xmlns:feature="clr-namespace:MyStyle.Feature"
+                     mc:Ignorable="d" Margin="2"
+                     Background="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}">
     <Grid x:Name="grid">
         <Grid.Resources>
 
@@ -338,12 +338,12 @@
                                                     <RowDefinition Height="Auto" />
                                                 </Grid.RowDefinitions>
                                                 <Grid Focusable="false"
-                                                  Background="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"
-                                                  Visibility="{Binding HeadersVisibility, 
-                                                              ConverterParameter={x:Static DataGridHeadersVisibility.All}, 
-                                                              Converter={x:Static DataGrid.HeadersVisibilityConverter}, 
-                                                              RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
-                                                 Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                                      Background="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"
+                                                      Visibility="{Binding HeadersVisibility, 
+                                                                      ConverterParameter={x:Static DataGridHeadersVisibility.All}, 
+                                                                      Converter={x:Static DataGrid.HeadersVisibilityConverter}, 
+                                                                      RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                       Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
                                                 <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter"
                                                                         Grid.Column="1"
                                                                         Visibility="{Binding HeadersVisibility, 
