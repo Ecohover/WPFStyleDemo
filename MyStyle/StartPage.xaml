@@ -9,15 +9,10 @@
     <Grid>
         <Button Content="开启页面" HorizontalAlignment="Left" Margin="176,75,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click" Visibility="Collapsed"/>
         <ComboBox x:Name="cbStyleName" HorizontalAlignment="Left" Margin="176,45,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding PageStyleList}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="1" SelectionChanged="cbStyleName_SelectionChanged" Visibility="Collapsed"/>
-        <Button x:Name="btn_Test" Content="Test" Visibility="Collapsed" HorizontalAlignment="Left" Margin="175.678,72.987,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btn_DockTest" Content="开启Dock页面" HorizontalAlignment="Left" Margin="176,99,0,0" VerticalAlignment="Top" Width="95" Click="btn_DockTest_Click" Visibility="Collapsed" />
-        <Button Content="Test" HorizontalAlignment="Left" Margin="176,141,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click_1" Visibility="Collapsed"/>
-        <Button Content="期貨報價" HorizontalAlignment="Left" Margin="61,78,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
-        <Button Content="商品報價" HorizontalAlignment="Left" Margin="61,103,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3" />
-        <Button Content="一般下單" HorizontalAlignment="Left" Margin="61,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
-        <Button Content="期权报价" HorizontalAlignment="Left" Margin="176,79,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5"/>
-        <Button Content="期权策略单" HorizontalAlignment="Left" Margin="176,103,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
-        <Button Content="下单设定" HorizontalAlignment="Left" Margin="176,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_7"/>
+
+        <Button x:Name="btn_DockTest" Content="开启Dock页面" HorizontalAlignment="Left" Margin="70,85,0,0" VerticalAlignment="Top" Width="95" 
+                Click="Button_Click" 
+                Visibility="Visible" />
 
     </Grid>
 </Window>

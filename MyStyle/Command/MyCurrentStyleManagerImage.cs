@@ -6,12 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace MyStyle.Command
 {
     public partial class MyCurrentStyleManager
     {
         #region Image
+
+        public static ImageSource ImageIco;
+
+        public static ImageSource ImageLogin;
+        public static ImageSource ImageLidericon;
+
         public static ImageSource ImageFlashOrderDelete;
         public static ImageSource ImageFlashMITOrderDelete;
         public static ImageSource ImageFlashEye;
@@ -31,6 +38,8 @@ namespace MyStyle.Command
         public static ImageSource ImageFlashCenter;
 
         public static ImageSource ImageButtonWhiteSetting;
+        public static ImageSource ImageButtonClose;
+
 
         public static ImageSource ImageTreeViewExpanded;
         public static ImageSource ImageTreeViewCollapsed;
@@ -51,6 +60,34 @@ namespace MyStyle.Command
         public static ImageSource ImageOptionTacticsG05;
         public static ImageSource ImageOptionTacticsG06;
         public static ImageSource ImageOptionTacticsG07;
+
+
+        public static ImageSource ImageToolBackground;
+        public static ImageSource ImageToolBackgroundLeft;
+        public static ImageSource ImageToolBackgroundRight;
+
+
+        public static ImageSource ImageToolClose;
+        public static ImageSource ImageToolInfo;
+        public static ImageSource ImageToolLinkGreen;
+        public static ImageSource ImageToolLinkOrange;
+        public static ImageSource ImageToolLinkRed;
+        public static ImageSource ImageToolUpHide;
+
+        public static ImageSource ImagePropertyGridArowDown;
+        public static ImageSource ImagePropertyGridArowUp;
+        public static ImageSource ImagePropertyGridSortLetter;
+        public static ImageSource ImagePropertyGridSortTree;
+
+
+        public static ImageSource ImageUpArrow;
+        public static ImageSource ImageDownArrow;
+
+        public static ImageSource ImageMaxRightArrow;
+        public static ImageSource ImageMaxLeftArrow;
+        public static ImageSource ImageRightArrow;
+        public static ImageSource ImageLeftArrow;
+
         #endregion
 
         public void SetDefalutFalshImage()
@@ -58,8 +95,14 @@ namespace MyStyle.Command
 
         }
 
-        public void SetFalshImage()
+        public void SetImage()
         {
+            Logger.Debug("SetImage()");
+
+
+            ImageLogin = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/Application/LiderLogin.png"));
+            ImageLidericon = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/Application/Lidericon.ico"));
+
             ImageFlashOrderDelete = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_OrderDelete.png"));
             ImageFlashMITOrderDelete = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_MITDelete.png"));
             ImageFlashEye = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/FlashOrder/Button_Eye.png"));
@@ -83,6 +126,7 @@ namespace MyStyle.Command
             ImageTreeViewExpanded = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/TreeView_DownArrow.png"));
             ImageTreeViewCollapsed = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/TreeView_RightArrow.png"));
 
+            ImageButtonClose = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/Button_Close.png"));
 
             ImageOptionTacticsR01 = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/OptionTactics/R01.png"));
             ImageOptionTacticsR02 = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/OptionTactics/R02.png"));
@@ -100,6 +144,38 @@ namespace MyStyle.Command
             ImageOptionTacticsG05 = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/OptionTactics/G05.png"));
             ImageOptionTacticsG06 = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/OptionTactics/G06.png"));
             ImageOptionTacticsG07 = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/OptionTactics/G07.png"));
+
+
+            ImageToolBackground = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/ToolMenu/ToolBackground.png"));
+            ImageToolBackgroundLeft = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/ToolMenu/ToolBackgroundLeft.png"));
+            ImageToolBackgroundRight = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/ToolMenu/ToolBackgroundRight.png"));
+
+
+            ImageToolUpHide = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/ToolMenu/ToolUpHide.png"));
+            ImageToolClose = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/ToolMenu/ToolClose.png"));
+            ImageToolInfo = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/ToolMenu/ToolInfo.png"));
+
+            ImageToolLinkGreen = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/ToolMenu/ToolLinkGreen.png"));
+            ImageToolLinkOrange = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/ToolMenu/ToolLinkOrange.png"));
+            ImageToolLinkRed = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/ToolMenu/ToolLinkRed.png"));
+
+
+            ImagePropertyGridArowDown = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/PropertyGrid/ArowDown.png"));
+            ImagePropertyGridArowUp = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/PropertyGrid/ArowUp.png"));
+            ImagePropertyGridSortLetter = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/PropertyGrid/SortLetter.png"));
+            ImagePropertyGridSortTree = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/PropertyGrid/SortTree.png"));
+
+
+
+            ImageMaxRightArrow = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/Button/Brtton_MaxRightArrow.png"));
+            ImageMaxLeftArrow = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/Button/Brtton_MaxLeftArrow.png"));
+
+            ImageUpArrow = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/Brtton/Brtton_UpArrow.png"));
+            ImageDownArrow = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/Brtton/Button_DownArrow.png"));
+            ImageRightArrow = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/Button/Button_RightArrow.png"));
+            ImageLeftArrow = new System.Windows.Media.Imaging.BitmapImage(new Uri("pack://application:,,,/MyStyle;component/Image/Button/Button_LeftArrow.png"));
+
+
         }
 
     }

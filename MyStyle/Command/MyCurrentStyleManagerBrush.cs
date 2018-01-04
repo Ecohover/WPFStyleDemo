@@ -12,10 +12,11 @@ namespace MyStyle.Command
     public partial class MyCurrentStyleManager
     {
         #region Brush
-        public static Brush BrushWindowBackgrond;
-        public static Brush BrushWindowTitleBackgrond;
+        public static Brush BrushWindowBackground;
+        public static Brush BrushWindowTitleBackground;
         public static Brush BrushWindowForeground;
         public static Brush BrushWindowBorderBrush;
+        public static Brush BrushWindowGridBorder;
 
         public static Brush BrushEvenTriggerLevel1;
         public static Brush BrushEvenTriggerLevel2;
@@ -28,9 +29,11 @@ namespace MyStyle.Command
         public static Brush BrushTabControlItemNormal;
 
         public static Brush BrushGridBackGroundGray;
+        public static Brush BrushGridBorderBrush;
         public static Brush BrushGridForeColorYellow;
         public static Brush BrushGridForeColorWhite;
         public static Brush BrushGridForeColorRed;
+        public static Brush BrushGridForeColorGreen;
 
         public static Brush BrushButtonGreen;
         public static Brush BrushButtonRed;
@@ -50,20 +53,40 @@ namespace MyStyle.Command
         public static Brush BrushFlashExitTactics;
 
         public static Brush BrushFlashIncreaseAndDecreaseRowHeader;
+        public static Brush BrushSciCharInfoBackground;
+
+
+        public static Brush BrushSyntheticFuturesTitleBackGround;
+
+        #region WindowSettings
+        public static Brush BrushOptionTactics_Info;
+        public static Brush BrushOptionTactics_OperationTiming;
+
+
+        public static Brush BrushOptionAutoOrderTitleBar;
+        public static Brush BrushOptionAutoArrangeOrderTitleBar;
+        #endregion
+
+
 
         #endregion
 
         public void SetBrushColor()
         {
-            BrushWindowBackgrond = GetSolidColorBrush("#FF1D1E26");
-            BrushWindowTitleBackgrond = GetSolidColorBrush("#FF222C36");
+            Logger.Debug("SetBrushColor()");
+            BrushWindowBackground = GetSolidColorBrush("#FF1D1E26");
+            BrushWindowTitleBackground = GetSolidColorBrush("#FF222C36");
             BrushWindowForeground = GetSolidColorBrush("#FFFFFFFF");
             BrushWindowBorderBrush = GetSolidColorBrush("#FF6B727C");
+            BrushWindowGridBorder = GetSolidColorBrush("#FF60769D");
+            
 
             BrushGridBackGroundGray = GetSolidColorBrush("#FF384959");
+            BrushGridBorderBrush = GetSolidColorBrush("#FF28292D");
             BrushGridForeColorYellow = GetSolidColorBrush("#FFFAE808");
             BrushGridForeColorWhite = GetSolidColorBrush("#FFFFFFFF");
             BrushGridForeColorRed = GetSolidColorBrush("#FFFF3838");
+            BrushGridForeColorGreen = GetSolidColorBrush("#FF02D403");
 
             BrushTabControlItemSelected = GetSolidColorBrush("#FF47627C");
 
@@ -82,6 +105,17 @@ namespace MyStyle.Command
             BrushGreen = GetSolidColorBrush("#FF52AD38");
             BrushBlue = GetSolidColorBrush("#FF596BF4");
 
+
+
+            BrushSciCharInfoBackground = GetSolidColorBrush("#FFEBEBEB");
+
+            BrushOptionTactics_OperationTiming = GetSolidColorBrush("#FF67F4E8");
+            BrushOptionTactics_Info = GetSolidColorBrush("#FF109ED7");
+
+
+
+            BrushOptionAutoOrderTitleBar = GetSolidColorBrush("#FF257680");
+            BrushOptionAutoArrangeOrderTitleBar = GetSolidColorBrush("#FF34529F");
 
 
 
@@ -158,7 +192,9 @@ namespace MyStyle.Command
             BrushButtonGreen = GetLinearGradientBrush(
                     new System.Windows.Point(0, 0),
                     new System.Windows.Point(0, 1),
-                    stops); stops = new GradientStopCollection
+                    stops);
+
+            stops = new GradientStopCollection
             {
                 GetGradientStop("#FFEC5F6F", 0),
                 GetGradientStop("#FFFF8580", 1)
@@ -167,7 +203,9 @@ namespace MyStyle.Command
             BrushButtonRed = GetLinearGradientBrush(
                     new System.Windows.Point(0, 0),
                     new System.Windows.Point(0, 1),
-                    stops); stops = new GradientStopCollection
+                    stops);
+
+            stops = new GradientStopCollection
             {
                 GetGradientStop("#FF0FC8CA", 0),
                 GetGradientStop("#FF109ED7", 1)
@@ -177,8 +215,19 @@ namespace MyStyle.Command
                     new System.Windows.Point(0, 0),
                     new System.Windows.Point(0, 1),
                     stops);
-            
-    }
+
+            stops = new GradientStopCollection
+            {
+                GetGradientStop("#FFF57C47", 1),
+                GetGradientStop("#FFF3A179", 0)
+            };
+
+            BrushSyntheticFuturesTitleBackGround = GetLinearGradientBrush(
+                    new System.Windows.Point(0, 0),
+                    new System.Windows.Point(0, 1),
+                    stops);
+
+        }
 
         private Brush GetLinearGradientBrush(System.Windows.Point StartPoint, System.Windows.Point EndPoint, GradientStopCollection Stops)
         {

@@ -78,7 +78,7 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"></Setter>
+                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackground}"></Setter>
                             </Trigger>
                             <Trigger Property="HasContent" Value="true">
                                 <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonMarkFocus}"/>

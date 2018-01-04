@@ -25,52 +25,44 @@
             <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushButtonGreen}"/>
             <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
             <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="Padding" Value="5,2,5,2"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid >
+                        <Grid Background="Transparent">
                             <Rectangle x:Name="rectangle" 
-                                   HorizontalAlignment="Stretch" 
-                                   Margin="0" 
-                                   VerticalAlignment="Stretch" 
+                                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
                                    RadiusY="4" RadiusX="4" 
-                                   Fill="{x:Static command:MyCurrentStyleManager.BrushButtonGreen}"/>
+                                   Fill="{TemplateBinding Background}" />
                             <Border x:Name="border" 
-                                Margin="0" 
-                                Padding="2" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                SnapsToDevicePixels="true">
+                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                 BorderBrush="{TemplateBinding BorderBrush}" 
+                                 BorderThickness="0" 
+                                 SnapsToDevicePixels="true">
                                 <ContentPresenter x:Name="contentPresenter" 
                                               Focusable="False" 
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Margin="0" 
                                               RecognizesAccessKey="True" 
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
-                                    <ContentPresenter.Resources>
-                                        <Style TargetType="{x:Type TextBlock}">
-                                            <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
-                                        </Style>
-                                    </ContentPresenter.Resources>
-                                </ContentPresenter>
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"></Setter>
+                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackground}"></Setter>
                             </Trigger>
                             <Trigger Property="HasContent" Value="true">
                                 <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonMarkFocus}"/>
                                 <Setter Property="Padding" Value="-1,-1,-1,-1"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Opacity" TargetName="rectangle" Value="0.6" />
+                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushEvenTriggerLevel2}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Opacity" TargetName="rectangle" Value="0.8" />
+                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Static command:MyCurrentStyleManager.BrushEvenTriggerLevel1}" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Opacity" TargetName="rectangle" Value="0.5"/>

@@ -1129,7 +1129,7 @@
 	<!-- editors:DoubleEditBox -->
 	<Style x:Key="{x:Type editors:DoubleEditBox}" TargetType="{x:Type editors:DoubleEditBox}" BasedOn="{StaticResource {x:Type editors:PartEditBox}}">
         <Setter Property="Hint" Value="{productsEditors:SRExtension UIDoubleEditBoxHint}" />
-        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"/>
+        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackground}"/>
         <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="DropDownHorizontalAlignment" Value="Right" />
@@ -1372,7 +1372,7 @@
 	<!-- editors:Int32EditBox -->
 	<Style x:Key="{x:Type editors:Int32EditBox}" TargetType="{x:Type editors:Int32EditBox}" BasedOn="{StaticResource {x:Type editors:PartEditBox}}">
         <Setter Property="Hint" Value="{productsEditors:SRExtension UIInt32EditBoxHint}" />
-        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"/>
+        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackground}"/>
         <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="DropDownHorizontalAlignment" Value="Right" />
@@ -1535,8 +1535,11 @@
 	<!-- editors:Int64EditBox -->
 	<Style x:Key="{x:Type editors:Int64EditBox}" TargetType="{x:Type editors:Int64EditBox}" BasedOn="{StaticResource {x:Type editors:PartEditBox}}">
 		<Setter Property="Hint" Value="{productsEditors:SRExtension UIInt64EditBoxHint}" />
-		<Setter Property="DropDownHorizontalAlignment" Value="Right" />
-		<Setter Property="MinDropDownHeight" Value="150" />
+        <Setter Property="DropDownHorizontalAlignment" Value="Right" />
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackground}"/>
+        <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
+        <Setter Property="MinDropDownHeight" Value="150" />
 		<Setter Property="MinDropDownWidth" Value="150" />
 		<Setter Property="DropDownContentTemplate">
 			<Setter.Value>

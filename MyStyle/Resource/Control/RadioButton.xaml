@@ -19,7 +19,7 @@
 
     <!-- RadioButton 定義 Start-->
     <Style TargetType="{x:Type RadioButton}">
-        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}"/>
+        <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowBackground}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
         <Setter Property="Template">
@@ -47,7 +47,7 @@
                                        Margin="0"
                                        Opacity="0"></Image>
                                 <Ellipse x:Name="mask" 
-                                         Grid.Column="0" Fill="{x:Static command:MyCurrentStyleManager.BrushWindowBackgrond}" 
+                                         Grid.Column="0" Fill="{x:Static command:MyCurrentStyleManager.BrushWindowBackground}" 
                                          Height="12" Width="12" 
                                          Margin="0" 
                                          StrokeThickness="0" 

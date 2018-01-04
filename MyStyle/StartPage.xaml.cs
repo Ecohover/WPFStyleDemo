@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using MyStyle.Command;
 using MyStyle.Control;
-using MyStyle.Windows;
+
 
 namespace MyStyle
 {
@@ -20,7 +20,7 @@ namespace MyStyle
         public StartPage()
         {
             InitializeComponent();
-            MyResource.GetInstance().StyleEnum = StyleEnum.Dark01;
+            MyStyleResource.GetInstance().StyleEnum = StyleEnum.Dark01;
             MyStyle.Command.MyCurrentStyleManager.GetInstance();
             this.Title = this.Title + "  V-" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             MyDockSiteManager.GetInstance().CreateDockSite("Demo");
@@ -60,19 +60,9 @@ namespace MyStyle
         }
         
 
-
-        //    private void btn_DockTest_Click(object sender, RoutedEventArgs e)
-        //    {
-        //        NewDock();
-        //    }
-
         private void btn_DockTest_Click(object sender, RoutedEventArgs e)
         {
             PageStyle selobj = (PageStyle)cbStyleName.SelectedItem;
-            //string stylekey = selobj.Key;
-            //MyUserControl frm = new MyUserControl(stylekey);
-            //string title = "DockDemo";
-            //OpenonDock(frm, title, new Size(800, 600));
         }
 
         private void OpenonDock(UserControl frm, string title, Size size)
@@ -113,47 +103,7 @@ namespace MyStyle
         {
             SelectedPageStyle = (PageStyle)cbStyleName.SelectedItem;
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            //MyStyle.GetInstance().SetColor();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            FuturesQuotes frm = new FuturesQuotes();
-            OpenonDock(frm, "期货报价", new Size(800, 600));
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            CommodityQuotes frm = new CommodityQuotes();
-            OpenonDock(frm, "商品报价", new Size(800, 600));
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            //GeneralOrder frm = new GeneralOrder();
-            //OpenonDock(frm, "一般下單",new Size(250, 270));
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            OptionQuotes frm = new OptionQuotes();
-            OpenonDock(frm, "期权报价", new Size(600, 300));
-        }
-
-        private void Button_Click_6(object sender, RoutedEventArgs e)
-        {
-            OptionTactics frm = new OptionTactics();
-            OpenonDock(frm, "期权策略单", new Size(600, 600));
-        }
-
-        private void Button_Click_7(object sender, RoutedEventArgs e)
-        {
-            OrderSetting frm = new OrderSetting();
-            OpenonDock(frm, "下单设定", new Size(500, 230));
-        }
+        
     }
 
 

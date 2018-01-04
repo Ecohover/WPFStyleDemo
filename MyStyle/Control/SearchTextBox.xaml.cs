@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyStyle.Command;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -22,9 +23,21 @@ namespace MyStyle.Control
     public partial class SearchTextBox : TextBox
     {
         public static readonly DependencyProperty StyleNameProperty =
-            DependencyProperty.Register("StyleName", typeof(string), typeof(SearchTextBox), new FrameworkPropertyMetadata { PropertyChangedCallback = Callback });
+            DependencyProperty.Register("StyleName", typeof(string), typeof(SearchTextBox));
+        public static readonly DependencyProperty MaskTextProperty =
+            DependencyProperty.Register("MaskText", typeof(string), typeof(SearchTextBox), new FrameworkPropertyMetadata { PropertyChangedCallback = MaskTextCallback });
+
+        private static void MaskTextCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            SearchTextBox obj = (SearchTextBox)d;
+            if (obj.Text.Length == 0)
+            {
+                obj.Text = obj.MaskText;
+            }
+        }
 
         public bool UseGloablStyle { get; set; }
+
 
         public string StyleName
         {
@@ -32,70 +45,54 @@ namespace MyStyle.Control
             set
             {
                 base.SetValue(StyleNameProperty, value);
-                SetStyle(value);
+                this.SetStyle();
             }
         }
-        private static void Callback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
-        {
-            SearchTextBox obj = (SearchTextBox)dependencyObject;
-            obj.SetStyle((string)args.NewValue);
-        }
 
-        private void SetStyle(string style)
+        public string MaskText
         {
-            ResourceDictionary mystyles;
-            try
+            set
             {
-                if (UseGloablStyle)
-                {
-                    if (!style.Equals("Normal") && !style.Equals(""))
-                    {
-                        mystyles = new ResourceDictionary();
-                        mystyles.Source = new Uri($"/MyStyle;component/Resource/{style}.xaml", UriKind.RelativeOrAbsolute);
-                        this.Resources = mystyles;
-                        this.Style = mystyles["SearchTextBox"] as Style;
-                    }
-                }
-                else
-                {
-                    this.Style = this.Resources["TextBox"] as Style;
-                }
-
+                base.SetValue(MaskTextProperty, value);
             }
-            catch (Exception ex)
+            get
             {
 
+                return (string)base.GetValue(MaskTextProperty);
             }
         }
+
+        
 
      
         public SearchTextBox()
         {
-            UseGloablStyle = false;
+            UseGloablStyle = true;
+            StyleName = MyStyle.Command.MyStyleResource.GetInstance().StyleEnum.ToString();
             Initial();
         }
 
         public void Initial()
         {
             InitializeComponent();
-            SetStyle(StyleName);
-            ResetText();
-        }
+            this.SetStyle();
 
-        public void ResetText()
-        {
-            //Text = LanguageAide.LanguageSupport.GetString("String_flash_filterinfo");
-            Text = "输入商品代码/名称";
-        }
-
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            Text = string.Empty;
         }
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            ResetText();
+            if (Text.Length == 0)
+            {
+                Text = MaskText;
+            }
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (Text == MaskText)
+            {
+                Text = string.Empty;
+            }
         }
     }
 }

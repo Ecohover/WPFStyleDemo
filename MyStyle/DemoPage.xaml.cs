@@ -46,7 +46,7 @@ namespace MyStyle
             {
                 if (!style.Equals("Normal"))
                 {
-                    this.Resources = MyResource.GetInstance().CloneMyResource((StyleEnum)Enum.Parse(typeof(StyleEnum), style));
+                    this.Resources = MyStyleResource.GetInstance().CloneMyResource((StyleEnum)Enum.Parse(typeof(StyleEnum), style));
                     WindowStyleName = "Window";
                     this.Style = this.Resources[WindowStyleName] as Style;
                 }

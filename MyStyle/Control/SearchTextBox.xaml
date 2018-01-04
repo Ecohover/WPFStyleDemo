@@ -7,8 +7,8 @@
          mc:Ignorable="d" 
          GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus">
     <TextBox.Resources>
-        <Style x:Key="TextBox" TargetType="{x:Type TextBox}">
-            <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}"/>
+        <Style x:Key="SearchTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackground}"/>
             <Setter Property="Foreground" Value="{x:Static command:MyCurrentStyleManager.BrushWindowForeground}"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
@@ -22,43 +22,42 @@
                     <ControlTemplate TargetType="{x:Type TextBox}">
                         <Grid>
                             <Rectangle  x:Name="rectangle" 
-                                    Focusable="false" 
-                                    HorizontalAlignment="Stretch" 
-                                    VerticalAlignment="Stretch" 
-                                    Margin="0" 
-                                    RadiusY="4" RadiusX="4" 
-                                    Fill="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackgrond}" />
+                                        Focusable="false" 
+                                        HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                        Margin="0" RadiusY="4" RadiusX="4" 
+                                        Fill="{x:Static command:MyCurrentStyleManager.BrushWindowTitleBackground}" />
                             <Grid >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="18"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Border x:Name="border"  
-                                Grid.Column="1" 
-                                VerticalAlignment="Center" 
-                                Margin="4,0,0,0" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                SnapsToDevicePixels="True" >
-                                    <ScrollViewer x:Name="PART_ContentHost" 
-                                          Focusable="false" 
-                                          HorizontalScrollBarVisibility="Hidden" 
-                                          VerticalScrollBarVisibility="Hidden"/>
+                                <Border x:Name="border" Grid.Column="1" 
+                                        VerticalAlignment="Center" 
+                                        Margin="4,0,0,0" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        SnapsToDevicePixels="True" >
+                                    <Grid>
+                                        <!--<Label x:Name="labelmask" Visibility="Collapsed"/>-->
+                                        <ScrollViewer x:Name="PART_ContentHost" 
+                                                      Focusable="false" 
+                                                      HorizontalScrollBarVisibility="Hidden" 
+                                                      VerticalScrollBarVisibility="Hidden"/>
+                                    </Grid>
                                 </Border>
                                 <Border x:Name="image" 
-                                Grid.Column="0" 
-                                Margin="0" 
-                                Padding="0" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                SnapsToDevicePixels="true">
-                                    <Image 
-                                    Source="pack://application:,,,/MyStyle;component/Image/TextBox_Search.png"  
-                                    Focusable="false" 
-                                    Width="10" Height="10" 
-                                    VerticalAlignment="Center"
-                                    Stretch="UniformToFill" 
-                                    Margin="2"></Image>
+                                        Grid.Column="0" 
+                                        Margin="0" 
+                                        Padding="0" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        SnapsToDevicePixels="true">
+                                    <Image  Source="pack://application:,,,/MyStyle;component/Image/TextBox_Search.png"  
+                                            Focusable="false" 
+                                            Width="10" Height="10" 
+                                            VerticalAlignment="Center"
+                                            Stretch="UniformToFill" 
+                                            Margin="2"/>
                                 </Border>
                             </Grid>
                         </Grid>
@@ -73,6 +72,17 @@
                             <Trigger Property="IsKeyboardFocused" Value="true">
                                 <Setter Property="Opacity" TargetName="rectangle" Value="0.8"/>
                             </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Opacity" TargetName="rectangle" Value="0.8"/>
+                            </Trigger>
+                            <!--<MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding RelativeSource={ RelativeSource Mode=FindAncestor, AncestorType={x:Type TextBox}}, Path=IsFocused}" Value="False"/>
+                                    <Condition Binding="{Binding ElementName=labelmask,Path=Text.Length, Mode=OneWay}" Value="0"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="Visibility" TargetName="labelmask" Value="Visible"/>
+                            </MultiDataTrigger>-->
+                            
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>

@@ -24,6 +24,10 @@ namespace MyStyle.Control
         public Option option;
         public static object lockobj = new object();
         public Guid ID;
+        public FrameworkElement LeftTemp;
+        public FrameworkElement RightTemp;
+        public ScrollViewer LeftScrollViewer;
+        public ScrollViewer RightScrollViewer;
         public OptionViewDataGrid()
         {
             ID = Guid.NewGuid();
@@ -31,23 +35,30 @@ namespace MyStyle.Control
             InitializeComponent();
             SetStyle();
             SetOption();
+            LeftTemp = LeftCallDataGrid.Template.LoadContent() as FrameworkElement;
+            RightTemp = LeftCallDataGrid.Template.LoadContent() as FrameworkElement;
 
-
-            ScrollViewer scroll = (ScrollViewer)LeftCallDataGrid.Template.FindName("DG_ScrollViewer1", LeftCallDataGrid);
-            if (scroll != null) ScrollSynchronizer.AddToVerticalScrollGroup(ID.ToString(), scroll);
-            scroll = (ScrollViewer)CenterHeadDataGrid.Template.FindName("DG_ScrollViewer", CenterHeadDataGrid);
-            if (scroll != null) ScrollSynchronizer.AddToVerticalScrollGroup(ID.ToString(), scroll);
-            scroll = (ScrollViewer)RightPutDataGrid.Template.FindName("DG_ScrollViewer", RightPutDataGrid);
-            if (scroll != null) ScrollSynchronizer.AddToVerticalScrollGroup(ID.ToString(), scroll);
+            LeftScrollViewer = (ScrollViewer)LeftTemp.FindName("DG_ScrollViewer");
+            RightScrollViewer = (ScrollViewer)RightTemp.FindName("DG_ScrollViewer");
+            if (LeftScrollViewer != null) ScrollSynchronizer.AddToVerticalScrollGroup(ID.ToString(), LeftScrollViewer);
+            if (RightScrollViewer != null) ScrollSynchronizer.AddToVerticalScrollGroup(ID.ToString(), RightScrollViewer);
+            LeftScrollViewer.ScrollChanged += LeftScrollViewer_ScrollChanged;
         }
+
+        private void LeftScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+        
         ~OptionViewDataGrid()
         {
-            ScrollViewer scroll = (ScrollViewer)LeftCallDataGrid.Template.FindName("DG_ScrollViewer", LeftCallDataGrid);
-            if (scroll != null) ScrollSynchronizer.RemoveFromVerticalScrollGroup(ID.ToString(), scroll);
-            scroll = (ScrollViewer)CenterHeadDataGrid.Template.FindName("DG_ScrollViewer", CenterHeadDataGrid);
-            if (scroll != null) ScrollSynchronizer.RemoveFromVerticalScrollGroup(ID.ToString(), scroll);
-            scroll = (ScrollViewer)RightPutDataGrid.Template.FindName("DG_ScrollViewer", RightPutDataGrid);
-            if (scroll != null) ScrollSynchronizer.RemoveFromVerticalScrollGroup(ID.ToString(), scroll);
+            if (LeftScrollViewer != null) ScrollSynchronizer.RemoveFromVerticalScrollGroup(ID.ToString(), LeftScrollViewer);
+            if (RightScrollViewer != null) ScrollSynchronizer.RemoveFromVerticalScrollGroup(ID.ToString(), RightScrollViewer);
+        }
+        public override void OnApplyTemplate()
+        {
+
+            base.OnApplyTemplate();
         }
         private void SetStyle()
         {
@@ -92,14 +103,15 @@ namespace MyStyle.Control
         {
             option = new Option();
             LeftCallDataGrid.ItemsSource = option.OptionPrices;
-            CenterHeadDataGrid.ItemsSource = option.OptionPrices;
             RightPutDataGrid.ItemsSource = option.OptionPrices;
         }
+        
     }
 
 
     public class Option
     {
+        
         public List<OptionPrice> OptionPrices { get; set; }
         public Option()
         {

@@ -8,10 +8,12 @@
         <ResourceDictionary Source="Control/UserControl.xaml"/>
         <ResourceDictionary Source="Docking/RaftingWindow.xaml"/>
         <ResourceDictionary Source="ActiproSoftware/Editors/Themes/Includes/Styles/PartEditBox.xaml"/>
+        <ResourceDictionary Source="ActiproSoftware/PropertyGrid/Themes/Includes/Styles/PropertyGrid.xaml"/>
+        <ResourceDictionary Source="ActiproSoftware/PropertyGrid/Themes/Includes/Styles/TreeListView.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <!--<SolidColorBrush x:Key="BrushWindowBackgrond" Color="#FF1D1E26"/>-->
-    <!--<SolidColorBrush x:Key="BrushWindowTitleBackgrond" Color="#FF222C36"/>
+    <!--<SolidColorBrush x:Key="BrushWindowBackground" Color="#FF1D1E26"/>-->
+    <!--<SolidColorBrush x:Key="BrushWindowTitleBackground" Color="#FF222C36"/>
     <SolidColorBrush x:Key="BrushWindowForeground" Color="#FFFFFFFF"/>
     <SolidColorBrush x:Key="BrushWindowBorderBrush" Color="#FF6B727C"/>-->
 

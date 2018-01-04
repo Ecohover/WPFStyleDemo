@@ -45,7 +45,7 @@ namespace MyStyle.Control
             {
                 if (!style.Equals("Normal"))
                 {
-                    this.Resources = MyResource.GetInstance().CloneMyResource((StyleEnum)Enum.Parse(typeof(StyleEnum), style));
+                    this.Resources = MyStyleResource.GetInstance().CloneMyResource((StyleEnum)Enum.Parse(typeof(StyleEnum), style));
                     UserControlStyleName = "UserControl";
                     this.Style = this.Resources[UserControlStyleName] as Style;
                 }

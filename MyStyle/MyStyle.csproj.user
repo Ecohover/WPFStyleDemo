@@ -8,7 +8,7 @@
     <StartProgram>C:\Demo\WPFDemo\WPFDemo.exe</StartProgram>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartAction>Program</StartAction>
+    <StartAction>Project</StartAction>
     <StartProgram>C:\AuroraQuantitative\RamenTrader\RamenTrader.exe</StartProgram>
   </PropertyGroup>
 </Project>

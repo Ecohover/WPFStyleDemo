@@ -12,8 +12,7 @@ namespace MyStyle.Command
     public partial class MyCurrentStyleManager
     {
         private readonly ILog Logger = LogManager.GetLogger(typeof(MyDockSiteManager));
-
-        private Dictionary<string, MyCurrentStyleManager> AllStyle = new Dictionary<string, MyCurrentStyleManager>();
+        
         private static MyCurrentStyleManager instance = null;
         private static object objLock = new object();
         public static MyCurrentStyleManager GetInstance()
@@ -30,7 +29,7 @@ namespace MyStyle.Command
         public void ResetStyle()
         {
             SetBrushColor();
-            SetFalshImage();
+            SetImage();
         }
         private MyCurrentStyleManager() :
             base()

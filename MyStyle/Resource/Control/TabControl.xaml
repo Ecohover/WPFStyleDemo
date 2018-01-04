@@ -13,7 +13,7 @@
         <Style TargetType="{x:Type TabControl}">
             <Setter Property="OverridesDefaultStyle"  Value="True" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Background" Value="{StaticResource BrushWindowBackgrond}" />
+            <Setter Property="Background" Value="{StaticResource BrushWindowBackground}" />
             <Setter Property="Foreground" Value="{StaticResource BrushWindowForeground}" />
             <Setter Property="BorderBrush" Value="{StaticResource BrushWindowBorderBrush}" />
             <Setter Property="Template">
@@ -56,7 +56,7 @@
         <Style x:Key="OldTabControl" TargetType="{x:Type TabControl}">
             <Setter Property="OverridesDefaultStyle"  Value="True" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Background" Value="{StaticResource BrushWindowBackgrond}" />
+            <Setter Property="Background" Value="{StaticResource BrushWindowBackground}" />
             <Setter Property="Foreground" Value="{StaticResource BrushWindowForeground}" />
             <Setter Property="BorderBrush" Value="{StaticResource BrushWindowBorderBrush}" />
             <Setter Property="Template">
@@ -105,7 +105,7 @@
 
         <!-- TabItem 定義 Start-->
         <Style TargetType="{x:Type TabItem}">
-            <Setter Property="Background" Value="{StaticResource BrushWindowBackgrond}" />
+            <Setter Property="Background" Value="{StaticResource BrushWindowBackground}" />
             <Setter Property="Foreground" Value="{StaticResource BrushWindowForeground}" />
             <Setter Property="BorderBrush" Value="{StaticResource BrushWindowBorderBrush}" />
             <Setter Property="Template">

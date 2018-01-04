@@ -28,8 +28,8 @@ namespace MyStyle.Control
 
         public MyControl()
         {
-            MyResource.GetInstance().ResetResources();
-            StyleName = MyResource.GetInstance().StyleEnum.ToString();
+            MyStyleResource.GetInstance().ResetResources();
+            StyleName = MyStyleResource.GetInstance().StyleEnum.ToString();
             UpdateStyle();
         }
 
@@ -41,7 +41,7 @@ namespace MyStyle.Control
             {
                 if (!StyleName.Equals("Normal"))
                 {
-                    this.Resources = MyResource.GetInstance().CloneMyResource((StyleEnum)Enum.Parse(typeof(StyleEnum), StyleName));
+                    this.Resources = MyStyleResource.GetInstance().GetMyResource() ;
                     UserControlStyleName = "UserControl";
                     this.Style = this.Resources[UserControlStyleName] as Style;
                 }
